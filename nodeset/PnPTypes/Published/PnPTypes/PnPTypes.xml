@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+    xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:OpcUa="http://opcfoundation.org/UA/"
+    xmlns:DI="http://opcfoundation.org/UA/DI/"
+    xmlns:DEVICE="https://fortiss.org/UA/Device/"
+    xmlns:PNPTYPES="https://pnp.org/UA/PnPTypes/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    TargetNamespace="https://pnp.org/UA/PnPTypes/"
+    TargetXmlNamespace="https://pnp.org/UA/PnPTypes/"
+    TargetVersion="0.1.0"
+    TargetPublicationDate="2021-08-08T00:00:00Z"
+    xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+<Namespaces>
+    <Namespace Name="PnPTypes" Prefix="PnPTypes" XmlNamespace="https://pnp.org/UA/PnPTypes/Types.xsd" XmlPrefix="PnPTypes">https://pnp.org/UA/PnPTypes/</Namespace>
+    <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua" InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd" XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    <Namespace Name="OpcUaDi" Prefix="Opc.Ua.Di" XmlNamespace="http://opcfoundation.org/UA/DI/Types.xsd" XmlPrefix="DI" FilePath="OpcUaDiModel">http://opcfoundation.org/UA/DI/</Namespace>
+    <Namespace Name="fortissDevice" Prefix="fortiss_Device" XmlNamespace="https://fortiss.org/UA/Device/Types.xsd" XmlPrefix="fortiss_Device" FilePath="../DeviceModel/DeviceModel">https://fortiss.org/UA/Device/</Namespace>
+</Namespaces>
+
+<!-- ### Data Types ###-->
+
+<DataType SymbolicName="PNPTYPES:HeaderDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>Standard metadata for higher-level stamped data types</Description>
+
+    <Fields>
+        <Field Name="SequenceID" DataType="OpcUa:UInt32">
+            <Description>Consecutively increasing frame ID</Description>
+        </Field>
+
+        <Field Name="Stamp" DataType="OpcUa:DateTime">
+            <Description>Last frame timestamp</Description>        
+        </Field>
+
+        <Field Name="FrameID" DataType="OpcUa:String">
+            <Description>Coordinate frame which the camera is associated with</Description>        
+        </Field>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:ImageDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description> Represents an Image Message. Defines the object where image frames are saved into. Definition based on ROS sensor_msgs/Image Message</Description>
+
+    <Fields>
+        <Field Name="Header" DataType="PNPTYPES:HeaderDataType"/>
+
+        <Field Name="Data" DataType="OpcUa:ByteString">
+            <Description>Last frame byte string. Encoded as configured. Size is (step * rows)</Description>
+        </Field>
+
+        <Field Name="Step" DataType="OpcUa:UInt32">
+            <Description>Frame full row length in bytes</Description>
+        </Field>
+
+        <Field Name="Encoding" DataType="OpcUa:String">
+            <Description>Camera frame encoding type. Mind the supported encodings</Description>
+        </Field>
+
+        <Field Name="Height" DataType="OpcUa:UInt32">
+            <Description>Frame height in pixels</Description>
+        </Field>
+
+        <Field Name="Width" DataType="OpcUa:UInt32">
+            <Description>Frame width in pixels</Description>
+        </Field>
+
+        <Field Name="IsBigendian" DataType="OpcUa:Boolean">
+            <Description>If data is Bigendian</Description>
+        </Field>
+    </Fields>
+</DataType>
+
+
+<DataType SymbolicName="PNPTYPES:PoseDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>A representation of pose in free space, composed of position and orientation</Description>
+
+    <Fields>
+        <Field Name="Position" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3"/>
+        <Field Name="Orientation" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3"/>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:MarkerDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>Contains the elements representing a Fiducial Marker</Description>
+
+    <Fields>
+        <Field Name="Header" DataType="PNPTYPES:HeaderDataType"/>
+        <Field Name="Id" DataType="OpcUa:UInt32"/>
+        <Field Name="Pose" DataType="PNPTYPES:PoseDataType"/>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:MarkerParametersDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>Required parameters to execute marker detection and pose estimation</Description>
+
+    <Fields>
+        <Field Name="Size" DataType="OpcUa:Float"/>
+        <Field Name="Dictionary" DataType="OpcUa:String" Value="ARUCO"/>
+        <Field Name="ErrorCorrection" DataType="OpcUa:Float" Value="0.0"/>
+        <Field Name="DetectionMode" DataType="OpcUa:String" Value="NORMAL"/>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:CameraInfoDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>Contains the definition of camera callibration parameters</Description>
+
+    <Fields>
+        <Field Name="DistortionCoefficients" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3">
+            <Description>Camera Distortion Coefficients = [k1, k2, p1, p2, k3]</Description>
+        </Field>
+
+        <Field Name="CameraMatrix" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3,3">
+            <Description>Camera Matrix = [(fx,0,cx), (0,fy,cy), (0,0,1)]</Description>
+        </Field>
+    </Fields>
+</DataType>
+
+
+<!-- ### Interface Types ###-->
+<ObjectType SymbolicName="PNPTYPES:ICameraInfoParameterType" BaseType="OpcUa:BaseInterfaceType" IsAbstract="true" SupportsEvents="true">
+    <Description>The interface definition of camera callibration parameters</Description>
+
+    <Children>
+        <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+            <Children>
+                <Variable SymbolicName="PNPTYPES:DistortionCoefficients" TypeDefinition="OpcUa:BaseDataVariableType"
+                    DataType="OpcUa:Double" ModellingRule="Mandatory" ValueRank="Array" ArrayDimensions="3" AccessLevel="ReadWrite">
+                    <Description>Camera Distortion Coefficients = [k1, k2, p1, p2, k3]</Description>
+                </Variable>
+
+                <Variable SymbolicName="PNPTYPES:CameraMatrix" TypeDefinition="OpcUa:BaseDataVariableType"
+                    DataType="OpcUa:Double" ModellingRule="Mandatory" ValueRank="Array" ArrayDimensions="3,3" AccessLevel="ReadWrite">
+                    <Description>Camera Matrix = [(fx,0,cx), (0,fy,cy), (0,0,1)]</Description>
+                </Variable>
+            </Children>
+        </Object>
+    </Children>
+</ObjectType>
+
+</ModelDesign>
