@@ -12,6 +12,20 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cli11)
 
+find_path(ARUCO_INCLUDE_DIRS
+  NAMES "aruco/aruco.h"
+  HINTS "usr/include/" "usr/local/include/"
+  REQUIRED
+)
+
+set(ARUCO_INCLUDE_DIRS "${ARUCO_INCLUDE_DIRS}/aruco")
+
+find_library(ARUCO_LIBRARIES
+  NAMES libaruco aruco
+  HINTS "usr/lib/" "usr/local/lib/"
+  REQUIRED
+)
+
 set(GENERATE_OUTPUT_DIR "${CMAKE_BINARY_DIR}/src_generated/${PROJECT_NAME}-client")
 file(MAKE_DIRECTORY "${GENERATE_OUTPUT_DIR}")
 include_directories("${GENERATE_OUTPUT_DIR}")
@@ -78,6 +92,8 @@ generate_certificate(
 include_directories(
     lib
     ${GENERATE_OUTPUT_DIR}
+    ${OpenCV_INCLUDE_DIRS}
+    ${ARUCO_INCLUDE_DIRS}
 )
 
 add_library(${PROJECT_NAME}-lib
@@ -90,6 +106,7 @@ add_library(${PROJECT_NAME}-lib
     ${UA_NODESET_IMAGE_PROCESSOR_SOURCES}
     ${UA_TYPES_IMAGE_PROCESSOR_SOURCES}
     src/ImageProcessor.cpp
+    src/MarkerDetectionSkillImpl.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}-lib
@@ -98,6 +115,7 @@ target_link_libraries(${PROJECT_NAME}-lib
     open62541::open62541
     ${OPCUA_LIB}
     ${OpenCV_LIBS}
+    ${ARUCO_LIBRARIES}
 )
 
 add_dependencies(${PROJECT_NAME}-lib
@@ -107,16 +125,25 @@ add_dependencies(${PROJECT_NAME}-lib
 )
 
 add_executable(${PROJECT_NAME}
-        src/main.cpp
+    src/main.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
-        ${PROJECT_NAME}-lib
+    ${PROJECT_NAME}-lib
 )
 
 add_dependencies(${PROJECT_NAME}
-        ${PROJECT_NAME}-lib
+    ${PROJECT_NAME}-lib
 )
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE
+    IMG_MARKERS="${CMAKE_CURRENT_LIST_DIR}/test/markers.jpg"
+    MARKERS_CSV="${CMAKE_CURRENT_LIST_DIR}/test/markers.csv"
+)
+
+if(OPCUA_PNP_COMPILE_TESTS)
+    add_subdirectory(test)
+endif()
 
 cmake_host_system_information(RESULT HOSTNAME QUERY HOSTNAME)
 file(GENERATE OUTPUT "${CMAKE_SOURCE_DIR}/run_imageprocessor.sh" INPUT "${PROJECT_BINARY_DIR}/.run_tmp.sh")

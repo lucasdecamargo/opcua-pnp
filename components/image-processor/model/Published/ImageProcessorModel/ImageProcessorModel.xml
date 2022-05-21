@@ -37,18 +37,18 @@
                     <Description>Distortion coefficients and matrix of the camera used to take the image photo</Description>
                 </Variable>
 
-                <Variable SymbolicName="IMAGEPROCESSOR:InputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ByteString" ModellingRule="Mandatory" AccessLevel="ReadWrite">
+                <Variable SymbolicName="IMAGEPROCESSOR:InputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ByteString" ModellingRule="Mandatory" AccessLevel="ReadWrite" ValueRank="Scalar">
                     <Description>Contains the data of the input image to be processed</Description>
                 </Variable>
                 
                 <!-- Output parameters -->
-                <Variable SymbolicName="IMAGEPROCESSOR:OutputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ImagePNG" ModellingRule="Mandatory" AccessLevel="Read">
-                    <Description>Contains the data of the output image with drawn markers</Description>
-                </Variable>
-
                 <Variable SymbolicName="IMAGEPROCESSOR:DetectedMarkersArray" DataType="PNPTYPES:MarkerDataType" ValueRank="Array" AccessLevel="Read">
                     <Description>Array of detected fiducial markers</Description>
-                </Variable>                
+                </Variable> 
+
+                <Variable SymbolicName="IMAGEPROCESSOR:OutputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ImagePNG" ModellingRule="Mandatory" AccessLevel="Read" ValueRank="Scalar">
+                    <Description>Contains the data of the output image with drawn markers</Description>
+                </Variable>              
             </Children>
         </Object>
     </Children>

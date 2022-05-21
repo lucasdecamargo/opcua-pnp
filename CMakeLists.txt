@@ -7,6 +7,8 @@ enable_testing()
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
+option(OPCUA_PNP_COMPILE_TESTS "Enable to compile tests" ON)
+
 find_package(open62541 1.0 REQUIRED COMPONENTS FullNamespace Events Discovery DiscoveryMulticast)
 
 add_definitions(

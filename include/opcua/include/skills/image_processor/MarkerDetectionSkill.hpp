@@ -30,7 +30,7 @@ namespace pnp
                     virtual bool start( const UA_CameraInfoDataType& cameraInfo,
                                         const UA_ByteString& inputImage,
                                         std::vector<UA_MarkerDataType>& detectedMarkers,
-                                        UA_ImagePNG* outputImage ) = 0;
+                                        UA_ImagePNG& outputImage ) = 0;
                     virtual bool halt() = 0;
                     virtual bool resume() = 0;
                     virtual bool suspend() = 0;
@@ -53,18 +53,28 @@ namespace pnp
                     SkillParameter<std::vector<UA_MarkerDataType>> paramDetectedMarkers;
                     SkillParameter<UA_ImagePNG> paramOutputImage;
 
+                    const size_t null_size = 0;
+
                     UA_StatusCode readParameters() override
                     {
+                        logger->trace("MarkerDetectionSkill reading parameters");
+
                         UA_StatusCode ret;
 
                         ret = readParameter<UA_CameraInfoDataType>(
                             paramCameraInfo,
                             [this](const UA_CameraInfoDataType& p)
                             {
-                                if(p.cameraMatrixSize != 9 || p.distortionCoefficientsSize < 5)
+                                if(p.cameraMatrixSize != 9 || p.distortionCoefficientsSize < 4)
+                                {
+                                    logger->info("CameraInfo parameter sizes invalid");
                                     return;
+                                }
                                 if(p.cameraMatrix == NULL || p.distortionCoefficients == NULL)
+                                {
+                                    logger->info("CameraInfo values pointing to NULL");
                                     return;
+                                }
                                 
                                 if(this->paramCameraInfo.value.distortionCoefficients != NULL)
                                     UA_free(this->paramCameraInfo.value.distortionCoefficients);
@@ -72,16 +82,16 @@ namespace pnp
                                     UA_free(this->paramCameraInfo.value.cameraMatrix);
 
                                 this->paramCameraInfo.value.distortionCoefficientsSize = p.distortionCoefficientsSize;
-                                this->paramCameraInfo.value.distortionCoefficientsSize = 9;
+                                this->paramCameraInfo.value.cameraMatrixSize = 9;
 
-                                UA_Array_copy(p.distortionCoefficients, p.distortionCoefficientsSize,
-                                                (void**)(this->paramCameraInfo.value.distortionCoefficients),
-                                                &UA_TYPES[UA_TYPES_DOUBLE]);
+                                this->paramCameraInfo.value.distortionCoefficients = (UA_Double*)UA_malloc(p.distortionCoefficientsSize * sizeof(UA_Double));
+                                this->paramCameraInfo.value.cameraMatrix = (UA_Double*)UA_malloc(9 * sizeof(UA_Double));
 
-                                UA_Array_copy(p.cameraMatrix, 9,
-                                                (void**)(this->paramCameraInfo.value.cameraMatrix),
-                                                &UA_TYPES[UA_TYPES_DOUBLE]);
-                                
+                                memcpy(this->paramCameraInfo.value.distortionCoefficients,
+                                        p.distortionCoefficients, p.distortionCoefficientsSize * sizeof(UA_Double));              
+
+                                memcpy(this->paramCameraInfo.value.cameraMatrix,
+                                        p.cameraMatrix, 9 * sizeof(UA_Double));                          
                             }
                         );
 
@@ -99,6 +109,8 @@ namespace pnp
                                 UA_ByteString_copy(&p, &this->paramInputImage.value);
                             }
                         );
+
+                        logger->trace("Paramters successfully read");
 
                         return ret;
                     }
@@ -139,25 +151,27 @@ namespace pnp
                     {
                         auto selfProgram = dynamic_cast<Program*>(this);
 
-                        LockedServer ls = server->getLocked();
-                        if (UA_Server_setNodeContext(ls.get(), skillNodeId, selfProgram) != UA_STATUSCODE_GOOD) {
-                            throw std::runtime_error("Adding method context failed");
+                        {
+                            LockedServer ls = server->getLocked();
+                            if (UA_Server_setNodeContext(ls.get(), skillNodeId, selfProgram) != UA_STATUSCODE_GOOD) {
+                                throw std::runtime_error("Adding method context failed");
+                            }
                         }
 
                         paramCameraInfo.value.distortionCoefficientsSize = 5;
                         paramCameraInfo.value.distortionCoefficients = (UA_Double*)UA_malloc(5 * sizeof(UA_Double));
-                        memset(&paramCameraInfo.value.distortionCoefficients,0,5);
+                        memset(paramCameraInfo.value.distortionCoefficients, 0, 5*sizeof(UA_Double));
                         paramCameraInfo.value.cameraMatrixSize = 9;
                         paramCameraInfo.value.cameraMatrix = (UA_Double*)UA_malloc(9 * sizeof(UA_Double));
-                        memset(&paramCameraInfo.value.cameraMatrix,0,9);
+                        memset(paramCameraInfo.value.cameraMatrix, 0, 9*sizeof(UA_Double));
                         paramCameraInfo.value.cameraMatrix[0] = 1;
                         paramCameraInfo.value.cameraMatrix[4] = 1;
                         paramCameraInfo.value.cameraMatrix[8] = 1;
 
-                        paramInputImage.value.length = 0;
+                        paramInputImage.value.length = null_size;
                         paramInputImage.value.data = NULL;
 
-                        paramOutputImage.value.length = 0;
+                        paramOutputImage.value.length = null_size;
                         paramOutputImage.value.data = NULL;
                     }
 
@@ -171,11 +185,11 @@ namespace pnp
                         this->startCallback = [impl, this]() {
                             if (this->readParameters() != UA_STATUSCODE_GOOD)
                                 return false;
-                            
+                                                        
                             return impl->start(this->paramCameraInfo.value,
                                                this->paramInputImage.value,
                                                this->paramDetectedMarkers.value,
-                                               &this->paramOutputImage.value);
+                                               this->paramOutputImage.value);
                         };
 
                         this->haltCallback = std::bind(
@@ -192,21 +206,89 @@ namespace pnp
                                 &MarkerDetectionSkill::detectionFinished, this);
                     }
 
+                    void updateParameters()
+                    {
+                        UA_StatusCode ret;
+
+                        logger->trace("Setting detected markers");
+                        UA_Variant v_markers;
+
+                        UA_MarkerDataType* tmp_markers;
+
+                        if(paramDetectedMarkers.value.empty())
+                            tmp_markers = NULL;
+                        else
+                            tmp_markers = (UA_MarkerDataType*)UA_malloc(paramDetectedMarkers.value.size() * sizeof(UA_MarkerDataType));
+
+                        std::copy(paramDetectedMarkers.value.begin(),
+                                    paramDetectedMarkers.value.end(),
+                                    tmp_markers);
+
+                        UA_Variant_setArrayCopy(&v_markers, tmp_markers, 
+                            paramDetectedMarkers.value.size(), &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+
+                        UA_UInt32 arrayDimension = paramDetectedMarkers.value.size();
+                        v_markers.arrayDimensions = &arrayDimension;
+                        v_markers.arrayDimensionsSize = 1;
+
+                        {
+                            LockedServer ls = server->getLocked();
+                            ret = UA_Server_writeValue(ls.get(), *paramDetectedMarkers.nodeId.get(), v_markers);
+                        }
+
+                        if(tmp_markers != NULL)
+                            UA_free(tmp_markers);
+                        
+                        paramDetectedMarkers.value.clear();
+
+                        if(ret != UA_STATUSCODE_GOOD) {
+                            logger->error("Failed to write Detected Markers. Returned: " +
+                                std::string(UA_StatusCode_name(ret)));
+                        }
+
+
+                        logger->trace("Setting output image");
+                        UA_Variant v_outimg;
+                        UA_Variant_init(&v_outimg);
+                        UA_Variant_setScalar(&v_outimg, &paramOutputImage.value, &UA_TYPES[UA_TYPES_IMAGEPNG]);
+
+                        {
+                            LockedServer ls = this->server->getLocked();
+                            ret = UA_Server_writeValue(ls.get(), *paramOutputImage.nodeId.get(), v_outimg);
+                        }
+
+                        logger->trace("Cleaning output image");
+                        UA_ImagePNG_clear(&paramOutputImage.value);
+
+                        if(ret != UA_STATUSCODE_GOOD) {
+                            logger->error("Failed to write Output Image. Returned: " +
+                                std::string(UA_StatusCode_name(ret)));
+                        }
+                    }
+
                     void detectionFinished()
                     {
-                        // Update output parameters
-                        // ...
+                        logger->trace("detectionFinished");
 
+                        updateParameters();
+
+                        logger->trace("Making transition to READY");
                         if (!transition(ProgramStateNumber::READY)) {
                             logger->error("Failed to make transition after marker detection has finished to ready");
                         }
+                        logger->trace("Transition successfull");
                     }
 
                     void detectionErrored()
                     {
+                        paramDetectedMarkers.value.clear();
+                        UA_ImagePNG_clear(&paramOutputImage.value);
+
+                        logger->trace("Making transition to READY");
                         if (!transition(ProgramStateNumber::READY)) {
                             logger->error("Failed to make transition after marker detection has finished to ready");
                         }
+                        logger->trace("Transition successfull");
                     }
 
                 };

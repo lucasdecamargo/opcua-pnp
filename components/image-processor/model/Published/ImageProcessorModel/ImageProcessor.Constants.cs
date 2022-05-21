@@ -389,14 +389,14 @@ namespace ImageProcessor
         public const uint MarkerDetectionSkillType_ParameterSet_InputImage = 15070;
 
         /// <summary>
-        /// The identifier for the MarkerDetectionSkillType_ParameterSet_OutputImage Variable.
-        /// </summary>
-        public const uint MarkerDetectionSkillType_ParameterSet_OutputImage = 15071;
-
-        /// <summary>
         /// The identifier for the MarkerDetectionSkillType_ParameterSet_DetectedMarkersArray Variable.
         /// </summary>
         public const uint MarkerDetectionSkillType_ParameterSet_DetectedMarkersArray = 15072;
+
+        /// <summary>
+        /// The identifier for the MarkerDetectionSkillType_ParameterSet_OutputImage Variable.
+        /// </summary>
+        public const uint MarkerDetectionSkillType_ParameterSet_OutputImage = 15071;
 
         /// <summary>
         /// The identifier for the ImageProcessorDeviceType_Lock_Locked Variable.
@@ -744,14 +744,14 @@ namespace ImageProcessor
         public const uint ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_InputImage = 15253;
 
         /// <summary>
-        /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage Variable.
-        /// </summary>
-        public const uint ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage = 15254;
-
-        /// <summary>
         /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_DetectedMarkersArray Variable.
         /// </summary>
         public const uint ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_DetectedMarkersArray = 15255;
+
+        /// <summary>
+        /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage Variable.
+        /// </summary>
+        public const uint ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage = 15254;
     }
     #endregion
 
@@ -1104,14 +1104,14 @@ namespace ImageProcessor
         public static readonly ExpandedNodeId MarkerDetectionSkillType_ParameterSet_InputImage = new ExpandedNodeId(ImageProcessor.Variables.MarkerDetectionSkillType_ParameterSet_InputImage, ImageProcessor.Namespaces.ImageProcessor);
 
         /// <summary>
-        /// The identifier for the MarkerDetectionSkillType_ParameterSet_OutputImage Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId MarkerDetectionSkillType_ParameterSet_OutputImage = new ExpandedNodeId(ImageProcessor.Variables.MarkerDetectionSkillType_ParameterSet_OutputImage, ImageProcessor.Namespaces.ImageProcessor);
-
-        /// <summary>
         /// The identifier for the MarkerDetectionSkillType_ParameterSet_DetectedMarkersArray Variable.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDetectionSkillType_ParameterSet_DetectedMarkersArray = new ExpandedNodeId(ImageProcessor.Variables.MarkerDetectionSkillType_ParameterSet_DetectedMarkersArray, ImageProcessor.Namespaces.ImageProcessor);
+
+        /// <summary>
+        /// The identifier for the MarkerDetectionSkillType_ParameterSet_OutputImage Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerDetectionSkillType_ParameterSet_OutputImage = new ExpandedNodeId(ImageProcessor.Variables.MarkerDetectionSkillType_ParameterSet_OutputImage, ImageProcessor.Namespaces.ImageProcessor);
 
         /// <summary>
         /// The identifier for the ImageProcessorDeviceType_Lock_Locked Variable.
@@ -1459,14 +1459,14 @@ namespace ImageProcessor
         public static readonly ExpandedNodeId ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_InputImage = new ExpandedNodeId(ImageProcessor.Variables.ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_InputImage, ImageProcessor.Namespaces.ImageProcessor);
 
         /// <summary>
-        /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage = new ExpandedNodeId(ImageProcessor.Variables.ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage, ImageProcessor.Namespaces.ImageProcessor);
-
-        /// <summary>
         /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_DetectedMarkersArray Variable.
         /// </summary>
         public static readonly ExpandedNodeId ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_DetectedMarkersArray = new ExpandedNodeId(ImageProcessor.Variables.ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_DetectedMarkersArray, ImageProcessor.Namespaces.ImageProcessor);
+
+        /// <summary>
+        /// The identifier for the ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage = new ExpandedNodeId(ImageProcessor.Variables.ImageProcessorDevice_Skills_MarkerDetectionSkill_ParameterSet_OutputImage, ImageProcessor.Namespaces.ImageProcessor);
     }
     #endregion
 

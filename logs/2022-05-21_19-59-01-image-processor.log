@@ -1,0 +1,361 @@
+[05/21/22 19:59:01.486] [info    ] [image-processor] Starting ImageProcessor Server ...
+[05/21/22 19:59:01.487] [warning ] [image-processor-ua-server] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/21/22 19:59:01.487] [warning ] [image-processor-ua-server] [OPC UA/server] AccessControl: Unconfigured AccessControl. Users have all permissions.
+[05/21/22 19:59:01.487] [info    ] [image-processor-ua-server] [OPC UA/server] AccessControl: Anonymous login is enabled
+[05/21/22 19:59:01.487] [info    ] [image-processor-ua-server] [OPC UA/server] AccessControl: x509 certificate user authentication is enabled
+[05/21/22 19:59:01.487] [warning ] [image-processor-ua-server] [OPC UA/server] Username/Password Authentication configured, but no encrypting SecurityPolicy. This can leak credentials on the network.
+[05/21/22 19:59:01.642] [info    ] [image-processor] Creating nodes from nodeset
+[05/21/22 19:59:01.642] [trace   ] [image-processor] Generating DI namespace
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15031): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15032): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15033): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6095): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6009): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.645] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6010): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6011): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6012): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6013): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15100): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15101): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15102): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6001): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6002): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6003): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6004): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6005): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6006): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6007): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6008): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6208): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6210): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6212): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6214): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6216): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.646] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6470): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15086): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15087): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15088): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15089): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15090): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15091): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15092): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15093): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15094): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15095): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15096): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15097): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15098): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15099): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15129): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15131): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.647] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15133): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6163): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6164): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6165): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6468): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15036): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15037): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15038): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15039): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15040): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15041): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15042): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15043): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.648] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15044): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15045): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15046): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15047): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15049): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15050): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15052): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15056): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15058): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15060): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=15062): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6296): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6297): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6298): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.649] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6497): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6387): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6390): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6391): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6392): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6534): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=123): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=133): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=6): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.650] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=42): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=402): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=78): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=113): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=100): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=136): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=345): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=346): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=347): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=141): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=151): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=152): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=169): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.651] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=170): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=366): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=367): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=368): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=373): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=374): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=375): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=380): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=381): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=382): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=383): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=384): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.652] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=385): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=386): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=227): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=263): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=264): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=2;i=322): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.653] [trace   ] [image-processor] Generating DeviceModel namespace
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15031): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15032): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15033): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15053): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15100): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15401): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15403): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.654] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15406): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15408): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15409): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15413): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15414): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15415): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15430): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=3;i=15397): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.655] [trace   ] [image-processor] Generating PnPTypes namespace
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=4;i=15003): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [trace   ] [image-processor] Generating ImageProcessor namespace
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15069): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15070): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15071): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15072): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15216): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15218): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15221): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15223): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.656] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15224): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15228): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15229): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15230): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15245): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15252): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15253): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15254): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15255): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15166): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.657] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15168): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15169): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15170): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15171): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15173): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15175): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 0 | Session "Administrator" | AddNode (ns=5;i=15177): The value is empty. But this is only allowed for BaseDataType. Create a matching default value.
+[05/21/22 19:59:01.658] [info    ] [image-processor] Initializing skills
+[05/21/22 19:59:01.658] [trace   ] [image-processor] Instantiating Marker Detection Skill Implementation
+[05/21/22 19:59:01.658] [trace   ] [image-processor] Instantiating Marker Detection Skill
+[05/21/22 19:59:01.658] [trace   ] [image-processor] Constructing Marker Detectiong Skill
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting default skill parameter variables: CameraInfo
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting default skill parameter variables: CameraInfo DistCoeff
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting default skill parameter variables: CameraInfo CamMatrix
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting default skill parameter variables: InputImage
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting default skill parameter variables: OutputImage
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Setting implementation
+[05/21/22 19:59:01.659] [trace   ] [image-processor] Executing transition to READY
+[05/21/22 19:59:02.652] [trace   ] [image-processor] Setting camera params
+[05/21/22 19:59:02.652] [trace   ] [image-processor] Mem copy cam matrix
+[05/21/22 19:59:02.652] [trace   ] [image-processor] Mem copy dist coeff
+[05/21/22 19:59:02.652] [trace   ] [image-processor] Setting variant camparams
+[05/21/22 19:59:02.652] [trace   ] [image-processor] Clearing camparams
+[05/21/22 19:59:02.659] [warning ] [image-processor-ua-server] [OPC UA/network] Multicast DNS: outbound interface 0.0.0.0, it means that the first OS interface is used (you can explicitly set the interface by using 'discovery.mdnsInterfaceIP' config parameter)
+[05/21/22 19:59:02.660] [info    ] [image-processor-ua-server] [OPC UA/network] TCP network layer listening on opc.tcp://lucas-laptop:4843/
+[05/21/22 19:59:02.660] [info    ] [image-processor-ua-server] [OPC UA/server] Multicast DNS: add record for domain: pnp.component.imageprocessor-lucas-laptop._opcua-tcp._tcp.local.
+[05/21/22 19:59:02.660] [info    ] [image-processor] OPC UA Server initialized: opc.tcp://lucas-laptop:4843/
+[05/21/22 19:59:04.878] [info    ] [image-processor-ua-server] [OPC UA/network] Connection 7 | New connection over TCP from 127.0.0.1
+[05/21/22 19:59:04.880] [info    ] [image-processor-ua-server] [OPC UA/channel] Connection 7 | SecureChannel 1 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/21/22 19:59:04.883] [warning ] [image-processor-ua-server] [OPC UA/channel] Connection 7 | SecureChannel 1 | ActivateSession: Session not found
+[05/21/22 19:59:04.886] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 1 | Session "urn:lucas-laptop:UnifiedAutomation:UaExpert" | Session created
+[05/21/22 19:59:04.887] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 1 | Session "urn:lucas-laptop:UnifiedAutomation:UaExpert" | ActivateSession: Session activated
+[05/21/22 19:59:04.929] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 1 | Session "urn:lucas-laptop:UnifiedAutomation:UaExpert" | Subscription 1 | Subscription created (Publishing interval 100.00ms, max 1000 notifications per publish)
+[05/21/22 19:59:04.931] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 1 | Session "urn:lucas-laptop:UnifiedAutomation:UaExpert" | Subscription 1 | MonitoredItem 1 | Created the MonitoredItem (Sampling Interval: 0.00ms, Queue Size: 100)
+[05/21/22 19:59:05.969] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:05.970] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:05.970] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:05.980] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:05.988] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:05.988] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:05.988] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:05.988] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:05.991] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:05.993] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:05.993] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:05.993] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:06.424] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:06.425] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:09.102] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:09.102] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:09.102] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:09.114] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:09.116] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:09.116] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:09.116] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:09.116] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:09.118] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:09.121] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:09.121] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:09.122] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:09.507] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:09.508] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:09.509] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:16.293] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:16.294] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:16.294] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:16.299] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:16.303] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:16.303] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:16.303] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:16.303] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:16.306] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:16.309] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:16.309] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:16.310] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:16.719] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:16.720] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:22.957] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:22.958] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:22.958] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:22.962] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:22.965] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:22.966] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:22.966] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:22.966] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:22.969] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:22.973] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:22.973] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:22.973] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:23.362] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:23.363] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:23.364] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:29.817] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:29.817] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:29.817] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:29.821] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:29.825] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:29.825] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:29.825] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:29.825] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:29.828] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:29.831] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:29.831] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:29.831] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:30.222] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:30.223] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:35.832] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:35.832] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:35.832] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:35.837] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:35.842] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:35.842] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:35.842] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:35.842] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:35.845] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:35.849] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:35.849] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:35.849] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:36.260] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:36.261] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:37.998] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:37.998] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:37.998] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:38.003] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:38.007] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:38.007] [info    ] [image-processor] MarkerDetectionSkill reading parameters
+[05/21/22 19:59:38.007] [trace   ] [image-processor] Dist coeff array copying
+[05/21/22 19:59:38.007] [trace   ] [image-processor] Cam matrix array copying
+[05/21/22 19:59:38.010] [trace   ] [image-processor] Copying UA_ByteString
+[05/21/22 19:59:38.013] [trace   ] [image-processor] Paramters successfully read
+[05/21/22 19:59:38.013] [info    ] [image-processor] MarkerDetectionSkill called
+[05/21/22 19:59:38.013] [trace   ] [image-processor] Decoding image
+[05/21/22 19:59:38.371] [trace   ] [image-processor] Position valid for marker 25
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Detection finished
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Updateing parameters
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Setting UA_Variant_setArrayCopy
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Setting variant dimensions
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Writing detected markers values to server
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Deleting tmp_markers
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Setting output image
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Writing output image to server
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Cleaning output image
+[05/21/22 19:59:38.372] [trace   ] [image-processor] Making transition to READY
+[05/21/22 19:59:38.373] [trace   ] [image-processor] Skill finished.
+[05/21/22 19:59:54.863] [warning ] [image-processor] Received Ctrl-C. Shutting down...
+[05/21/22 19:59:54.864] [info    ] [image-processor-ua-server] [OPC UA/network] Shutting down the TCP network layer
+[05/21/22 19:59:54.864] [info    ] [image-processor-ua-server] [OPC UA/server] Multicast DNS: remove record for domain: pnp.component.imageprocessor-lucas-laptop._opcua-tcp._tcp.local.
+[05/21/22 19:59:54.865] [info    ] [image-processor-ua-server] [OPC UA/session] SecureChannel 1 | Session "urn:lucas-laptop:UnifiedAutomation:UaExpert" | Subscription 1 | Subscription deleted
+[05/21/22 19:59:54.865] [info    ] [image-processor-ua-server] [OPC UA/server] Subscription 1 | MonitoredItem 1 | Deleting the MonitoredItem
