@@ -1,0 +1,6 @@
+[05/18/22 22:45:31.866] [info    ] [imgviewer] Starting Camera Server ...
+[05/18/22 22:45:31.866] [warning ] [imgviewer] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 22:45:31.866] [warning ] [imgviewer] [OPC UA/network] Server url is invalid: 
+[05/18/22 22:45:31.866] [warning ] [imgviewer] [OPC UA/client] Could not open a TCP connection to 
+[05/18/22 22:45:31.866] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: BadConnectionClosed
+[05/18/22 22:45:31.866] [critical] [imgviewer] Could not initialize component. Cannot connect camera client 

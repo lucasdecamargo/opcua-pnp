@@ -48,29 +48,14 @@ namespace PnPTypes
     public static partial class DataTypes
     {
         /// <summary>
-        /// The identifier for the HeaderDataType DataType.
+        /// The identifier for the PositionDataType DataType.
         /// </summary>
-        public const uint HeaderDataType = 15015;
-
-        /// <summary>
-        /// The identifier for the ImageDataType DataType.
-        /// </summary>
-        public const uint ImageDataType = 15003;
-
-        /// <summary>
-        /// The identifier for the PoseDataType DataType.
-        /// </summary>
-        public const uint PoseDataType = 15005;
+        public const uint PositionDataType = 15073;
 
         /// <summary>
         /// The identifier for the MarkerDataType DataType.
         /// </summary>
         public const uint MarkerDataType = 15001;
-
-        /// <summary>
-        /// The identifier for the MarkerParametersDataType DataType.
-        /// </summary>
-        public const uint MarkerParametersDataType = 15063;
 
         /// <summary>
         /// The identifier for the CameraInfoDataType DataType.
@@ -93,19 +78,9 @@ namespace PnPTypes
         public const uint ICameraInfoParameterType_ParameterSet = 15012;
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint HeaderDataType_Encoding_DefaultBinary = 15019;
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public const uint ImageDataType_Encoding_DefaultBinary = 15004;
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public const uint PoseDataType_Encoding_DefaultBinary = 15017;
+        public const uint PositionDataType_Encoding_DefaultBinary = 15074;
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultBinary Object.
@@ -113,29 +88,14 @@ namespace PnPTypes
         public const uint MarkerDataType_Encoding_DefaultBinary = 15002;
 
         /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public const uint MarkerParametersDataType_Encoding_DefaultBinary = 15064;
-
-        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public const uint CameraInfoDataType_Encoding_DefaultBinary = 15054;
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultXml Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint HeaderDataType_Encoding_DefaultXml = 15027;
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public const uint ImageDataType_Encoding_DefaultXml = 15042;
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public const uint PoseDataType_Encoding_DefaultXml = 15043;
+        public const uint PositionDataType_Encoding_DefaultXml = 15078;
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultXml Object.
@@ -143,39 +103,19 @@ namespace PnPTypes
         public const uint MarkerDataType_Encoding_DefaultXml = 15009;
 
         /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public const uint MarkerParametersDataType_Encoding_DefaultXml = 15068;
-
-        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultXml Object.
         /// </summary>
         public const uint CameraInfoDataType_Encoding_DefaultXml = 15058;
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultJson Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint HeaderDataType_Encoding_DefaultJson = 15035;
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public const uint ImageDataType_Encoding_DefaultJson = 15050;
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public const uint PoseDataType_Encoding_DefaultJson = 15051;
+        public const uint PositionDataType_Encoding_DefaultJson = 15082;
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
         /// </summary>
         public const uint MarkerDataType_Encoding_DefaultJson = 15052;
-
-        /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public const uint MarkerParametersDataType_Encoding_DefaultJson = 15072;
 
         /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultJson Object.
@@ -208,14 +148,9 @@ namespace PnPTypes
     public static partial class Variables
     {
         /// <summary>
-        /// The identifier for the ICameraInfoParameterType_ParameterSet_DistortionCoefficients Variable.
+        /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraInfo Variable.
         /// </summary>
-        public const uint ICameraInfoParameterType_ParameterSet_DistortionCoefficients = 15013;
-
-        /// <summary>
-        /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraMatrix Variable.
-        /// </summary>
-        public const uint ICameraInfoParameterType_ParameterSet_CameraMatrix = 15014;
+        public const uint ICameraInfoParameterType_ParameterSet_CameraInfo = 15003;
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema Variable.
@@ -233,29 +168,14 @@ namespace PnPTypes
         public const uint PnPTypes_BinarySchema_Deprecated = 15023;
 
         /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_HeaderDataType Variable.
+        /// The identifier for the PnPTypes_BinarySchema_PositionDataType Variable.
         /// </summary>
-        public const uint PnPTypes_BinarySchema_HeaderDataType = 15024;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_ImageDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_BinarySchema_ImageDataType = 15036;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_PoseDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_BinarySchema_PoseDataType = 15039;
+        public const uint PnPTypes_BinarySchema_PositionDataType = 15075;
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_MarkerDataType Variable.
         /// </summary>
         public const uint PnPTypes_BinarySchema_MarkerDataType = 15006;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_MarkerParametersDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_BinarySchema_MarkerParametersDataType = 15065;
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_CameraInfoDataType Variable.
@@ -278,29 +198,14 @@ namespace PnPTypes
         public const uint PnPTypes_XmlSchema_Deprecated = 15031;
 
         /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_HeaderDataType Variable.
+        /// The identifier for the PnPTypes_XmlSchema_PositionDataType Variable.
         /// </summary>
-        public const uint PnPTypes_XmlSchema_HeaderDataType = 15032;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_ImageDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_XmlSchema_ImageDataType = 15044;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_PoseDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_XmlSchema_PoseDataType = 15047;
+        public const uint PnPTypes_XmlSchema_PositionDataType = 15079;
 
         /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_MarkerDataType Variable.
         /// </summary>
         public const uint PnPTypes_XmlSchema_MarkerDataType = 15010;
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_MarkerParametersDataType Variable.
-        /// </summary>
-        public const uint PnPTypes_XmlSchema_MarkerParametersDataType = 15069;
 
         /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_CameraInfoDataType Variable.
@@ -318,29 +223,14 @@ namespace PnPTypes
     public static partial class DataTypeIds
     {
         /// <summary>
-        /// The identifier for the HeaderDataType DataType.
+        /// The identifier for the PositionDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId HeaderDataType = new ExpandedNodeId(PnPTypes.DataTypes.HeaderDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the ImageDataType DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId ImageDataType = new ExpandedNodeId(PnPTypes.DataTypes.ImageDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PoseDataType DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId PoseDataType = new ExpandedNodeId(PnPTypes.DataTypes.PoseDataType, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PositionDataType = new ExpandedNodeId(PnPTypes.DataTypes.PositionDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType DataType.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType = new ExpandedNodeId(PnPTypes.DataTypes.MarkerDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the MarkerParametersDataType DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId MarkerParametersDataType = new ExpandedNodeId(PnPTypes.DataTypes.MarkerParametersDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the CameraInfoDataType DataType.
@@ -363,19 +253,9 @@ namespace PnPTypes
         public static readonly ExpandedNodeId ICameraInfoParameterType_ParameterSet = new ExpandedNodeId(PnPTypes.Objects.ICameraInfoParameterType_ParameterSet, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId HeaderDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.HeaderDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public static readonly ExpandedNodeId ImageDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.ImageDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultBinary Object.
@@ -383,29 +263,14 @@ namespace PnPTypes
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public static readonly ExpandedNodeId MarkerParametersDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.MarkerParametersDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public static readonly ExpandedNodeId CameraInfoDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.CameraInfoDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultXml Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId HeaderDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.HeaderDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public static readonly ExpandedNodeId ImageDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.ImageDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultXml Object.
@@ -413,39 +278,19 @@ namespace PnPTypes
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public static readonly ExpandedNodeId MarkerParametersDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.MarkerParametersDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultXml Object.
         /// </summary>
         public static readonly ExpandedNodeId CameraInfoDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.CameraInfoDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the HeaderDataType_Encoding_DefaultJson Object.
+        /// The identifier for the PositionDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId HeaderDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.HeaderDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the ImageDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public static readonly ExpandedNodeId ImageDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.ImageDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PoseDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the MarkerParametersDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public static readonly ExpandedNodeId MarkerParametersDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.MarkerParametersDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultJson Object.
@@ -478,14 +323,9 @@ namespace PnPTypes
     public static partial class VariableIds
     {
         /// <summary>
-        /// The identifier for the ICameraInfoParameterType_ParameterSet_DistortionCoefficients Variable.
+        /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraInfo Variable.
         /// </summary>
-        public static readonly ExpandedNodeId ICameraInfoParameterType_ParameterSet_DistortionCoefficients = new ExpandedNodeId(PnPTypes.Variables.ICameraInfoParameterType_ParameterSet_DistortionCoefficients, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraMatrix Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId ICameraInfoParameterType_ParameterSet_CameraMatrix = new ExpandedNodeId(PnPTypes.Variables.ICameraInfoParameterType_ParameterSet_CameraMatrix, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId ICameraInfoParameterType_ParameterSet_CameraInfo = new ExpandedNodeId(PnPTypes.Variables.ICameraInfoParameterType_ParameterSet_CameraInfo, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema Variable.
@@ -503,29 +343,14 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_Deprecated = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_Deprecated, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_HeaderDataType Variable.
+        /// The identifier for the PnPTypes_BinarySchema_PositionDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_BinarySchema_HeaderDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_HeaderDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_ImageDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_BinarySchema_ImageDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_ImageDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_PoseDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_BinarySchema_PoseDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_PoseDataType, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PnPTypes_BinarySchema_PositionDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_PositionDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_MarkerDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_MarkerDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_MarkerDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_BinarySchema_MarkerParametersDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_BinarySchema_MarkerParametersDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_MarkerParametersDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_CameraInfoDataType Variable.
@@ -548,29 +373,14 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PnPTypes_XmlSchema_Deprecated = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_Deprecated, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_HeaderDataType Variable.
+        /// The identifier for the PnPTypes_XmlSchema_PositionDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_XmlSchema_HeaderDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_HeaderDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_ImageDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_XmlSchema_ImageDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_ImageDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_PoseDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_XmlSchema_PoseDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_PoseDataType, PnPTypes.Namespaces.PnPTypes);
+        public static readonly ExpandedNodeId PnPTypes_XmlSchema_PositionDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_PositionDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_MarkerDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_XmlSchema_MarkerDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_MarkerDataType, PnPTypes.Namespaces.PnPTypes);
-
-        /// <summary>
-        /// The identifier for the PnPTypes_XmlSchema_MarkerParametersDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId PnPTypes_XmlSchema_MarkerParametersDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_MarkerParametersDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_CameraInfoDataType Variable.
@@ -592,29 +402,14 @@ namespace PnPTypes
         public const string CameraInfoDataType = "CameraInfoDataType";
 
         /// <summary>
-        /// The BrowseName for the HeaderDataType component.
-        /// </summary>
-        public const string HeaderDataType = "HeaderDataType";
-
-        /// <summary>
         /// The BrowseName for the ICameraInfoParameterType component.
         /// </summary>
         public const string ICameraInfoParameterType = "ICameraInfoParameterType";
 
         /// <summary>
-        /// The BrowseName for the ImageDataType component.
-        /// </summary>
-        public const string ImageDataType = "ImageDataType";
-
-        /// <summary>
         /// The BrowseName for the MarkerDataType component.
         /// </summary>
         public const string MarkerDataType = "MarkerDataType";
-
-        /// <summary>
-        /// The BrowseName for the MarkerParametersDataType component.
-        /// </summary>
-        public const string MarkerParametersDataType = "MarkerParametersDataType";
 
         /// <summary>
         /// The BrowseName for the PnPTypes_BinarySchema component.
@@ -627,9 +422,9 @@ namespace PnPTypes
         public const string PnPTypes_XmlSchema = "PnPTypes";
 
         /// <summary>
-        /// The BrowseName for the PoseDataType component.
+        /// The BrowseName for the PositionDataType component.
         /// </summary>
-        public const string PoseDataType = "PoseDataType";
+        public const string PositionDataType = "PositionDataType";
     }
     #endregion
 

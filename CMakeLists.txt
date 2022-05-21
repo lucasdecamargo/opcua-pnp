@@ -24,6 +24,14 @@ FetchContent_MakeAvailable(cli11)
 
 add_subdirectory(include/opcua)
 
+set(OPCUA_LIB "${PROJECT_NAME}-opcua")
+set(NODESET_DIR "${CMAKE_CURRENT_LIST_DIR}/nodeset")
+
+###################
+# I4.0 COMPONENTS #
+###################
+add_subdirectory(components/camera)
+add_subdirectory(components/image-processor)
 
 ##################################
 # MANUFACTURING EXECUTION SYSTEM #
@@ -63,5 +71,5 @@ add_dependencies(mes
 )
 
 cmake_host_system_information(RESULT HOSTNAME QUERY HOSTNAME)
-file(GENERATE OUTPUT "${PROJECT_SOURCE_DIR}/run_mes.sh" INPUT "${PROJECT_BINARY_DIR}/.run_tmp.sh")
+file(GENERATE OUTPUT "${CMAKE_SOURCE_DIR}/run_mes.sh" INPUT "${PROJECT_BINARY_DIR}/.run_tmp.sh")
 configure_file("run_template.in.sh" "${PROJECT_BINARY_DIR}/.run_tmp.sh")

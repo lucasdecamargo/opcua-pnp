@@ -11,74 +11,34 @@
   <xs:import namespace="http://opcfoundation.org/UA/DI/Types.xsd" />
   <xs:import namespace="https://fortiss.org/UA/Device/Types.xsd" />
 
-  <xs:complexType name="HeaderDataType">
-    <xs:annotation>
-      <xs:documentation>Standard metadata for higher-level stamped data types</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="SequenceID" type="xs:unsignedInt" minOccurs="0" />
-      <xs:element name="Stamp" type="xs:dateTime" minOccurs="0" />
-      <xs:element name="FrameID" type="xs:string" minOccurs="0" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="HeaderDataType" type="tns:HeaderDataType" />
-
-  <xs:complexType name="ListOfHeaderDataType">
-    <xs:sequence>
-      <xs:element name="HeaderDataType" type="tns:HeaderDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ListOfHeaderDataType" type="tns:ListOfHeaderDataType" nillable="true"></xs:element>
-
-  <xs:complexType name="ImageDataType">
-    <xs:annotation>
-      <xs:documentation>Represents an Image Message. Defines the object where image frames are saved into. Definition based on ROS sensor_msgs/Image Message</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="Header" type="tns:HeaderDataType" minOccurs="0" nillable="true" />
-      <xs:element name="Data" type="xs:base64Binary" minOccurs="0" nillable="true" />
-      <xs:element name="Step" type="xs:unsignedInt" minOccurs="0" />
-      <xs:element name="Encoding" type="xs:string" minOccurs="0" nillable="true" />
-      <xs:element name="Height" type="xs:unsignedInt" minOccurs="0" />
-      <xs:element name="Width" type="xs:unsignedInt" minOccurs="0" />
-      <xs:element name="IsBigendian" type="xs:boolean" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ImageDataType" type="tns:ImageDataType" />
-
-  <xs:complexType name="ListOfImageDataType">
-    <xs:sequence>
-      <xs:element name="ImageDataType" type="tns:ImageDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ListOfImageDataType" type="tns:ListOfImageDataType" nillable="true"></xs:element>
-
-  <xs:complexType name="PoseDataType">
+  <xs:complexType name="PositionDataType">
     <xs:annotation>
       <xs:documentation>A representation of pose in free space, composed of position and orientation</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="Position" type="ua:ListOfDouble" minOccurs="0" nillable="true" />
-      <xs:element name="Orientation" type="ua:ListOfDouble" minOccurs="0" nillable="true" />
+      <xs:element name="x" type="xs:double" minOccurs="0" />
+      <xs:element name="y" type="xs:double" minOccurs="0" />
+      <xs:element name="z" type="xs:double" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="PoseDataType" type="tns:PoseDataType" />
+  <xs:element name="PositionDataType" type="tns:PositionDataType" />
 
-  <xs:complexType name="ListOfPoseDataType">
+  <xs:complexType name="ListOfPositionDataType">
     <xs:sequence>
-      <xs:element name="PoseDataType" type="tns:PoseDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="PositionDataType" type="tns:PositionDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfPoseDataType" type="tns:ListOfPoseDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfPositionDataType" type="tns:ListOfPositionDataType" nillable="true"></xs:element>
 
   <xs:complexType name="MarkerDataType">
     <xs:annotation>
       <xs:documentation>Contains the elements representing a Fiducial Marker</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="Header" type="tns:HeaderDataType" minOccurs="0" nillable="true" />
       <xs:element name="Id" type="xs:unsignedInt" minOccurs="0" />
-      <xs:element name="Pose" type="tns:PoseDataType" minOccurs="0" nillable="true" />
+      <xs:element name="Size" type="xs:float" minOccurs="0" />
+      <xs:element name="Dictionary" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="Position" type="tns:PositionDataType" minOccurs="0" nillable="true" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MarkerDataType" type="tns:MarkerDataType" />
@@ -89,26 +49,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ListOfMarkerDataType" type="tns:ListOfMarkerDataType" nillable="true"></xs:element>
-
-  <xs:complexType name="MarkerParametersDataType">
-    <xs:annotation>
-      <xs:documentation>Required parameters to execute marker detection and pose estimation</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="Size" type="xs:float" minOccurs="0" />
-      <xs:element name="Dictionary" type="xs:string" minOccurs="0" nillable="true" />
-      <xs:element name="ErrorCorrection" type="xs:float" minOccurs="0" />
-      <xs:element name="DetectionMode" type="xs:string" minOccurs="0" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MarkerParametersDataType" type="tns:MarkerParametersDataType" />
-
-  <xs:complexType name="ListOfMarkerParametersDataType">
-    <xs:sequence>
-      <xs:element name="MarkerParametersDataType" type="tns:MarkerParametersDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ListOfMarkerParametersDataType" type="tns:ListOfMarkerParametersDataType" nillable="true"></xs:element>
 
   <xs:complexType name="CameraInfoDataType">
     <xs:annotation>

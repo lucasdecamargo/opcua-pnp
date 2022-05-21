@@ -1,0 +1,6 @@
+#ifndef PNP_IMAGEPROCESSOR_H
+#define PNP_IMAGEPROCESSOR_H
+
+
+
+#endif

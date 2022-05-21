@@ -3,7 +3,7 @@
 # Send SIGTERM to the Java KB background job, because for some reason only its process signal mask ignores SIGINT (ctrl+c).
 trap 'kill -SIGTERM $P_kb' SIGINT
 
-echo "Starting Composite Skills component ..."
+echo "Starting MES component ..."
 /home/lucas/Coding/OPCUA/opcua-pnp/build/mes --config /home/lucas/Coding/OPCUA/opcua-pnp/component.cfg --certs-server=/home/lucas/Coding/OPCUA/opcua-pnp/certs/server/lucas-laptop --certs-client=/home/lucas/Coding/OPCUA/opcua-pnp/certs/client/lucas-laptop &
 P_mes=$!
 

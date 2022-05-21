@@ -1,0 +1,46 @@
+[05/18/22 23:39:33.821] [info    ] [imgviewer] Starting Camera Server ...
+[05/18/22 23:39:33.822] [warning ] [imgviewer] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 23:39:33.826] [info    ] [imgviewer] [OPC UA/channel] Connection 4 | SecureChannel 12 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/18/22 23:39:33.827] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:39:33.828] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:39:33.828] [info    ] [imgviewer-ua] Using endpoint with no security
+[05/18/22 23:39:33.828] [warning ] [imgviewer-ua] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 23:39:33.828] [info    ] [imgviewer] Attempting to connect with username: demo
+[05/18/22 23:39:33.832] [info    ] [imgviewer-ua] [OPC UA/channel] Connection 4 | SecureChannel 13 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/18/22 23:39:33.839] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:39:33.839] [info    ] [imgviewer-ua] [OPC UA/client] Rejecting UserTokenPolicy 0 (anonymous) in endpoint 0: configuration doesn't match
+[05/18/22 23:39:33.839] [info    ] [imgviewer-ua] [OPC UA/client] Selected endpoint 0 in URL opc.tcp://lucas-laptop:4842 with SecurityMode None and SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None
+[05/18/22 23:39:33.839] [info    ] [imgviewer-ua] [OPC UA/client] Selected UserTokenPolicy open62541-username-policy with UserTokenType UserName and SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None
+[05/18/22 23:39:33.840] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Created, ConnectStatus: Good
+[05/18/22 23:39:33.841] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Activated, ConnectStatus: Good
+[05/18/22 23:39:33.841] [info    ] [imgviewer] Camera Client connected
+[05/18/22 23:39:33.977] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:34.981] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:35.984] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:36.988] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:37.991] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:38.993] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:39.996] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:40.998] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:42.002] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:43.005] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:44.007] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:45.009] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:46.012] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:39:47.015] [error   ] [imgviewer] Failed on reading image: OpenCV(4.2.0) ../modules/imgcodecs/src/loadsave.cpp:730: error: (-215:Assertion failed) !buf.empty() in function 'imdecode_'
+
+[05/18/22 23:40:24.077] [warning ] [imgviewer] Received Ctrl-C. Shutting down...
+[05/18/22 23:40:24.510] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: Good

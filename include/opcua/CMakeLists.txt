@@ -60,10 +60,12 @@ ua_generate_nodeset_and_datatypes(
 
 add_library(${PROJECT_NAME}
     server/OpcUaServer.cpp
+    include/skills/camera/PhotoSkill.hpp
     include/skills/camera/ImageSkill.hpp
     include/skills/camera/ImageFrameSkill.hpp
     include/skills/camera/ImageStreamSkill.hpp
     include/skills/image_processing/MarkerDetectionSkill.hpp
+    include/skills/image_processor/MarkerDetectionSkill.hpp
     include/skills/composed/RTMarkerDetectionSkill.hpp
     ${UA_NODESET_DI_SOURCES}
     ${UA_TYPES_DI_SOURCES}

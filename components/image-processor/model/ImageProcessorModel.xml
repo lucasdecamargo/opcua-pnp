@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+    xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:OpcUa="http://opcfoundation.org/UA/"
+    xmlns:DI="http://opcfoundation.org/UA/DI/"
+    xmlns:DEVICE="https://fortiss.org/UA/Device/"
+    xmlns:PNPTYPES="https://pnp.org/UA/PnPTypes/"
+    xmlns:IMAGEPROCESSOR="https://pnp.org/UA/ImageProcessor/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    TargetNamespace="https://pnp.org/UA/ImageProcessor/"
+    TargetXmlNamespace="https://pnp.org/UA/ImageProcessor/"
+    TargetVersion="0.1.0"
+    TargetPublicationDate="2021-08-08T00:00:00Z"
+    xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+<Namespaces>
+    <Namespace Name="ImageProcessor" Prefix="ImageProcessor" XmlNamespace="https://pnp.org/UA/ImageProcessor/Types.xsd" XmlPrefix="ImageProcessor">https://pnp.org/UA/ImageProcessor/</Namespace>
+    <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua" InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd" XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    <Namespace Name="OpcUaDi" Prefix="Opc.Ua.Di" XmlNamespace="http://opcfoundation.org/UA/DI/Types.xsd" XmlPrefix="DI" FilePath="OpcUaDiModel">http://opcfoundation.org/UA/DI/</Namespace>
+    <Namespace Name="fortissDevice" Prefix="fortiss_Device" XmlNamespace="https://fortiss.org/UA/Device/Types.xsd" XmlPrefix="fortiss_Device" FilePath="../../../nodeset/DeviceModel/DeviceModel">https://fortiss.org/UA/Device/</Namespace>
+    <Namespace Name="PnPTypes" Prefix="PnPTypes" XmlNamespace="https://pnp.org/UA/PnPTypes/Types.xsd" XmlPrefix="PnPTypes" FilePath="../../../nodeset/PnPTypes/PnPTypes">https://pnp.org/UA/PnPTypes/</Namespace>
+</Namespaces>
+
+<!-- ### Object Types ###-->
+
+<ObjectType SymbolicName="IMAGEPROCESSOR:MarkerDetectionSkillType" BaseType="DEVICE:SkillType" IsAbstract="false">
+    <BrowseName>MarkerDetectionSkillType</BrowseName>
+    <Description>Skill to detect fiducial markers in images</Description>
+
+    <Children>
+        <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+            <Children>
+                <!-- Input parameters -->
+                <Variable SymbolicName="IMAGEPROCESSOR:CameraInfo" TypeDefinition="OpcUa:BaseDataVariableType" DataType="PNPTYPES:CameraInfoDataType" ModellingRule="Mandatory" AccessLevel="ReadWrite">
+                    <Description>Distortion coefficients and matrix of the camera used to take the image photo</Description>
+                </Variable>
+
+                <Variable SymbolicName="IMAGEPROCESSOR:InputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ByteString" ModellingRule="Mandatory" AccessLevel="ReadWrite">
+                    <Description>Contains the data of the input image to be processed</Description>
+                </Variable>
+                
+                <!-- Output parameters -->
+                <Variable SymbolicName="IMAGEPROCESSOR:DetectedMarkersArray" DataType="PNPTYPES:MarkerDataType" ValueRank="Array" AccessLevel="Read">
+                    <Description>Array of detected fiducial markers</Description>
+                </Variable> 
+
+                <Variable SymbolicName="IMAGEPROCESSOR:OutputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ImagePNG" ModellingRule="Mandatory" AccessLevel="Read">
+                    <Description>Contains the data of the output image with drawn markers</Description>
+                </Variable>              
+            </Children>
+        </Object>
+    </Children>
+</ObjectType>
+
+<ObjectType SymbolicName="IMAGEPROCESSOR:ImageProcessorDeviceType" BaseType="DI:DeviceType" IsAbstract="false">
+</ObjectType>
+
+<!-- ### Objects ### -->
+
+<Object SymbolicName="IMAGEPROCESSOR:ImageProcessorDevice" TypeDefinition="IMAGEPROCESSOR:ImageProcessorDeviceType" SupportsEvents="true">
+    <Description>The Image Processor Component</Description>
+
+    <Children>
+        <Object SymbolicName="DEVICE:Skills" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+            <Description>Contains the skills of the Camera Device</Description>
+            <Children>
+                <Object SymbolicName="IMAGEPROCESSOR:MarkerDetectionSkill" TypeDefinition="IMAGEPROCESSOR:MarkerDetectionSkillType" 
+                    ModellingRule="Mandatory" SupportsEvents="true"/>
+            </Children>
+        </Object>
+    </Children>
+
+    <References>
+        <Reference IsInverse="false">
+            <ReferenceType>OpcUa:HasInterface</ReferenceType>
+            <TargetId>DEVICE:ISkillControllerType</TargetId>
+        </Reference>
+
+        <Reference IsInverse="true">
+            <ReferenceType>OpcUa:Organizes</ReferenceType>
+            <TargetId>DI:DeviceSet</TargetId>
+        </Reference>
+    </References>
+</Object>
+
+</ModelDesign>

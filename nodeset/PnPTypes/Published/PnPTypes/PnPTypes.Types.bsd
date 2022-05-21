@@ -12,45 +12,19 @@
   <opc:Import Namespace="http://opcfoundation.org/UA/DI/" Location="Opc.Ua.Di.BinarySchema.bsd"/>
   <opc:Import Namespace="https://fortiss.org/UA/Device/" Location="fortiss_Device.BinarySchema.bsd"/>
 
-  <opc:StructuredType Name="HeaderDataType" BaseType="ua:ExtensionObject">
-    <opc:Documentation>Standard metadata for higher-level stamped data types</opc:Documentation>
-    <opc:Field Name="SequenceID" TypeName="opc:UInt32" />
-    <opc:Field Name="Stamp" TypeName="opc:DateTime" />
-    <opc:Field Name="FrameID" TypeName="opc:String" />
-  </opc:StructuredType>
-
-  <opc:StructuredType Name="ImageDataType" BaseType="ua:ExtensionObject">
-    <opc:Documentation>Represents an Image Message. Defines the object where image frames are saved into. Definition based on ROS sensor_msgs/Image Message</opc:Documentation>
-    <opc:Field Name="Header" TypeName="tns:HeaderDataType" />
-    <opc:Field Name="Data" TypeName="opc:ByteString" />
-    <opc:Field Name="Step" TypeName="opc:UInt32" />
-    <opc:Field Name="Encoding" TypeName="opc:String" />
-    <opc:Field Name="Height" TypeName="opc:UInt32" />
-    <opc:Field Name="Width" TypeName="opc:UInt32" />
-    <opc:Field Name="IsBigendian" TypeName="opc:Boolean" />
-  </opc:StructuredType>
-
-  <opc:StructuredType Name="PoseDataType" BaseType="ua:ExtensionObject">
+  <opc:StructuredType Name="PositionDataType" BaseType="ua:ExtensionObject">
     <opc:Documentation>A representation of pose in free space, composed of position and orientation</opc:Documentation>
-    <opc:Field Name="NoOfPosition" TypeName="opc:Int32" />
-    <opc:Field Name="Position" TypeName="opc:Double" LengthField="NoOfPosition" />
-    <opc:Field Name="NoOfOrientation" TypeName="opc:Int32" />
-    <opc:Field Name="Orientation" TypeName="opc:Double" LengthField="NoOfOrientation" />
+    <opc:Field Name="x" TypeName="opc:Double" />
+    <opc:Field Name="y" TypeName="opc:Double" />
+    <opc:Field Name="z" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MarkerDataType" BaseType="ua:ExtensionObject">
     <opc:Documentation>Contains the elements representing a Fiducial Marker</opc:Documentation>
-    <opc:Field Name="Header" TypeName="tns:HeaderDataType" />
     <opc:Field Name="Id" TypeName="opc:UInt32" />
-    <opc:Field Name="Pose" TypeName="tns:PoseDataType" />
-  </opc:StructuredType>
-
-  <opc:StructuredType Name="MarkerParametersDataType" BaseType="ua:ExtensionObject">
-    <opc:Documentation>Required parameters to execute marker detection and pose estimation</opc:Documentation>
     <opc:Field Name="Size" TypeName="opc:Float" />
     <opc:Field Name="Dictionary" TypeName="opc:String" />
-    <opc:Field Name="ErrorCorrection" TypeName="opc:Float" />
-    <opc:Field Name="DetectionMode" TypeName="opc:String" />
+    <opc:Field Name="Position" TypeName="tns:PositionDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CameraInfoDataType" BaseType="ua:ExtensionObject">

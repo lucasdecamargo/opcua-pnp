@@ -1,0 +1,68 @@
+[05/18/22 23:28:20.327] [info    ] [imgviewer] Starting Camera Server ...
+[05/18/22 23:28:20.328] [warning ] [imgviewer] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 23:28:20.332] [info    ] [imgviewer] [OPC UA/channel] Connection 4 | SecureChannel 2 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/18/22 23:28:20.332] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:28:20.333] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:28:20.334] [info    ] [imgviewer-ua] Using endpoint with no security
+[05/18/22 23:28:20.334] [warning ] [imgviewer-ua] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 23:28:20.334] [info    ] [imgviewer] Attempting to connect with username: demo
+[05/18/22 23:28:20.341] [info    ] [imgviewer-ua] [OPC UA/channel] Connection 4 | SecureChannel 3 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/18/22 23:28:20.341] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:28:20.343] [info    ] [imgviewer-ua] [OPC UA/client] Rejecting UserTokenPolicy 0 (anonymous) in endpoint 0: configuration doesn't match
+[05/18/22 23:28:20.343] [info    ] [imgviewer-ua] [OPC UA/client] Selected endpoint 0 in URL opc.tcp://lucas-laptop:4842 with SecurityMode None and SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None
+[05/18/22 23:28:20.343] [info    ] [imgviewer-ua] [OPC UA/client] Selected UserTokenPolicy open62541-username-policy with UserTokenType UserName and SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None
+[05/18/22 23:28:20.344] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Created, ConnectStatus: Good
+[05/18/22 23:28:20.346] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Activated, ConnectStatus: Good
+[05/18/22 23:28:20.346] [info    ] [imgviewer] Camera Client connected
+[05/18/22 23:28:20.484] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:21.487] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:22.489] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:23.492] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:24.496] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:25.498] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:26.501] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:27.504] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:28.508] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:29.510] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:30.513] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:31.515] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:32.517] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:33.520] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:34.523] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:35.525] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:36.527] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:37.530] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:38.532] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:39.535] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:40.539] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:41.541] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:42.544] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:43.547] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:44.550] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:45.552] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:46.555] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:47.557] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:48.559] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:49.565] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:50.570] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:51.574] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:52.579] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:53.584] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:54.588] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:55.591] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:56.596] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:57.601] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:58.605] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:28:59.609] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:00.614] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:01.617] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:02.622] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:03.626] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:04.629] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:05.634] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:06.637] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:07.641] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:08.646] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:09.649] [error   ] [imgviewer] Failed on reading image: Cannot read image node. Is not of type ImagePNG
+[05/18/22 23:29:10.101] [warning ] [imgviewer] Received Ctrl-C. Shutting down...
+[05/18/22 23:29:10.651] [info    ] [imgviewer-ua] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: Good

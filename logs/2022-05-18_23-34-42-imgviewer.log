@@ -1,0 +1,7 @@
+[05/18/22 23:34:42.322] [info    ] [imgviewer] Starting Camera Server ...
+[05/18/22 23:34:42.322] [warning ] [imgviewer] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
+[05/18/22 23:34:42.328] [info    ] [imgviewer] [OPC UA/channel] Connection 4 | SecureChannel 6 | SecureChannel opened with SecurityPolicy http://opcfoundation.org/UA/SecurityPolicy#None and a revised lifetime of 600.00s
+[05/18/22 23:34:42.328] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Open, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:34:42.329] [info    ] [imgviewer] [OPC UA/client] Client Status: ChannelState: Closed, SessionState: Closed, ConnectStatus: Good
+[05/18/22 23:34:42.329] [info    ] [imgviewer-ua] Using endpoint with no security
+[05/18/22 23:34:42.329] [warning ] [imgviewer-ua] [OPC UA/userland] AcceptAll Certificate Verification. Any remote certificate will be accepted.
