@@ -4,7 +4,7 @@
 trap 'kill -SIGTERM $P_kb' SIGINT
 
 echo "Starting MES component ..."
-/home/lucas/Coding/OPCUA/opcua-pnp/build/mes --config /home/lucas/Coding/OPCUA/opcua-pnp/component.cfg --certs-server=/home/lucas/Coding/OPCUA/opcua-pnp/certs/server/lucas-laptop --certs-client=/home/lucas/Coding/OPCUA/opcua-pnp/certs/client/lucas-laptop &
+/home/lucas/Coding/OPCUA/opcua-pnp/build/mes/mes --config /home/lucas/Coding/OPCUA/opcua-pnp/mes/component.cfg --certs-server=/home/lucas/Coding/OPCUA/opcua-pnp/mes/certs/server/lucas-laptop --certs-client=/home/lucas/Coding/OPCUA/opcua-pnp/mes/certs/client/lucas-laptop &
 P_mes=$!
 
 # After the trapped SIGINT interrupts wait, remove the trap and then wait for the background jobs to finish shutting down.
