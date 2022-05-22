@@ -53,6 +53,16 @@ namespace PnPTypes
         public const uint PositionDataType = 15073;
 
         /// <summary>
+        /// The identifier for the RotationDataType DataType.
+        /// </summary>
+        public const uint RotationDataType = 15004;
+
+        /// <summary>
+        /// The identifier for the PoseDataType DataType.
+        /// </summary>
+        public const uint PoseDataType = 15005;
+
+        /// <summary>
         /// The identifier for the MarkerDataType DataType.
         /// </summary>
         public const uint MarkerDataType = 15001;
@@ -83,6 +93,16 @@ namespace PnPTypes
         public const uint PositionDataType_Encoding_DefaultBinary = 15074;
 
         /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public const uint RotationDataType_Encoding_DefaultBinary = 15013;
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public const uint PoseDataType_Encoding_DefaultBinary = 15014;
+
+        /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public const uint MarkerDataType_Encoding_DefaultBinary = 15002;
@@ -98,6 +118,16 @@ namespace PnPTypes
         public const uint PositionDataType_Encoding_DefaultXml = 15078;
 
         /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public const uint RotationDataType_Encoding_DefaultXml = 15027;
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public const uint PoseDataType_Encoding_DefaultXml = 15032;
+
+        /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultXml Object.
         /// </summary>
         public const uint MarkerDataType_Encoding_DefaultXml = 15009;
@@ -111,6 +141,16 @@ namespace PnPTypes
         /// The identifier for the PositionDataType_Encoding_DefaultJson Object.
         /// </summary>
         public const uint PositionDataType_Encoding_DefaultJson = 15082;
+
+        /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public const uint RotationDataType_Encoding_DefaultJson = 15039;
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public const uint PoseDataType_Encoding_DefaultJson = 15040;
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
@@ -173,6 +213,16 @@ namespace PnPTypes
         public const uint PnPTypes_BinarySchema_PositionDataType = 15075;
 
         /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_RotationDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_BinarySchema_RotationDataType = 15015;
+
+        /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_PoseDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_BinarySchema_PoseDataType = 15024;
+
+        /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_MarkerDataType Variable.
         /// </summary>
         public const uint PnPTypes_BinarySchema_MarkerDataType = 15006;
@@ -203,6 +253,16 @@ namespace PnPTypes
         public const uint PnPTypes_XmlSchema_PositionDataType = 15079;
 
         /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_RotationDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_XmlSchema_RotationDataType = 15033;
+
+        /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_PoseDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_XmlSchema_PoseDataType = 15036;
+
+        /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_MarkerDataType Variable.
         /// </summary>
         public const uint PnPTypes_XmlSchema_MarkerDataType = 15010;
@@ -226,6 +286,16 @@ namespace PnPTypes
         /// The identifier for the PositionDataType DataType.
         /// </summary>
         public static readonly ExpandedNodeId PositionDataType = new ExpandedNodeId(PnPTypes.DataTypes.PositionDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the RotationDataType DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId RotationDataType = new ExpandedNodeId(PnPTypes.DataTypes.RotationDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PoseDataType DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId PoseDataType = new ExpandedNodeId(PnPTypes.DataTypes.PoseDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType DataType.
@@ -258,6 +328,16 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public static readonly ExpandedNodeId RotationDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.RotationDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
@@ -273,6 +353,16 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public static readonly ExpandedNodeId RotationDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.RotationDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultXml Object.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
@@ -286,6 +376,16 @@ namespace PnPTypes
         /// The identifier for the PositionDataType_Encoding_DefaultJson Object.
         /// </summary>
         public static readonly ExpandedNodeId PositionDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.PositionDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the RotationDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public static readonly ExpandedNodeId RotationDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.RotationDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PoseDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public static readonly ExpandedNodeId PoseDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.PoseDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
@@ -348,6 +448,16 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_PositionDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_PositionDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_RotationDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_BinarySchema_RotationDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_RotationDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_PoseDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_BinarySchema_PoseDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_PoseDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_MarkerDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_MarkerDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_MarkerDataType, PnPTypes.Namespaces.PnPTypes);
@@ -376,6 +486,16 @@ namespace PnPTypes
         /// The identifier for the PnPTypes_XmlSchema_PositionDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_XmlSchema_PositionDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_PositionDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_RotationDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_XmlSchema_RotationDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_RotationDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_PoseDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_XmlSchema_PoseDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_PoseDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_MarkerDataType Variable.
@@ -422,9 +542,19 @@ namespace PnPTypes
         public const string PnPTypes_XmlSchema = "PnPTypes";
 
         /// <summary>
+        /// The BrowseName for the PoseDataType component.
+        /// </summary>
+        public const string PoseDataType = "PoseDataType";
+
+        /// <summary>
         /// The BrowseName for the PositionDataType component.
         /// </summary>
         public const string PositionDataType = "PositionDataType";
+
+        /// <summary>
+        /// The BrowseName for the RotationDataType component.
+        /// </summary>
+        public const string RotationDataType = "RotationDataType";
     }
     #endregion
 

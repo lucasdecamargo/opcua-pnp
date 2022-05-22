@@ -1,3 +1,0 @@
-[05/16/22 21:36:51.956] [info    ] [camera] Starting Camera Server ...
-[05/16/22 21:36:52.056] [error   ] [camera] Adding the Camera namespace failed. Please check previous error output.
-[05/16/22 21:36:52.057] [critical] [camera] Could not initialize component. Can not initialize Camera nodeset 

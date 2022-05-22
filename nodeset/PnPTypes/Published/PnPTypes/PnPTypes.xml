@@ -24,12 +24,31 @@
 <!-- ### Data Types ###-->
 
 <DataType SymbolicName="PNPTYPES:PositionDataType" BaseType="OpcUa:Structure" IsAbstract="false">
-    <Description>A representation of pose in free space, composed of position and orientation</Description>
+    <Description>A representation of position in cartesian space</Description>
 
     <Fields>
         <Field Name="x" DataType="OpcUa:Double"/>
         <Field Name="y" DataType="OpcUa:Double"/>
         <Field Name="z" DataType="OpcUa:Double"/>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:RotationDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>A representation of rotation in cartesian space</Description>
+
+    <Fields>
+        <Field Name="r" DataType="OpcUa:Double"/>
+        <Field Name="p" DataType="OpcUa:Double"/>
+        <Field Name="y" DataType="OpcUa:Double"/>
+    </Fields>
+</DataType>
+
+<DataType SymbolicName="PNPTYPES:PoseDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>A representation of pose in cartesian space, composed by position and rotation</Description>
+
+    <Fields>
+        <Field Name="Position" DataType="PNPTYPES:PositionDataType"/>
+        <Field Name="Rotation" DataType="PNPTYPES:RotationDataType"/>
     </Fields>
 </DataType>
 
@@ -49,11 +68,11 @@
     <Description>Contains the definition of camera callibration parameters</Description>
 
     <Fields>
-        <Field Name="DistortionCoefficients" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3">
+        <Field Name="DistortionCoefficients" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="5">
             <Description>Camera Distortion Coefficients = [k1, k2, p1, p2, k3]</Description>
         </Field>
 
-        <Field Name="CameraMatrix" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="3,3">
+        <Field Name="CameraMatrix" DataType="OpcUa:Double" ValueRank="Array" ArrayDimensions="9">
             <Description>Camera Matrix = [(fx,0,cx), (0,fy,cy), (0,0,1)]</Description>
         </Field>
     </Fields>

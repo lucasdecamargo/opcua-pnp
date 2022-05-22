@@ -16,12 +16,46 @@
     </uax:BrowseName>
     <uax:Description>
       <uax:Locale></uax:Locale>
-      <uax:Text>A representation of pose in free space, composed of position and orientation</uax:Text>
+      <uax:Text>A representation of position in cartesian space</uax:Text>
     </uax:Description>
     <uax:SuperTypeId>
       <uax:Identifier>i=22</uax:Identifier>
     </uax:SuperTypeId>
   </PositionDataType>
+  <RotationDataType xmlns="https://pnp.org/UA/PnPTypes/">
+    <uax:NodeClass>DataType_64</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15004</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>RotationDataType</uax:Name>
+    </uax:BrowseName>
+    <uax:Description>
+      <uax:Locale></uax:Locale>
+      <uax:Text>A representation of rotation in cartesian space</uax:Text>
+    </uax:Description>
+    <uax:SuperTypeId>
+      <uax:Identifier>i=22</uax:Identifier>
+    </uax:SuperTypeId>
+  </RotationDataType>
+  <PoseDataType xmlns="https://pnp.org/UA/PnPTypes/">
+    <uax:NodeClass>DataType_64</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15005</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>PoseDataType</uax:Name>
+    </uax:BrowseName>
+    <uax:Description>
+      <uax:Locale></uax:Locale>
+      <uax:Text>A representation of pose in cartesian space, composed by position and rotation</uax:Text>
+    </uax:Description>
+    <uax:SuperTypeId>
+      <uax:Identifier>i=22</uax:Identifier>
+    </uax:SuperTypeId>
+  </PoseDataType>
   <MarkerDataType xmlns="https://pnp.org/UA/PnPTypes/">
     <uax:NodeClass>DataType_64</uax:NodeClass>
     <uax:NodeId>
@@ -156,6 +190,72 @@
   <DefaultBinary xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>Object_1</uax:NodeClass>
     <uax:NodeId>
+      <uax:Identifier>ns=1;i=15013</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default Binary</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15013</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15004</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15015</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultBinary>
+  <DefaultBinary xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15014</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default Binary</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15014</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15005</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15024</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultBinary>
+  <DefaultBinary xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
       <uax:Identifier>ns=1;i=15002</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
@@ -248,29 +348,41 @@ Ik9wYy5VYS5EaS5CaW5hcnlTY2hlbWEuYnNkIi8+DQogIDxvcGM6SW1wb3J0IE5hbWVzcGFjZT0i
 aHR0cHM6Ly9mb3J0aXNzLm9yZy9VQS9EZXZpY2UvIiBMb2NhdGlvbj0iZm9ydGlzc19EZXZpY2Uu
 QmluYXJ5U2NoZW1hLmJzZCIvPg0KDQogIDxvcGM6U3RydWN0dXJlZFR5cGUgTmFtZT0iUG9zaXRp
 b25EYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lvbk9iamVjdCI+DQogICAgPG9wYzpEb2N1
-bWVudGF0aW9uPkEgcmVwcmVzZW50YXRpb24gb2YgcG9zZSBpbiBmcmVlIHNwYWNlLCBjb21wb3Nl
-ZCBvZiBwb3NpdGlvbiBhbmQgb3JpZW50YXRpb248L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxv
-cGM6RmllbGQgTmFtZT0ieCIgVHlwZU5hbWU9Im9wYzpEb3VibGUiIC8+DQogICAgPG9wYzpGaWVs
-ZCBOYW1lPSJ5IiBUeXBlTmFtZT0ib3BjOkRvdWJsZSIgLz4NCiAgICA8b3BjOkZpZWxkIE5hbWU9
-InoiIFR5cGVOYW1lPSJvcGM6RG91YmxlIiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0K
-ICA8b3BjOlN0cnVjdHVyZWRUeXBlIE5hbWU9Ik1hcmtlckRhdGFUeXBlIiBCYXNlVHlwZT0idWE6
-RXh0ZW5zaW9uT2JqZWN0Ij4NCiAgICA8b3BjOkRvY3VtZW50YXRpb24+Q29udGFpbnMgdGhlIGVs
-ZW1lbnRzIHJlcHJlc2VudGluZyBhIEZpZHVjaWFsIE1hcmtlcjwvb3BjOkRvY3VtZW50YXRpb24+
-DQogICAgPG9wYzpGaWVsZCBOYW1lPSJJZCIgVHlwZU5hbWU9Im9wYzpVSW50MzIiIC8+DQogICAg
-PG9wYzpGaWVsZCBOYW1lPSJTaXplIiBUeXBlTmFtZT0ib3BjOkZsb2F0IiAvPg0KICAgIDxvcGM6
-RmllbGQgTmFtZT0iRGljdGlvbmFyeSIgVHlwZU5hbWU9Im9wYzpTdHJpbmciIC8+DQogICAgPG9w
-YzpGaWVsZCBOYW1lPSJQb3NpdGlvbiIgVHlwZU5hbWU9InRuczpQb3NpdGlvbkRhdGFUeXBlIiAv
-Pg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KICA8b3BjOlN0cnVjdHVyZWRUeXBlIE5hbWU9
-IkNhbWVyYUluZm9EYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lvbk9iamVjdCI+DQogICAg
-PG9wYzpEb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9uIG9mIGNhbWVyYSBjYWxs
-aWJyYXRpb24gcGFyYW1ldGVyczwvb3BjOkRvY3VtZW50YXRpb24+DQogICAgPG9wYzpGaWVsZCBO
-YW1lPSJOb09mRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgVHlwZU5hbWU9Im9wYzpJbnQzMiIgLz4N
-CiAgICA8b3BjOkZpZWxkIE5hbWU9IkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1lPSJv
-cGM6RG91YmxlIiBMZW5ndGhGaWVsZD0iTm9PZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIC8+DQog
-ICAgPG9wYzpGaWVsZCBOYW1lPSJOb09mQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3BjOkludDMy
-IiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3BjOkRv
-dWJsZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZDYW1lcmFNYXRyaXgiIC8+DQogIDwvb3BjOlN0cnVjdHVy
-ZWRUeXBlPg0KDQo8L29wYzpUeXBlRGljdGlvbmFyeT4=</uax:ByteString>
+bWVudGF0aW9uPkEgcmVwcmVzZW50YXRpb24gb2YgcG9zaXRpb24gaW4gY2FydGVzaWFuIHNwYWNl
+PC9vcGM6RG9jdW1lbnRhdGlvbj4NCiAgICA8b3BjOkZpZWxkIE5hbWU9IngiIFR5cGVOYW1lPSJv
+cGM6RG91YmxlIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0ieSIgVHlwZU5hbWU9Im9wYzpEb3Vi
+bGUiIC8+DQogICAgPG9wYzpGaWVsZCBOYW1lPSJ6IiBUeXBlTmFtZT0ib3BjOkRvdWJsZSIgLz4N
+CiAgPC9vcGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJS
+b3RhdGlvbkRhdGFUeXBlIiBCYXNlVHlwZT0idWE6RXh0ZW5zaW9uT2JqZWN0Ij4NCiAgICA8b3Bj
+OkRvY3VtZW50YXRpb24+QSByZXByZXNlbnRhdGlvbiBvZiByb3RhdGlvbiBpbiBjYXJ0ZXNpYW4g
+c3BhY2U8L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iciIgVHlwZU5h
+bWU9Im9wYzpEb3VibGUiIC8+DQogICAgPG9wYzpGaWVsZCBOYW1lPSJwIiBUeXBlTmFtZT0ib3Bj
+OkRvdWJsZSIgLz4NCiAgICA8b3BjOkZpZWxkIE5hbWU9InkiIFR5cGVOYW1lPSJvcGM6RG91Ymxl
+IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KICA8b3BjOlN0cnVjdHVyZWRUeXBlIE5h
+bWU9IlBvc2VEYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lvbk9iamVjdCI+DQogICAgPG9w
+YzpEb2N1bWVudGF0aW9uPkEgcmVwcmVzZW50YXRpb24gb2YgcG9zZSBpbiBjYXJ0ZXNpYW4gc3Bh
+Y2UsIGNvbXBvc2VkIGJ5IHBvc2l0aW9uIGFuZCByb3RhdGlvbjwvb3BjOkRvY3VtZW50YXRpb24+
+DQogICAgPG9wYzpGaWVsZCBOYW1lPSJQb3NpdGlvbiIgVHlwZU5hbWU9InRuczpQb3NpdGlvbkRh
+dGFUeXBlIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iUm90YXRpb24iIFR5cGVOYW1lPSJ0bnM6
+Um90YXRpb25EYXRhVHlwZSIgLz4NCiAgPC9vcGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpT
+dHJ1Y3R1cmVkVHlwZSBOYW1lPSJNYXJrZXJEYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lv
+bk9iamVjdCI+DQogICAgPG9wYzpEb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBlbGVtZW50cyBy
+ZXByZXNlbnRpbmcgYSBGaWR1Y2lhbCBNYXJrZXI8L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxv
+cGM6RmllbGQgTmFtZT0iSWQiIFR5cGVOYW1lPSJvcGM6VUludDMyIiAvPg0KICAgIDxvcGM6Rmll
+bGQgTmFtZT0iU2l6ZSIgVHlwZU5hbWU9Im9wYzpGbG9hdCIgLz4NCiAgICA8b3BjOkZpZWxkIE5h
+bWU9IkRpY3Rpb25hcnkiIFR5cGVOYW1lPSJvcGM6U3RyaW5nIiAvPg0KICAgIDxvcGM6RmllbGQg
+TmFtZT0iUG9zaXRpb24iIFR5cGVOYW1lPSJ0bnM6UG9zaXRpb25EYXRhVHlwZSIgLz4NCiAgPC9v
+cGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJDYW1lcmFJ
+bmZvRGF0YVR5cGUiIEJhc2VUeXBlPSJ1YTpFeHRlbnNpb25PYmplY3QiPg0KICAgIDxvcGM6RG9j
+dW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEgY2FsbGlicmF0aW9u
+IHBhcmFtZXRlcnM8L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iTm9P
+ZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1lPSJvcGM6SW50MzIiIC8+DQogICAgPG9w
+YzpGaWVsZCBOYW1lPSJEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiBUeXBlTmFtZT0ib3BjOkRvdWJs
+ZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiAvPg0KICAgIDxvcGM6
+RmllbGQgTmFtZT0iTm9PZkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpJbnQzMiIgLz4NCiAg
+ICA8b3BjOkZpZWxkIE5hbWU9IkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpEb3VibGUiIExl
+bmd0aEZpZWxkPSJOb09mQ2FtZXJhTWF0cml4IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4N
+Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</uax:ByteString>
       </uax:Value>
     </uax:Value>
     <uax:DataType>
@@ -374,6 +486,62 @@ ZWRUeXBlPg0KDQo8L29wYzpUeXBlRGljdGlvbmFyeT4=</uax:ByteString>
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </PositionDataType>
+    <RotationDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15015</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>RotationDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15015</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>RotationDataType</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </RotationDataType>
+    <PoseDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15024</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>PoseDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15024</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>PoseDataType</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </PoseDataType>
     <MarkerDataType>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
@@ -460,6 +628,72 @@ ZWRUeXBlPg0KDQo8L29wYzpUeXBlRGljdGlvbmFyeT4=</uax:ByteString>
         </uax:ReferenceTypeId>
         <uax:TargetId>
           <uax:Identifier>ns=1;i=15079</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultXml>
+  <DefaultXml xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15027</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default XML</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15027</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15004</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15033</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultXml>
+  <DefaultXml xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15032</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default XML</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15032</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15005</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15036</uax:Identifier>
         </uax:TargetId>
       </uax:Reference>
     </uax:References>
@@ -557,53 +791,82 @@ c2QiIC8+DQogIDx4czppbXBvcnQgbmFtZXNwYWNlPSJodHRwOi8vb3BjZm91bmRhdGlvbi5vcmcv
 VUEvREkvVHlwZXMueHNkIiAvPg0KICA8eHM6aW1wb3J0IG5hbWVzcGFjZT0iaHR0cHM6Ly9mb3J0
 aXNzLm9yZy9VQS9EZXZpY2UvVHlwZXMueHNkIiAvPg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1l
 PSJQb3NpdGlvbkRhdGFUeXBlIj4NCiAgICA8eHM6YW5ub3RhdGlvbj4NCiAgICAgIDx4czpkb2N1
-bWVudGF0aW9uPkEgcmVwcmVzZW50YXRpb24gb2YgcG9zZSBpbiBmcmVlIHNwYWNlLCBjb21wb3Nl
-ZCBvZiBwb3NpdGlvbiBhbmQgb3JpZW50YXRpb248L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94
-czphbm5vdGF0aW9uPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9
-IngiIHR5cGU9InhzOmRvdWJsZSIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgPHhzOmVsZW1lbnQg
-bmFtZT0ieSIgdHlwZT0ieHM6ZG91YmxlIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICA8eHM6ZWxl
-bWVudCBuYW1lPSJ6IiB0eXBlPSJ4czpkb3VibGUiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICA8L3hz
-OnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJQb3Np
-dGlvbkRhdGFUeXBlIiB0eXBlPSJ0bnM6UG9zaXRpb25EYXRhVHlwZSIgLz4NCg0KICA8eHM6Y29t
-cGxleFR5cGUgbmFtZT0iTGlzdE9mUG9zaXRpb25EYXRhVHlwZSI+DQogICAgPHhzOnNlcXVlbmNl
-Pg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUG9zaXRpb25EYXRhVHlwZSIgdHlwZT0idG5zOlBv
-c2l0aW9uRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG5pbGxh
-YmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQog
-IDx4czplbGVtZW50IG5hbWU9Ikxpc3RPZlBvc2l0aW9uRGF0YVR5cGUiIHR5cGU9InRuczpMaXN0
-T2ZQb3NpdGlvbkRhdGFUeXBlIiBuaWxsYWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQogIDx4
-czpjb21wbGV4VHlwZSBuYW1lPSJNYXJrZXJEYXRhVHlwZSI+DQogICAgPHhzOmFubm90YXRpb24+
-DQogICAgICA8eHM6ZG9jdW1lbnRhdGlvbj5Db250YWlucyB0aGUgZWxlbWVudHMgcmVwcmVzZW50
-aW5nIGEgRmlkdWNpYWwgTWFya2VyPC94czpkb2N1bWVudGF0aW9uPg0KICAgIDwveHM6YW5ub3Rh
-dGlvbj4NCiAgICA8eHM6c2VxdWVuY2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJJZCIgdHlw
-ZT0ieHM6dW5zaWduZWRJbnQiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgIDx4czplbGVtZW50IG5h
-bWU9IlNpemUiIHR5cGU9InhzOmZsb2F0IiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICA8eHM6ZWxl
-bWVudCBuYW1lPSJEaWN0aW9uYXJ5IiB0eXBlPSJ4czpzdHJpbmciIG1pbk9jY3Vycz0iMCIgbmls
-bGFibGU9InRydWUiIC8+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJQb3NpdGlvbiIgdHlwZT0i
-dG5zOlBvc2l0aW9uRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbmlsbGFibGU9InRydWUiIC8+DQog
-ICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFt
-ZT0iTWFya2VyRGF0YVR5cGUiIHR5cGU9InRuczpNYXJrZXJEYXRhVHlwZSIgLz4NCg0KICA8eHM6
-Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mTWFya2VyRGF0YVR5cGUiPg0KICAgIDx4czpzZXF1ZW5j
-ZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9Ik1hcmtlckRhdGFUeXBlIiB0eXBlPSJ0bnM6TWFy
-a2VyRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG5pbGxhYmxl
-PSJ0cnVlIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQogIDx4
-czplbGVtZW50IG5hbWU9Ikxpc3RPZk1hcmtlckRhdGFUeXBlIiB0eXBlPSJ0bnM6TGlzdE9mTWFy
-a2VyRGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCiAgPHhzOmNvbXBs
-ZXhUeXBlIG5hbWU9IkNhbWVyYUluZm9EYXRhVHlwZSI+DQogICAgPHhzOmFubm90YXRpb24+DQog
-ICAgICA8eHM6ZG9jdW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEg
-Y2FsbGlicmF0aW9uIHBhcmFtZXRlcnM8L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94czphbm5v
-dGF0aW9uPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkRpc3Rv
-cnRpb25Db2VmZmljaWVudHMiIHR5cGU9InVhOkxpc3RPZkRvdWJsZSIgbWluT2NjdXJzPSIwIiBu
-aWxsYWJsZT0idHJ1ZSIgLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVyYU1hdHJpeCIg
-dHlwZT0idWE6TGlzdE9mRG91YmxlIiBtaW5PY2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0K
-ICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQogIDx4czplbGVtZW50IG5h
-bWU9IkNhbWVyYUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgLz4N
-Cg0KICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAg
-ICA8eHM6c2VxdWVuY2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJDYW1lcmFJbmZvRGF0YVR5
-cGUiIHR5cGU9InRuczpDYW1lcmFJbmZvRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJz
-PSJ1bmJvdW5kZWQiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwv
-eHM6Y29tcGxleFR5cGU+DQogIDx4czplbGVtZW50IG5hbWU9Ikxpc3RPZkNhbWVyYUluZm9EYXRh
-VHlwZSIgdHlwZT0idG5zOkxpc3RPZkNhbWVyYUluZm9EYXRhVHlwZSIgbmlsbGFibGU9InRydWUi
-PjwveHM6ZWxlbWVudD4NCg0KPC94czpzY2hlbWE+</uax:ByteString>
+bWVudGF0aW9uPkEgcmVwcmVzZW50YXRpb24gb2YgcG9zaXRpb24gaW4gY2FydGVzaWFuIHNwYWNl
+PC94czpkb2N1bWVudGF0aW9uPg0KICAgIDwveHM6YW5ub3RhdGlvbj4NCiAgICA8eHM6c2VxdWVu
+Y2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJ4IiB0eXBlPSJ4czpkb3VibGUiIG1pbk9jY3Vy
+cz0iMCIgLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9InkiIHR5cGU9InhzOmRvdWJsZSIgbWlu
+T2NjdXJzPSIwIiAvPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0ieiIgdHlwZT0ieHM6ZG91Ymxl
+IiBtaW5PY2N1cnM9IjAiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4VHlw
+ZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iUG9zaXRpb25EYXRhVHlwZSIgdHlwZT0idG5zOlBvc2l0
+aW9uRGF0YVR5cGUiIC8+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZlBvc2l0aW9u
+RGF0YVR5cGUiPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IlBv
+c2l0aW9uRGF0YVR5cGUiIHR5cGU9InRuczpQb3NpdGlvbkRhdGFUeXBlIiBtaW5PY2N1cnM9IjAi
+IG1heE9jY3Vycz0idW5ib3VuZGVkIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVl
+bmNlPg0KICA8L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJMaXN0T2ZQb3Np
+dGlvbkRhdGFUeXBlIiB0eXBlPSJ0bnM6TGlzdE9mUG9zaXRpb25EYXRhVHlwZSIgbmlsbGFibGU9
+InRydWUiPjwveHM6ZWxlbWVudD4NCg0KICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iUm90YXRpb25E
+YXRhVHlwZSI+DQogICAgPHhzOmFubm90YXRpb24+DQogICAgICA8eHM6ZG9jdW1lbnRhdGlvbj5B
+IHJlcHJlc2VudGF0aW9uIG9mIHJvdGF0aW9uIGluIGNhcnRlc2lhbiBzcGFjZTwveHM6ZG9jdW1l
+bnRhdGlvbj4NCiAgICA8L3hzOmFubm90YXRpb24+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAg
+PHhzOmVsZW1lbnQgbmFtZT0iciIgdHlwZT0ieHM6ZG91YmxlIiBtaW5PY2N1cnM9IjAiIC8+DQog
+ICAgICA8eHM6ZWxlbWVudCBuYW1lPSJwIiB0eXBlPSJ4czpkb3VibGUiIG1pbk9jY3Vycz0iMCIg
+Lz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9InkiIHR5cGU9InhzOmRvdWJsZSIgbWluT2NjdXJz
+PSIwIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQogIDx4czpl
+bGVtZW50IG5hbWU9IlJvdGF0aW9uRGF0YVR5cGUiIHR5cGU9InRuczpSb3RhdGlvbkRhdGFUeXBl
+IiAvPg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZSb3RhdGlvbkRhdGFUeXBlIj4N
+CiAgICA8eHM6c2VxdWVuY2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJSb3RhdGlvbkRhdGFU
+eXBlIiB0eXBlPSJ0bnM6Um90YXRpb25EYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9
+InVuYm91bmRlZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94
+czpjb21wbGV4VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mUm90YXRpb25EYXRhVHlw
+ZSIgdHlwZT0idG5zOkxpc3RPZlJvdGF0aW9uRGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hz
+OmVsZW1lbnQ+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9IlBvc2VEYXRhVHlwZSI+DQogICAg
+PHhzOmFubm90YXRpb24+DQogICAgICA8eHM6ZG9jdW1lbnRhdGlvbj5BIHJlcHJlc2VudGF0aW9u
+IG9mIHBvc2UgaW4gY2FydGVzaWFuIHNwYWNlLCBjb21wb3NlZCBieSBwb3NpdGlvbiBhbmQgcm90
+YXRpb248L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94czphbm5vdGF0aW9uPg0KICAgIDx4czpz
+ZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IlBvc2l0aW9uIiB0eXBlPSJ0bnM6UG9z
+aXRpb25EYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICAgIDx4
+czplbGVtZW50IG5hbWU9IlJvdGF0aW9uIiB0eXBlPSJ0bnM6Um90YXRpb25EYXRhVHlwZSIgbWlu
+T2NjdXJzPSIwIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVlbmNlPg0KICA8L3hz
+OmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJQb3NlRGF0YVR5cGUiIHR5cGU9InRu
+czpQb3NlRGF0YVR5cGUiIC8+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZlBvc2VE
+YXRhVHlwZSI+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUG9z
+ZURhdGFUeXBlIiB0eXBlPSJ0bnM6UG9zZURhdGFUeXBlIiBtaW5PY2N1cnM9IjAiIG1heE9jY3Vy
+cz0idW5ib3VuZGVkIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVlbmNlPg0KICA8
+L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJMaXN0T2ZQb3NlRGF0YVR5cGUi
+IHR5cGU9InRuczpMaXN0T2ZQb3NlRGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1l
+bnQ+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ik1hcmtlckRhdGFUeXBlIj4NCiAgICA8eHM6
+YW5ub3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBlbGVtZW50
+cyByZXByZXNlbnRpbmcgYSBGaWR1Y2lhbCBNYXJrZXI8L3hzOmRvY3VtZW50YXRpb24+DQogICAg
+PC94czphbm5vdGF0aW9uPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5h
+bWU9IklkIiB0eXBlPSJ4czp1bnNpZ25lZEludCIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgPHhz
+OmVsZW1lbnQgbmFtZT0iU2l6ZSIgdHlwZT0ieHM6ZmxvYXQiIG1pbk9jY3Vycz0iMCIgLz4NCiAg
+ICAgIDx4czplbGVtZW50IG5hbWU9IkRpY3Rpb25hcnkiIHR5cGU9InhzOnN0cmluZyIgbWluT2Nj
+dXJzPSIwIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IlBvc2l0
+aW9uIiB0eXBlPSJ0bnM6UG9zaXRpb25EYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBuaWxsYWJsZT0i
+dHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6
+ZWxlbWVudCBuYW1lPSJNYXJrZXJEYXRhVHlwZSIgdHlwZT0idG5zOk1hcmtlckRhdGFUeXBlIiAv
+Pg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZNYXJrZXJEYXRhVHlwZSI+DQogICAg
+PHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iTWFya2VyRGF0YVR5cGUiIHR5
+cGU9InRuczpNYXJrZXJEYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRl
+ZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4
+VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mTWFya2VyRGF0YVR5cGUiIHR5cGU9InRu
+czpMaXN0T2ZNYXJrZXJEYXRhVHlwZSIgbmlsbGFibGU9InRydWUiPjwveHM6ZWxlbWVudD4NCg0K
+ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAgICA8eHM6YW5u
+b3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9u
+IG9mIGNhbWVyYSBjYWxsaWJyYXRpb24gcGFyYW1ldGVyczwveHM6ZG9jdW1lbnRhdGlvbj4NCiAg
+ICA8L3hzOmFubm90YXRpb24+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQg
+bmFtZT0iRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgdHlwZT0idWE6TGlzdE9mRG91YmxlIiBtaW5P
+Y2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iQ2Ft
+ZXJhTWF0cml4IiB0eXBlPSJ1YTpMaXN0T2ZEb3VibGUiIG1pbk9jY3Vycz0iMCIgbmlsbGFibGU9
+InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhz
+OmVsZW1lbnQgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6Q2FtZXJhSW5mb0Rh
+dGFUeXBlIiAvPg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZDYW1lcmFJbmZvRGF0
+YVR5cGUiPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVy
+YUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgbWluT2NjdXJzPSIw
+IiBtYXhPY2N1cnM9InVuYm91bmRlZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1
+ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mQ2Ft
+ZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6TGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIiBuaWxs
+YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</uax:ByteString>
       </uax:Value>
     </uax:Value>
     <uax:DataType>
@@ -707,6 +970,62 @@ PjwveHM6ZWxlbWVudD4NCg0KPC94czpzY2hlbWE+</uax:ByteString>
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </PositionDataType>
+    <RotationDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15033</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>RotationDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15033</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>//xs:element[@name='RotationDataType']</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </RotationDataType>
+    <PoseDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15036</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>PoseDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15036</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>//xs:element[@name='PoseDataType']</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </PoseDataType>
     <MarkerDataType>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
@@ -785,6 +1104,56 @@ PjwveHM6ZWxlbWVudD4NCg0KPC94czpzY2hlbWE+</uax:ByteString>
         <uax:IsInverse>true</uax:IsInverse>
         <uax:TargetId>
           <uax:Identifier>ns=1;i=15073</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultJson>
+  <DefaultJson xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15039</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default JSON</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15039</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15004</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultJson>
+  <DefaultJson xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15040</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default JSON</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15040</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15005</uax:Identifier>
         </uax:TargetId>
       </uax:Reference>
     </uax:References>

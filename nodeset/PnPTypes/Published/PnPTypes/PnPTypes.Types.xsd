@@ -13,7 +13,7 @@
 
   <xs:complexType name="PositionDataType">
     <xs:annotation>
-      <xs:documentation>A representation of pose in free space, composed of position and orientation</xs:documentation>
+      <xs:documentation>A representation of position in cartesian space</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="x" type="xs:double" minOccurs="0" />
@@ -29,6 +29,43 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ListOfPositionDataType" type="tns:ListOfPositionDataType" nillable="true"></xs:element>
+
+  <xs:complexType name="RotationDataType">
+    <xs:annotation>
+      <xs:documentation>A representation of rotation in cartesian space</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="r" type="xs:double" minOccurs="0" />
+      <xs:element name="p" type="xs:double" minOccurs="0" />
+      <xs:element name="y" type="xs:double" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotationDataType" type="tns:RotationDataType" />
+
+  <xs:complexType name="ListOfRotationDataType">
+    <xs:sequence>
+      <xs:element name="RotationDataType" type="tns:RotationDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfRotationDataType" type="tns:ListOfRotationDataType" nillable="true"></xs:element>
+
+  <xs:complexType name="PoseDataType">
+    <xs:annotation>
+      <xs:documentation>A representation of pose in cartesian space, composed by position and rotation</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Position" type="tns:PositionDataType" minOccurs="0" nillable="true" />
+      <xs:element name="Rotation" type="tns:RotationDataType" minOccurs="0" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PoseDataType" type="tns:PoseDataType" />
+
+  <xs:complexType name="ListOfPoseDataType">
+    <xs:sequence>
+      <xs:element name="PoseDataType" type="tns:PoseDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfPoseDataType" type="tns:ListOfPoseDataType" nillable="true"></xs:element>
 
   <xs:complexType name="MarkerDataType">
     <xs:annotation>

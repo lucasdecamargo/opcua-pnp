@@ -54,6 +54,7 @@
         <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
             <Children>
                 <Variable SymbolicName="CAMERA:CameraInfo" TypeDefinition="OpcUa:BaseDataVariableType" DataType="PNPTYPES:CameraInfoDataType" ModellingRule="Mandatory" AccessLevel="ReadWrite"/>
+                <Variable SymbolicName="CAMERA:CameraPose" TypeDefinition="OpcUa:BaseDataVariableType" DataType="PNPTYPES:PoseDataType" ModellingRule="Mandatory" AccessLevel="ReadWrite"/>
             </Children>
         </Object>
 
@@ -70,11 +71,6 @@
         <Reference IsInverse="false">
             <ReferenceType>OpcUa:HasInterface</ReferenceType>
             <TargetId>DEVICE:ISkillControllerType</TargetId>
-        </Reference>
-
-        <Reference IsInverse="false">
-            <ReferenceType>OpcUa:HasInterface</ReferenceType>
-            <TargetId>PNPTYPES:ICameraInfoParameterType</TargetId>
         </Reference>
 
         <Reference IsInverse="true">

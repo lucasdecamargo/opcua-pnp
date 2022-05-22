@@ -41,7 +41,7 @@ namespace PnPTypes
     #region PositionDataType Class
     #if (!OPCUA_EXCLUDE_PositionDataType)
     /// <summary>
-    /// A representation of pose in free space, composed of position and orientation
+    /// A representation of position in cartesian space
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
@@ -274,6 +274,510 @@ namespace PnPTypes
             for (int ii = 0; ii < this.Count; ii++)
             {
                 clone.Add((PositionDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
+    #region RotationDataType Class
+    #if (!OPCUA_EXCLUDE_RotationDataType)
+    /// <summary>
+    /// A representation of rotation in cartesian space
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = PnPTypes.Namespaces.PnPTypesXsd)]
+    public partial class RotationDataType : IEncodeable
+    {
+        #region Constructors
+        /// <summary>
+        /// The default constructor.
+        /// </summary>
+        public RotationDataType()
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Called by the .NET framework during deserialization.
+        /// </summary>
+        [OnDeserializing]
+        private void Initialize(StreamingContext context)
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Sets private members to default values.
+        /// </summary>
+        private void Initialize()
+        {
+            m_r = (double)0;
+            m_p = (double)0;
+            m_y = (double)0;
+        }
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        [DataMember(Name = "r", IsRequired = false, Order = 1)]
+        public double r
+        {
+            get { return m_r;  }
+            set { m_r = value; }
+        }
+
+        /// <remarks />
+        [DataMember(Name = "p", IsRequired = false, Order = 2)]
+        public double p
+        {
+            get { return m_p;  }
+            set { m_p = value; }
+        }
+
+        /// <remarks />
+        [DataMember(Name = "y", IsRequired = false, Order = 3)]
+        public double y
+        {
+            get { return m_y;  }
+            set { m_y = value; }
+        }
+        #endregion
+
+        #region IEncodeable Members
+        /// <summary cref="IEncodeable.TypeId" />
+        public virtual ExpandedNodeId TypeId
+        {
+            get { return DataTypeIds.RotationDataType; }
+        }
+
+        /// <summary cref="IEncodeable.BinaryEncodingId" />
+        public virtual ExpandedNodeId BinaryEncodingId
+        {
+            get { return ObjectIds.RotationDataType_Encoding_DefaultBinary; }
+        }
+
+        /// <summary cref="IEncodeable.XmlEncodingId" />
+        public virtual ExpandedNodeId XmlEncodingId
+        {
+            get { return ObjectIds.RotationDataType_Encoding_DefaultXml; }
+        }
+
+        /// <summary cref="IEncodeable.Encode(IEncoder)" />
+        public virtual void Encode(IEncoder encoder)
+        {
+            encoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            encoder.WriteDouble("r", r);
+            encoder.WriteDouble("p", p);
+            encoder.WriteDouble("y", y);
+
+            encoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.Decode(IDecoder)" />
+        public virtual void Decode(IDecoder decoder)
+        {
+            decoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            r = decoder.ReadDouble("r");
+            p = decoder.ReadDouble("p");
+            y = decoder.ReadDouble("y");
+
+            decoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
+        public virtual bool IsEqual(IEncodeable encodeable)
+        {
+            if (Object.ReferenceEquals(this, encodeable))
+            {
+                return true;
+            }
+
+            RotationDataType value = encodeable as RotationDataType;
+
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (!Utils.IsEqual(m_r, value.m_r)) return false;
+            if (!Utils.IsEqual(m_p, value.m_p)) return false;
+            if (!Utils.IsEqual(m_y, value.m_y)) return false;
+
+            return true;
+        }
+
+        #if !NET_STANDARD
+        /// <summary cref="ICloneable.Clone" />
+        public virtual object Clone()
+        {
+            return (RotationDataType)this.MemberwiseClone();
+        }
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            RotationDataType clone = (RotationDataType)base.MemberwiseClone();
+
+            clone.m_r = (double)Utils.Clone(this.m_r);
+            clone.m_p = (double)Utils.Clone(this.m_p);
+            clone.m_y = (double)Utils.Clone(this.m_y);
+
+            return clone;
+        }
+        #endregion
+
+        #region Private Fields
+        private double m_r;
+        private double m_p;
+        private double m_y;
+        #endregion
+    }
+
+    #region RotationDataTypeCollection Class
+    /// <summary>
+    /// A collection of RotationDataType objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfRotationDataType", Namespace = PnPTypes.Namespaces.PnPTypesXsd, ItemName = "RotationDataType")]
+    #if !NET_STANDARD
+    public partial class RotationDataTypeCollection : List<RotationDataType>, ICloneable
+    #else
+    public partial class RotationDataTypeCollection : List<RotationDataType>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public RotationDataTypeCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public RotationDataTypeCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public RotationDataTypeCollection(IEnumerable<RotationDataType> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator RotationDataTypeCollection(RotationDataType[] values)
+        {
+            if (values != null)
+            {
+                return new RotationDataTypeCollection(values);
+            }
+
+            return new RotationDataTypeCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator RotationDataType[](RotationDataTypeCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (RotationDataTypeCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            RotationDataTypeCollection clone = new RotationDataTypeCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((RotationDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
+    #region PoseDataType Class
+    #if (!OPCUA_EXCLUDE_PoseDataType)
+    /// <summary>
+    /// A representation of pose in cartesian space, composed by position and rotation
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = PnPTypes.Namespaces.PnPTypesXsd)]
+    public partial class PoseDataType : IEncodeable
+    {
+        #region Constructors
+        /// <summary>
+        /// The default constructor.
+        /// </summary>
+        public PoseDataType()
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Called by the .NET framework during deserialization.
+        /// </summary>
+        [OnDeserializing]
+        private void Initialize(StreamingContext context)
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Sets private members to default values.
+        /// </summary>
+        private void Initialize()
+        {
+            m_position = new PositionDataType();
+            m_rotation = new RotationDataType();
+        }
+        #endregion
+
+        #region Public Properties
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember(Name = "Position", IsRequired = false, Order = 1)]
+        public PositionDataType Position
+        {
+            get
+            {
+                return m_position;
+            }
+
+            set
+            {
+                m_position = value;
+
+                if (value == null)
+                {
+                    m_position = new PositionDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember(Name = "Rotation", IsRequired = false, Order = 2)]
+        public RotationDataType Rotation
+        {
+            get
+            {
+                return m_rotation;
+            }
+
+            set
+            {
+                m_rotation = value;
+
+                if (value == null)
+                {
+                    m_rotation = new RotationDataType();
+                }
+            }
+        }
+        #endregion
+
+        #region IEncodeable Members
+        /// <summary cref="IEncodeable.TypeId" />
+        public virtual ExpandedNodeId TypeId
+        {
+            get { return DataTypeIds.PoseDataType; }
+        }
+
+        /// <summary cref="IEncodeable.BinaryEncodingId" />
+        public virtual ExpandedNodeId BinaryEncodingId
+        {
+            get { return ObjectIds.PoseDataType_Encoding_DefaultBinary; }
+        }
+
+        /// <summary cref="IEncodeable.XmlEncodingId" />
+        public virtual ExpandedNodeId XmlEncodingId
+        {
+            get { return ObjectIds.PoseDataType_Encoding_DefaultXml; }
+        }
+
+        /// <summary cref="IEncodeable.Encode(IEncoder)" />
+        public virtual void Encode(IEncoder encoder)
+        {
+            encoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            encoder.WriteEncodeable("Position", Position, typeof(PositionDataType));
+            encoder.WriteEncodeable("Rotation", Rotation, typeof(RotationDataType));
+
+            encoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.Decode(IDecoder)" />
+        public virtual void Decode(IDecoder decoder)
+        {
+            decoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            Position = (PositionDataType)decoder.ReadEncodeable("Position", typeof(PositionDataType));
+            Rotation = (RotationDataType)decoder.ReadEncodeable("Rotation", typeof(RotationDataType));
+
+            decoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
+        public virtual bool IsEqual(IEncodeable encodeable)
+        {
+            if (Object.ReferenceEquals(this, encodeable))
+            {
+                return true;
+            }
+
+            PoseDataType value = encodeable as PoseDataType;
+
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (!Utils.IsEqual(m_position, value.m_position)) return false;
+            if (!Utils.IsEqual(m_rotation, value.m_rotation)) return false;
+
+            return true;
+        }
+
+        #if !NET_STANDARD
+        /// <summary cref="ICloneable.Clone" />
+        public virtual object Clone()
+        {
+            return (PoseDataType)this.MemberwiseClone();
+        }
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            PoseDataType clone = (PoseDataType)base.MemberwiseClone();
+
+            clone.m_position = (PositionDataType)Utils.Clone(this.m_position);
+            clone.m_rotation = (RotationDataType)Utils.Clone(this.m_rotation);
+
+            return clone;
+        }
+        #endregion
+
+        #region Private Fields
+        private PositionDataType m_position;
+        private RotationDataType m_rotation;
+        #endregion
+    }
+
+    #region PoseDataTypeCollection Class
+    /// <summary>
+    /// A collection of PoseDataType objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfPoseDataType", Namespace = PnPTypes.Namespaces.PnPTypesXsd, ItemName = "PoseDataType")]
+    #if !NET_STANDARD
+    public partial class PoseDataTypeCollection : List<PoseDataType>, ICloneable
+    #else
+    public partial class PoseDataTypeCollection : List<PoseDataType>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public PoseDataTypeCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public PoseDataTypeCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public PoseDataTypeCollection(IEnumerable<PoseDataType> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator PoseDataTypeCollection(PoseDataType[] values)
+        {
+            if (values != null)
+            {
+                return new PoseDataTypeCollection(values);
+            }
+
+            return new PoseDataTypeCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator PoseDataType[](PoseDataTypeCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (PoseDataTypeCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            PoseDataTypeCollection clone = new PoseDataTypeCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((PoseDataType)Utils.Clone(this[ii]));
             }
 
             return clone;

@@ -28,6 +28,7 @@ public:
 private:
     UA_StatusCode initSkills();
     bool createNodesFromNodeset();
+    UA_StatusCode setParameters();
 
     std::shared_ptr<spdlog::logger> logger;
     std::shared_ptr<spdlog::logger> loggerOpcua;

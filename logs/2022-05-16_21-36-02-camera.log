@@ -1,3 +1,0 @@
-[05/16/22 21:36:02.938] [info    ] [camera] Starting Camera Server ...
-[05/16/22 21:36:03.035] [error   ] [camera] Adding the DeviceModel namespace failed. Please check previous error output.
-[05/16/22 21:36:03.036] [critical] [camera] Could not initialize component. Can not initialize Camera nodeset 

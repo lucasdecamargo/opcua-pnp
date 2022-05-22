@@ -614,6 +614,11 @@ namespace Camera
         public const uint CameraDevice_ParameterSet_CameraInfo = 15249;
 
         /// <summary>
+        /// The identifier for the CameraDevice_ParameterSet_CameraPose Variable.
+        /// </summary>
+        public const uint CameraDevice_ParameterSet_CameraPose = 15209;
+
+        /// <summary>
         /// The identifier for the CameraDevice_Skills_PhotoSkill_CurrentState Variable.
         /// </summary>
         public const uint CameraDevice_Skills_PhotoSkill_CurrentState = 15212;
@@ -1302,6 +1307,11 @@ namespace Camera
         /// The identifier for the CameraDevice_ParameterSet_CameraInfo Variable.
         /// </summary>
         public static readonly ExpandedNodeId CameraDevice_ParameterSet_CameraInfo = new ExpandedNodeId(Camera.Variables.CameraDevice_ParameterSet_CameraInfo, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraDevice_ParameterSet_CameraPose Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraDevice_ParameterSet_CameraPose = new ExpandedNodeId(Camera.Variables.CameraDevice_ParameterSet_CameraPose, Camera.Namespaces.Camera);
 
         /// <summary>
         /// The identifier for the CameraDevice_Skills_PhotoSkill_CurrentState Variable.

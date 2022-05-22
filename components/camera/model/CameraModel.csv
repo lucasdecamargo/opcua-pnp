@@ -206,6 +206,7 @@ CameraDevice_ProtocolSupport,15205,Object
 CameraDevice_ProtocolSupport_ProtocolSupportIdentifier,15206,Variable
 CameraDevice_ImageSet,15207,Object
 CameraDevice_ImageSet_ImageIdentifier,15208,Variable
+CameraDevice_ParameterSet_CameraPose,15209,Variable
 CameraDevice_Skills,15210,Object
 CameraDevice_Skills_PhotoSkill,15211,Object
 CameraDevice_Skills_PhotoSkill_CurrentState,15212,Variable

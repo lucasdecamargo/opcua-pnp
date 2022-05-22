@@ -13,10 +13,23 @@
   <opc:Import Namespace="https://fortiss.org/UA/Device/" Location="fortiss_Device.BinarySchema.bsd"/>
 
   <opc:StructuredType Name="PositionDataType" BaseType="ua:ExtensionObject">
-    <opc:Documentation>A representation of pose in free space, composed of position and orientation</opc:Documentation>
+    <opc:Documentation>A representation of position in cartesian space</opc:Documentation>
     <opc:Field Name="x" TypeName="opc:Double" />
     <opc:Field Name="y" TypeName="opc:Double" />
     <opc:Field Name="z" TypeName="opc:Double" />
+  </opc:StructuredType>
+
+  <opc:StructuredType Name="RotationDataType" BaseType="ua:ExtensionObject">
+    <opc:Documentation>A representation of rotation in cartesian space</opc:Documentation>
+    <opc:Field Name="r" TypeName="opc:Double" />
+    <opc:Field Name="p" TypeName="opc:Double" />
+    <opc:Field Name="y" TypeName="opc:Double" />
+  </opc:StructuredType>
+
+  <opc:StructuredType Name="PoseDataType" BaseType="ua:ExtensionObject">
+    <opc:Documentation>A representation of pose in cartesian space, composed by position and rotation</opc:Documentation>
+    <opc:Field Name="Position" TypeName="tns:PositionDataType" />
+    <opc:Field Name="Rotation" TypeName="tns:RotationDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MarkerDataType" BaseType="ua:ExtensionObject">

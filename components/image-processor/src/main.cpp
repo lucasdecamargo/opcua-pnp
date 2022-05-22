@@ -157,7 +157,8 @@ int main(int argc, char* argv[])
         std::shared_ptr<ImageProcessor> imageProcessor = std::make_shared<ImageProcessor>(
             logger, loggerUa, uaServer, settings["image_processor"], markersFile);
         
-        set_input_parameters(uaServer,logger);
+        if(settings["image_processor"].exists("load_sample_parameters") ? (bool)settings["image_processor"] : false)
+            set_input_parameters(uaServer,logger);
 
         if(uaServer->init(true, nullptr) == UA_STATUSCODE_GOOD)
         {
