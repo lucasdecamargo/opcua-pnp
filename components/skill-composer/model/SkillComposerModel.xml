@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+    xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:OpcUa="http://opcfoundation.org/UA/"
+    xmlns:DI="http://opcfoundation.org/UA/DI/"
+    xmlns:DEVICE="https://fortiss.org/UA/Device/"
+    xmlns:PNPTYPES="https://pnp.org/UA/PnPTypes/"
+    xmlns:SKILLCOMPOSER="https://pnp.org/UA/SkillComposer/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    TargetNamespace="https://pnp.org/UA/SkillComposer/"
+    TargetXmlNamespace="https://pnp.org/UA/SkillComposer/"
+    TargetVersion="0.1.0"
+    TargetPublicationDate="2021-08-08T00:00:00Z"
+    xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+<Namespaces>
+    <Namespace Name="SkillComposer" Prefix="SkillComposer" XmlNamespace="https://pnp.org/UA/SkillComposer/Types.xsd" XmlPrefix="SkillComposer">https://pnp.org/UA/SkillComposer/</Namespace>
+    <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua" InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd" XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    <Namespace Name="OpcUaDi" Prefix="Opc.Ua.Di" XmlNamespace="http://opcfoundation.org/UA/DI/Types.xsd" XmlPrefix="DI" FilePath="OpcUaDiModel">http://opcfoundation.org/UA/DI/</Namespace>
+    <Namespace Name="fortissDevice" Prefix="fortiss_Device" XmlNamespace="https://fortiss.org/UA/Device/Types.xsd" XmlPrefix="fortiss_Device" FilePath="../../../nodeset/DeviceModel/DeviceModel">https://fortiss.org/UA/Device/</Namespace>
+    <Namespace Name="PnPTypes" Prefix="PnPTypes" XmlNamespace="https://pnp.org/UA/PnPTypes/Types.xsd" XmlPrefix="PnPTypes" FilePath="../../../nodeset/PnPTypes/PnPTypes">https://pnp.org/UA/PnPTypes/</Namespace>
+</Namespaces>
+
+<!-- ### Object Types ###-->
+
+<ObjectType SymbolicName="SKILLCOMPOSER:MarkerFindingSkillType" BaseType="DEVICE:SkillType" IsAbstract="false">
+    <BrowseName>MarkerFindingSkillType</BrowseName>
+    <Description>Composes PhotoSkills and MarkerFindingSkill to find fiducial markers</Description>
+
+    <Children>
+        <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+            <Children>
+                <!-- Output parameters -->
+                <Variable SymbolicName="SKILLCOMPOSER:FoundMarkersArray" DataType="PNPTYPES:MarkerDataType" ValueRank="Array" AccessLevel="Read">
+                    <Description>Array of found fiducial markers</Description>
+                </Variable> 
+            </Children>
+        </Object>
+    </Children>
+</ObjectType>
+
+<ObjectType SymbolicName="SKILLCOMPOSER:SkillComposerDeviceType" BaseType="DI:DeviceType" IsAbstract="false">
+</ObjectType>
+
+<!-- ### Objects ### -->
+
+<Object SymbolicName="SKILLCOMPOSER:SkillComposerDevice" TypeDefinition="SKILLCOMPOSER:SkillComposerDeviceType" SupportsEvents="true">
+    <Description>The Skill Composer Component</Description>
+
+    <Children>
+        <Object SymbolicName="DEVICE:Skills" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+            <Description>Contains the skills of the Skill Composer Device</Description>
+            <Children>
+                <Object SymbolicName="SKILLCOMPOSER:MarkerFindingSkill" TypeDefinition="SKILLCOMPOSER:MarkerFindingSkillType" 
+                    ModellingRule="Mandatory" SupportsEvents="true"/>
+            </Children>
+        </Object>
+    </Children>
+
+    <References>
+        <Reference IsInverse="false">
+            <ReferenceType>OpcUa:HasInterface</ReferenceType>
+            <TargetId>DEVICE:ISkillControllerType</TargetId>
+        </Reference>
+
+        <Reference IsInverse="true">
+            <ReferenceType>OpcUa:Organizes</ReferenceType>
+            <TargetId>DI:DeviceSet</TargetId>
+        </Reference>
+    </References>
+</Object>
+
+</ModelDesign>

@@ -27,6 +27,7 @@ static void stopHandler(int)
     running = false;
 }
 
+
 int main(int argc, char* argv[])
 {
     signal(SIGINT, stopHandler);
@@ -97,6 +98,8 @@ int main(int argc, char* argv[])
         if(ret != UA_STATUSCODE_GOOD)
             throw std::runtime_error("Cannot intialize async client. STATUSCODE: " +
                 std::string(UA_StatusCode_name(ret)));
+        
+        uaClient->addEventSubscription();
 
         cv::namedWindow("ImagePNG", cv::WindowFlags::WINDOW_AUTOSIZE);
 

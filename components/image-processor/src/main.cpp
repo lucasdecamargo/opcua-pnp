@@ -29,6 +29,7 @@ void set_input_parameters(
     const std::shared_ptr<pnp::opcua::OpcUaServer>& server,
     std::shared_ptr<spdlog::logger> logger)
 {
+    logger->trace("Loading sample parameters");
     const UA_Double cam_dist_coeff[] = {0,0,0,0,0};
     const UA_Double cam_matrix[] = {1000      ,0      ,1560,
                                 0      ,1000     ,2080,
@@ -157,7 +158,7 @@ int main(int argc, char* argv[])
         std::shared_ptr<ImageProcessor> imageProcessor = std::make_shared<ImageProcessor>(
             logger, loggerUa, uaServer, settings["image_processor"], markersFile);
         
-        if(settings["image_processor"].exists("load_sample_parameters") ? (bool)settings["image_processor"] : false)
+        if(settings["image_processor"].exists("load_sample_parameters") ? (bool)settings["image_processor"]["load_sample_parameters"] : false)
             set_input_parameters(uaServer,logger);
 
         if(uaServer->init(true, nullptr) == UA_STATUSCODE_GOOD)

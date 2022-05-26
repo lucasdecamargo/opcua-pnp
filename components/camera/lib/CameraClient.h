@@ -26,6 +26,8 @@ public:
     UA_StatusCode stepAsync();
     void stop();
 
+    UA_StatusCode addEventSubscription();
+
     UA_StatusCode readVariable(const UA_NodeId& node, UA_Variant* data);
     UA_StatusCode readImageNode(UA_ImagePNG* image);
 
@@ -34,6 +36,19 @@ protected:
     std::recursive_mutex clientMutex;
     std::shared_ptr<spdlog::logger> logger;
     std::shared_ptr<spdlog::logger> loggerOpcua;
+
+    UA_UInt32 subId;
+    UA_UInt32 monId;
+
+    void eventHandler(UA_UInt32 subId, UA_UInt32 monId, void *monContext,
+                              size_t nEventFields, UA_Variant *eventFields);
+
+    static void eventHandlerCallback(UA_Client *client,
+                                     UA_UInt32 subId, void *subContext,
+                                     UA_UInt32 monId, void *monContext,
+                                     size_t nEventFields, UA_Variant *eventFields);
+
+    bool getEventFilter(UA_EventFilter *filter);
 
 private:
     void threadWorker();

@@ -5,6 +5,8 @@
 #include <libconfig.h++>
 #include <spdlog/spdlog.h>
 
+#include <client/SkillDetector.h>
+
 class MES
 {
 public:
@@ -39,6 +41,7 @@ protected:
 private:
     bool running = false;
     const libconfig::Setting& pnpSetting;
+    std::unique_ptr<SkillDetector> skillDetector;
 };
 
 #endif

@@ -134,6 +134,9 @@ private:
     void removeEventSubscription();
 
     static bool getEventFilter(UA_EventFilter *filter);
+    static void setupOfTypeFilter(UA_ContentFilterElement *element, UA_UInt16 nsIndex, UA_UInt32 typeId);
+    static UA_StatusCode setupWhereClause(UA_ContentFilter *contentFilter);
+    static UA_StatusCode setupOperandArrays(UA_ContentFilter *contentFilter);
 
     bool running;
     std::thread stepperThread;

@@ -212,20 +212,14 @@ namespace pnp
 
                         logger->trace("Setting detected markers");
                         UA_Variant v_markers;
+                        UA_Variant_init(&v_markers);
 
-                        UA_MarkerDataType* tmp_markers;
-
-                        if(paramDetectedMarkers.value.empty())
-                            tmp_markers = NULL;
-                        else
-                            tmp_markers = (UA_MarkerDataType*)UA_malloc(paramDetectedMarkers.value.size() * sizeof(UA_MarkerDataType));
-
-                        std::copy(paramDetectedMarkers.value.begin(),
-                                    paramDetectedMarkers.value.end(),
-                                    tmp_markers);
-
-                        UA_Variant_setArrayCopy(&v_markers, tmp_markers, 
-                            paramDetectedMarkers.value.size(), &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+                        UA_Variant_setArray(
+                            &v_markers,
+                            paramDetectedMarkers.value.data(),
+                            paramDetectedMarkers.value.size(),
+                            &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]
+                        );
 
                         UA_UInt32 arrayDimension = paramDetectedMarkers.value.size();
                         v_markers.arrayDimensions = &arrayDimension;
@@ -236,9 +230,6 @@ namespace pnp
                             ret = UA_Server_writeValue(ls.get(), *paramDetectedMarkers.nodeId.get(), v_markers);
                         }
 
-                        if(tmp_markers != NULL)
-                            UA_free(tmp_markers);
-                        
                         paramDetectedMarkers.value.clear();
 
                         if(ret != UA_STATUSCODE_GOOD) {

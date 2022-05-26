@@ -9,6 +9,10 @@
 #include <open62541/server.h>
 #include <logging_opcua.h>
 
+#include <namespace_di_generated.h>
+#include <namespace_device_model_generated.h>
+#include <namespace_pnp_types_generated.h>
+
 using namespace std::string_literals;
 
 MES::MES(
@@ -22,7 +26,9 @@ MES::MES(
         logger(std::move(_loggerApp)),
         loggerOpcua(std::move(_loggerOpcua)),
         server(server),
-        pnpSetting(pnpSetting)
+        pnpSetting(pnpSetting),
+        skillDetector(new SkillDetector(logger, loggerOpcua, clientCertPath, clientKeyPath,
+                        "pnp.mes.client", "MES Client"))
 {
 
     if (!this->createNodesFromNodeset()) {
@@ -42,6 +48,25 @@ MES::~MES()
 
 bool MES::createNodesFromNodeset()
 {
+    LockedServer ls = server->getLocked();
+
+    if(namespace_di_generated(ls.get()) != UA_STATUSCODE_GOOD)
+    {
+        logger->error("Adding the DI namespace failed. Please check previous error output.");
+        return false;
+    }
+
+    if(namespace_device_model_generated(ls.get()) != UA_STATUSCODE_GOOD)
+    {
+        logger->error("Adding the DeviceModel namespace failed. Please check previous error output.");
+        return false;
+    }
+
+    if(namespace_pnp_types_generated(ls.get()) != UA_STATUSCODE_GOOD)
+    {
+        logger->error("Adding the PnPTypes namespace failed. Please check previous error output.");
+        return false;
+    }
     return true;
 }
 
@@ -52,8 +77,8 @@ UA_StatusCode MES::initSkills()
 
 void MES::onServerRegister(const UA_RegisteredServer* registeredServer)
 {
-    /* ... */
-    logger->info("[MES] onServerRegister");
+    logger->trace("onServerRegister");
+    return skillDetector->onServerRegister(registeredServer);
 }
 
 void MES::onServerAnnounce(
@@ -61,8 +86,6 @@ void MES::onServerAnnounce(
         UA_Boolean isServerAnnounce
 )
 {
-    /* ... */
-    logger->info("Server announced! Name: "s + std::string((char*)serverOnNetwork->serverName.data)
-        + " DiscoveryUrl: "s + std::string((char*)serverOnNetwork->discoveryUrl.data)
-    );
+    logger->trace("onServerAnnounce");
+    return skillDetector->onServerAnnounce(serverOnNetwork, isServerAnnounce);
 }

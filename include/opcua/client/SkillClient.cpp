@@ -199,6 +199,60 @@ SkillClient::~SkillClient() {
 
 #define EVENT_FILTER_SELECT_COUNT 8
 
+void SkillClient::setupOfTypeFilter(UA_ContentFilterElement *element, UA_UInt16 nsIndex, UA_UInt32 typeId){
+    element->filterOperands[0].content.decoded.type = &UA_TYPES[UA_TYPES_LITERALOPERAND];
+    element->filterOperands[0].encoding = UA_EXTENSIONOBJECT_DECODED;
+    UA_LiteralOperand *literalOperand = UA_LiteralOperand_new();
+    UA_LiteralOperand_init(literalOperand);
+    UA_NodeId *nodeId = UA_NodeId_new();
+    UA_NodeId_init(nodeId);
+    nodeId->namespaceIndex = nsIndex;
+    nodeId->identifierType = UA_NODEIDTYPE_NUMERIC;
+    nodeId->identifier.numeric = typeId;
+    UA_Variant_setScalar(&literalOperand->value, nodeId, &UA_TYPES[UA_TYPES_NODEID]);
+    element->filterOperands[0].content.decoded.data = literalOperand;
+}
+
+UA_StatusCode SkillClient::setupOperandArrays(UA_ContentFilter *contentFilter){
+    for(size_t i =0; i< contentFilter->elementsSize; ++i) {  /* Set Operands Arrays */
+        contentFilter->elements[i].filterOperands = (UA_ExtensionObject*)
+            UA_Array_new(
+                contentFilter->elements[i].filterOperandsSize, &UA_TYPES[UA_TYPES_EXTENSIONOBJECT]);
+        if (!contentFilter->elements[i].filterOperands){
+            UA_ContentFilter_clear(contentFilter);
+            return UA_STATUSCODE_BADOUTOFMEMORY;
+        }
+        for(size_t n =0; n< contentFilter->elements[i].filterOperandsSize; ++n) {
+            UA_ExtensionObject_init(&contentFilter->elements[i].filterOperands[n]);
+        }
+    }
+    return UA_STATUSCODE_GOOD;
+}
+
+UA_StatusCode SkillClient::setupWhereClause(UA_ContentFilter *contentFilter)
+{
+    UA_ContentFilter_init(contentFilter);
+    contentFilter->elementsSize = 1;
+    contentFilter->elements = (UA_ContentFilterElement *)UA_new(&UA_TYPES[UA_TYPES_CONTENTFILTERELEMENT]);
+
+    if(!contentFilter->elements)
+        return UA_STATUSCODE_BADOUTOFMEMORY;
+
+    UA_ContentFilterElement_init(contentFilter->elements);
+
+    contentFilter->elements->filterOperator = UA_FILTEROPERATOR_OFTYPE;
+    contentFilter->elements->filterOperandsSize = 1;
+
+    if(setupOperandArrays(contentFilter) != UA_STATUSCODE_GOOD) {
+        UA_ContentFilter_clear(contentFilter);
+        return UA_STATUSCODE_BADCONFIGURATIONERROR;
+    }
+
+    setupOfTypeFilter(contentFilter->elements, 0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+
+    return UA_STATUSCODE_GOOD;
+}
+
 bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     UA_EventFilter_init(filter);
 
@@ -211,7 +265,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
         UA_SimpleAttributeOperand_init(&selectClauses[i]);
     }
 
-    selectClauses[0].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[0].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[0].browsePathSize = 1;
     selectClauses[0].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[0].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -223,7 +277,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[0].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[0].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "EventType");
 
-    selectClauses[1].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[1].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[1].browsePathSize = 1;
     selectClauses[1].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[1].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -235,7 +289,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[1].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[1].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Severity");
 
-    selectClauses[2].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[2].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[2].browsePathSize = 1;
     selectClauses[2].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[2].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -246,7 +300,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[2].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[2].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Message");
 
-    selectClauses[3].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[3].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[3].browsePathSize = 1;
     selectClauses[3].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[3].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -257,7 +311,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[3].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[3].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "FromState");
 
-    selectClauses[4].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[4].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[4].browsePathSize = 1;
     selectClauses[4].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[4].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -268,7 +322,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[4].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[4].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "ToState");
 
-    selectClauses[5].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[5].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[5].browsePathSize = 1;
     selectClauses[5].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[5].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -279,7 +333,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[5].attributeId = UA_ATTRIBUTEID_VALUE;
     selectClauses[5].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Transition");
 
-    selectClauses[6].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[6].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[6].browsePathSize = 1;
     selectClauses[6].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[6].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -291,7 +345,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
     selectClauses[6].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "IntermediateResult");
 
 
-    selectClauses[7].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[7].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_BASEEVENTTYPE);
     selectClauses[7].browsePathSize = 1;
     selectClauses[7].browsePath = (UA_QualifiedName *)
             UA_Array_new(selectClauses[7].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
@@ -304,6 +358,7 @@ bool SkillClient::getEventFilter(UA_EventFilter *filter) {
 
     filter->selectClauses = selectClauses;
     filter->selectClausesSize = EVENT_FILTER_SELECT_COUNT;
+    setupWhereClause(&filter->whereClause);
 
     return true;
 }
@@ -473,7 +528,7 @@ UA_StatusCode SkillClient::connect(bool addSubscription) {
         if (sessionState >= UA_SESSIONSTATE_ACTIVATED) {
 
             if (addSubscription && subId == 0 && monId == 0)
-                addEventSubscription();
+                return addEventSubscription();
 
             return UA_STATUSCODE_GOOD;
         }
@@ -556,7 +611,7 @@ UA_StatusCode SkillClient::addEventSubscription() {
     UA_MonitoredItemCreateResult result =
             UA_Client_MonitoredItems_createEvent(client, subId,
                                                  UA_TIMESTAMPSTORETURN_BOTH, item,
-                                                 nullptr, &SkillClient::eventHandlerCallback, nullptr);
+                                                 &monId, &SkillClient::eventHandlerCallback, nullptr);
 
     if (result.statusCode != UA_STATUSCODE_GOOD) {
         logger->error("Failed to add MonitoredItem, status code {}", std::string(UA_StatusCode_name(result.statusCode)));
@@ -566,10 +621,11 @@ UA_StatusCode SkillClient::addEventSubscription() {
         return ret;
     }
 
-    monId = result.monitoredItemId;
+    // monId = result.monitoredItemId;
 
     UA_MonitoredItemCreateResult_clear(&result);
     UA_Array_delete(filter.selectClauses, filter.selectClausesSize, &UA_TYPES[UA_TYPES_SIMPLEATTRIBUTEOPERAND]);
+    UA_Array_delete(filter.whereClause.elements, filter.whereClause.elementsSize, &UA_TYPES[UA_TYPES_CONTENTFILTERELEMENT]);
     return UA_STATUSCODE_GOOD;
 }
 

@@ -83,10 +83,10 @@ int main(int argc, char* argv[]) {
         uaServer = std::make_shared<pnp::opcua::OpcUaServer>(
                 settings,
                 logger,
-                "pnp.component.mes",
+                "pnp.mes",
                 "PNP MES",
                 certFiles,
-                "pnp.component.mes.client",
+                "pnp.mes.client",
                 "PNP MES - Client",
                 clientCertFiles);
 

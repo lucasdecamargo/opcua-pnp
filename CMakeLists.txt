@@ -11,6 +11,7 @@ option(OPCUA_PNP_COMPILE_TESTS "Enable to compile tests" ON)
 
 add_definitions(
     -lconfig++
+    -pthread
 )
 
 #####################
@@ -19,6 +20,7 @@ add_definitions(
 add_subdirectory(include/opcua)
 
 set(OPCUA_LIB "${PROJECT_NAME}-opcua")
+set(OPCUA_CLIENT_LIB "${PROJECT_NAME}-opcua-client")
 set(NODESET_DIR "${CMAKE_CURRENT_LIST_DIR}/nodeset")
 
 ##################################
@@ -31,3 +33,4 @@ add_subdirectory(mes)
 ###################
 add_subdirectory(components/camera)
 add_subdirectory(components/image-processor)
+add_subdirectory(components/skill-composer)

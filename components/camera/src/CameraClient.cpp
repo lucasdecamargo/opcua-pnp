@@ -5,6 +5,8 @@
 
 #include <open62541/client_highlevel.h>
 
+#include <open62541/client_subscriptions.h>
+
 CameraClient::CameraClient(std::shared_ptr<spdlog::logger> _loggerApp,
                          std::shared_ptr<spdlog::logger> _loggerOpcua,
                          const std::string &serverURL,
@@ -15,7 +17,8 @@ CameraClient::CameraClient(std::shared_ptr<spdlog::logger> _loggerApp,
                          const std::string& clientAppUri,
                          const std::string& clientAppName) :
         logger(std::move(_loggerApp)), loggerOpcua(std::move(_loggerOpcua)),
-        serverURL(serverURL), username(username), password(password)
+        serverURL(serverURL), username(username), password(password),
+        subId(0), monId(0)
 {
     running = false;
 
@@ -213,4 +216,197 @@ void CameraClient::threadWorker()
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     running = false;
+}
+
+UA_StatusCode CameraClient::addEventSubscription()
+{
+    std::lock_guard<std::recursive_mutex> lk(clientMutex);
+
+    UA_CreateSubscriptionRequest subRequest = UA_CreateSubscriptionRequest_default();
+    UA_CreateSubscriptionResponse subResponse = UA_Client_Subscriptions_create(client, subRequest,
+                                                                               this, nullptr, nullptr);
+    if (subResponse.responseHeader.serviceResult != UA_STATUSCODE_GOOD) {
+        UA_Client_disconnect(client);
+        UA_Client_delete(client);
+        throw std::runtime_error(
+                "Failed to create subscription, status code " +
+                std::string(UA_StatusCode_name(subResponse.responseHeader.serviceResult)));
+    }
+
+    subId = subResponse.subscriptionId;
+
+    UA_UInt16 nsCamera;
+
+    {
+        UA_String nsCameraUri = UA_String_fromChars(NAMESPACE_URI_CAMERA);
+        UA_Client_NamespaceGetIndex(client, &nsCameraUri, &nsCamera);
+        UA_String_clear(&nsCameraUri);
+    }
+
+    /* Add a MonitoredItem */
+    UA_MonitoredItemCreateRequest item;
+    UA_MonitoredItemCreateRequest_init(&item);
+    item.itemToMonitor.nodeId = UA_NODEID_NUMERIC(nsCamera, UA_CAMERAID_CAMERADEVICE_SKILLS_PHOTOSKILL);
+    item.itemToMonitor.attributeId = UA_ATTRIBUTEID_EVENTNOTIFIER;
+    item.monitoringMode = UA_MONITORINGMODE_REPORTING;
+
+    item.requestedParameters.filter.encoding = UA_EXTENSIONOBJECT_DECODED;
+    UA_EventFilter filter;
+    if (!getEventFilter(&filter)) {
+        throw std::runtime_error("Cannot create event filter");
+    }
+    item.requestedParameters.filter.content.decoded.data = &filter;
+    item.requestedParameters.filter.content.decoded.type = &UA_TYPES[UA_TYPES_EVENTFILTER];
+    // set a minimum queue size of > 2 so that we get all the events, if the robot already reached the position and sends
+    // two events at the same time.
+    item.requestedParameters.queueSize = 20;
+    item.requestedParameters.discardOldest = true;
+
+    UA_MonitoredItemCreateResult result =
+            UA_Client_MonitoredItems_createEvent(client, subId,
+                                                 UA_TIMESTAMPSTORETURN_BOTH, item,
+                                                 nullptr, &CameraClient::eventHandlerCallback, nullptr);
+
+    if (result.statusCode != UA_STATUSCODE_GOOD) {
+        logger->error("Failed to add MonitoredItem, status code {}", std::string(UA_StatusCode_name(result.statusCode)));
+        UA_StatusCode ret = result.statusCode;
+        UA_MonitoredItemCreateResult_clear(&result);
+        UA_Array_delete(filter.selectClauses, filter.selectClausesSize, &UA_TYPES[UA_TYPES_SIMPLEATTRIBUTEOPERAND]);
+        return ret;
+    }
+
+    monId = result.monitoredItemId;
+
+    UA_MonitoredItemCreateResult_clear(&result);
+    UA_Array_delete(filter.selectClauses, filter.selectClausesSize, &UA_TYPES[UA_TYPES_SIMPLEATTRIBUTEOPERAND]);
+    return UA_STATUSCODE_GOOD;
+}
+
+#define EVENT_FILTER_SELECT_COUNT 8
+
+bool CameraClient::getEventFilter(UA_EventFilter *filter) {
+    UA_EventFilter_init(filter);
+
+    auto *selectClauses = (UA_SimpleAttributeOperand *)
+            UA_Array_new(EVENT_FILTER_SELECT_COUNT, &UA_TYPES[UA_TYPES_SIMPLEATTRIBUTEOPERAND]);
+    if (!selectClauses)
+        return false;
+
+    for (size_t i = 0; i < EVENT_FILTER_SELECT_COUNT; ++i) {
+        UA_SimpleAttributeOperand_init(&selectClauses[i]);
+    }
+
+    selectClauses[0].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[0].browsePathSize = 1;
+    selectClauses[0].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[0].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[0].browsePath) {
+        UA_SimpleAttributeOperand_clear(selectClauses);
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[0].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[0].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "EventType");
+
+    selectClauses[1].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[1].browsePathSize = 1;
+    selectClauses[1].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[1].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[1].browsePath) {
+        UA_SimpleAttributeOperand_clear(selectClauses);
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[1].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[1].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Severity");
+
+    selectClauses[2].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[2].browsePathSize = 1;
+    selectClauses[2].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[2].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[2].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[2].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[2].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Message");
+
+    selectClauses[3].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[3].browsePathSize = 1;
+    selectClauses[3].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[3].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[3].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[3].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[3].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "FromState");
+
+    selectClauses[4].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[4].browsePathSize = 1;
+    selectClauses[4].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[4].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[4].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[4].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[4].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "ToState");
+
+    selectClauses[5].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[5].browsePathSize = 1;
+    selectClauses[5].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[5].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[5].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[5].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[5].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Transition");
+
+    selectClauses[6].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[6].browsePathSize = 1;
+    selectClauses[6].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[6].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[6].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[6].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[6].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "IntermediateResult");
+
+
+    selectClauses[7].typeDefinitionId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE);
+    selectClauses[7].browsePathSize = 1;
+    selectClauses[7].browsePath = (UA_QualifiedName *)
+            UA_Array_new(selectClauses[7].browsePathSize, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+    if (!selectClauses[7].browsePath) {
+        UA_SimpleAttributeOperand_delete(selectClauses);
+        return false;
+    }
+    selectClauses[7].attributeId = UA_ATTRIBUTEID_VALUE;
+    selectClauses[7].browsePath[0] = UA_QUALIFIEDNAME_ALLOC(0, "Time");
+
+    filter->selectClauses = selectClauses;
+    filter->selectClausesSize = EVENT_FILTER_SELECT_COUNT;
+
+    return true;
+}
+
+void CameraClient::eventHandlerCallback(UA_Client *client,
+                                       UA_UInt32 subIdParam, void *subContext,
+                                       UA_UInt32 monIdParam, void *monContext,
+                                       size_t nEventFields, UA_Variant *eventFields) {
+    if (!subContext)
+        return;
+    auto *self = static_cast<CameraClient *>(subContext);
+
+    self->eventHandler(subIdParam, monIdParam, monContext, nEventFields, eventFields);
+}
+
+
+void CameraClient::eventHandler(UA_UInt32 subIdParam, UA_UInt32 monIdParam, void *monContext, size_t nEventFields,
+                               UA_Variant *eventFields) {
+
+    logger->info("Event handler!");
 }
