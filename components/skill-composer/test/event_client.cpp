@@ -27,13 +27,8 @@ handler_events_filter(UA_Client *client, UA_UInt32 subId, void *subContext,
             UA_LocalizedText *lt = (UA_LocalizedText *)eventFields[i].data;
             UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND,
                         "Message: '%.*s'", (int)lt->text.length, lt->text.data);
-        } else if (UA_Variant_hasScalarType(&eventFields[i], &UA_TYPES[UA_TYPES_NODEID])) {
-            UA_String nodeIdName = UA_STRING_ALLOC("");
-            UA_NodeId_print((UA_NodeId *)eventFields[i].data, &nodeIdName);
-            UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND,
-                        "TypeNodeId: '%.*s'", (int)nodeIdName.length, nodeIdName.data);
-            UA_String_clear(&nodeIdName);
-        } else {
+        }
+        else {
 #ifdef UA_ENABLE_TYPEDESCRIPTION
             UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND,
                         "Don't know how to handle type: '%s'", eventFields[i].type->typeName);

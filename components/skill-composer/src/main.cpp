@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
     }
     const libconfig::Setting& settings = cfg.getRoot();
 
-    logger = pnp::log::LoggerFactory::createLogger("image-processor",
+    logger = pnp::log::LoggerFactory::createLogger("skill-composer",
                                                        settings["logging"]["level"]["app"],
                                                        settings["logging"].exists("path") ? settings["logging"]["path"] : "");
 

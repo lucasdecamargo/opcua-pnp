@@ -4,6 +4,8 @@
 #include <client/RegisteredSkill.h>
 #include <client/SkillParameter.h>
 
+#include <open62541/client_highlevel.h>
+
 namespace pnp {
     namespace skill {
         inline
@@ -40,6 +42,19 @@ namespace pnp {
                 return UA_STATUSCODE_BADINTERNALERROR;
 
             return result;
+        }
+
+        inline
+        std::vector<std::shared_ptr<RegisteredSkill>> 
+        findRegisteredSKillsByName(const std::shared_ptr<SkillDetector>& skillDetector, std::string name)
+        {
+            std::vector<std::shared_ptr<RegisteredSkill>> found_skills;
+
+            auto range = skillDetector->registeredSkills.equal_range(name);
+            for(auto r = range.first; r != range.second; r++)
+                found_skills.push_back(r->second);
+
+            return found_skills;        
         }
     }
 }

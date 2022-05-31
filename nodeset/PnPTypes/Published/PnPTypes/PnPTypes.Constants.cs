@@ -74,6 +74,46 @@ namespace PnPTypes
     }
     #endregion
 
+    #region Method Identifiers
+    /// <summary>
+    /// A class that declares constants for all Methods in the Model Design.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class Methods
+    {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Open = 15066;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Close Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Close = 15069;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Read = 15071;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Write Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Write = 15084;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_GetPosition = 15086;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_SetPosition Method.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_SetPosition = 15089;
+    }
+    #endregion
+
     #region Object Identifiers
     /// <summary>
     /// A class that declares constants for all Objects in the Model Design.
@@ -82,6 +122,11 @@ namespace PnPTypes
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class Objects
     {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata Object.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata = 15041;
+
         /// <summary>
         /// The identifier for the ICameraInfoParameterType_ParameterSet Object.
         /// </summary>
@@ -187,6 +232,121 @@ namespace PnPTypes
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class Variables
     {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceUri Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceUri = 15042;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceVersion Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceVersion = 15043;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespacePublicationDate Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespacePublicationDate = 15044;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_IsNamespaceSubset Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_IsNamespaceSubset = 15045;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticNodeIdTypes Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_StaticNodeIdTypes = 15046;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticNumericNodeIdRange Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_StaticNumericNodeIdRange = 15047;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticStringNodeIdPattern Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_StaticStringNodeIdPattern = 15048;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Size Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Size = 15050;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Writable Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Writable = 15051;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_UserWritable Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_UserWritable = 15063;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_OpenCount Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_OpenCount = 15064;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Open_InputArguments = 15067;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open_OutputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Open_OutputArguments = 15068;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Close_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Close_InputArguments = 15070;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Read_InputArguments = 15072;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read_OutputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Read_OutputArguments = 15083;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Write_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_Write_InputArguments = 15085;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_InputArguments = 15087;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments = 15088;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_SetPosition_InputArguments Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_NamespaceFile_SetPosition_InputArguments = 15090;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultRolePermissions Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_DefaultRolePermissions = 15092;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultUserRolePermissions Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_DefaultUserRolePermissions = 15093;
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultAccessRestrictions Variable.
+        /// </summary>
+        public const uint PnPTypesNamespaceMetadata_DefaultAccessRestrictions = 15094;
+
         /// <summary>
         /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraInfo Variable.
         /// </summary>
@@ -309,6 +469,46 @@ namespace PnPTypes
     }
     #endregion
 
+    #region Method Node Identifiers
+    /// <summary>
+    /// A class that declares constants for all Methods in the Model Design.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class MethodIds
+    {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Open = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_Open, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Close Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Close = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_Close, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Read = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_Read, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Write Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Write = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_Write, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_GetPosition = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_GetPosition, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_SetPosition Method.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_SetPosition = new ExpandedNodeId(PnPTypes.Methods.PnPTypesNamespaceMetadata_NamespaceFile_SetPosition, PnPTypes.Namespaces.PnPTypes);
+    }
+    #endregion
+
     #region Object Node Identifiers
     /// <summary>
     /// A class that declares constants for all Objects in the Model Design.
@@ -317,6 +517,11 @@ namespace PnPTypes
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class ObjectIds
     {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata Object.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata = new ExpandedNodeId(PnPTypes.Objects.PnPTypesNamespaceMetadata, PnPTypes.Namespaces.PnPTypes);
+
         /// <summary>
         /// The identifier for the ICameraInfoParameterType_ParameterSet Object.
         /// </summary>
@@ -422,6 +627,121 @@ namespace PnPTypes
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class VariableIds
     {
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceUri Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceUri = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceUri, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceVersion Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceVersion = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceVersion, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespacePublicationDate Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespacePublicationDate = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespacePublicationDate, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_IsNamespaceSubset Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_IsNamespaceSubset = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_IsNamespaceSubset, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticNodeIdTypes Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_StaticNodeIdTypes = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_StaticNodeIdTypes, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticNumericNodeIdRange Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_StaticNumericNodeIdRange = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_StaticNumericNodeIdRange, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_StaticStringNodeIdPattern Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_StaticStringNodeIdPattern = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_StaticStringNodeIdPattern, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Size Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Size = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Size, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Writable Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Writable = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Writable, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_UserWritable Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_UserWritable = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_UserWritable, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_OpenCount Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_OpenCount = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_OpenCount, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Open_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Open_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Open_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Open_OutputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Open_OutputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Close_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Close_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Close_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Read_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Read_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Read_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Read_OutputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Read_OutputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_Write_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_Write_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_Write_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_NamespaceFile_SetPosition_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_NamespaceFile_SetPosition_InputArguments = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_NamespaceFile_SetPosition_InputArguments, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultRolePermissions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_DefaultRolePermissions = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_DefaultRolePermissions, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultUserRolePermissions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_DefaultUserRolePermissions = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_DefaultUserRolePermissions, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the PnPTypesNamespaceMetadata_DefaultAccessRestrictions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypesNamespaceMetadata_DefaultAccessRestrictions = new ExpandedNodeId(PnPTypes.Variables.PnPTypesNamespaceMetadata_DefaultAccessRestrictions, PnPTypes.Namespaces.PnPTypes);
+
         /// <summary>
         /// The identifier for the ICameraInfoParameterType_ParameterSet_CameraInfo Variable.
         /// </summary>
@@ -540,6 +860,11 @@ namespace PnPTypes
         /// The BrowseName for the PnPTypes_XmlSchema component.
         /// </summary>
         public const string PnPTypes_XmlSchema = "PnPTypes";
+
+        /// <summary>
+        /// The BrowseName for the PnPTypesNamespaceMetadata component.
+        /// </summary>
+        public const string PnPTypesNamespaceMetadata = "https://pnp.org/UA/PnPTypes/";
 
         /// <summary>
         /// The BrowseName for the PoseDataType component.

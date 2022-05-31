@@ -58,6 +58,7 @@ public:
     void stopThreaded();
 
     const pnp::opcua::ProgramStateNumber getCurrentState();
+    const UA_NodeId getParameterSetNodeId();
 
     UA_StatusCode readVariable(const UA_NodeId& node, UA_Variant* data);
     const pnp::opcua::ProgramTransitionNumber getLastTransition();

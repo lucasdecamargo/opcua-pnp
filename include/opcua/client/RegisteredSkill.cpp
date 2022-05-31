@@ -16,7 +16,8 @@ RegisteredSkill::RegisteredSkill(
         clientCertPath(clientCertPath),
         clientKeyPath(clientKeyPath),
         clientAppUri(clientAppUri),
-        clientAppName(clientAppName) {
+        clientAppName(clientAppName),
+        logger(logger) {
 
     UA_StatusCode retval;
     {
@@ -167,4 +168,30 @@ std::future<UA_StatusCode> RegisteredSkill::getFinalResultData(std::shared_ptr<s
         return pnp::opcua::setPromiseErrorException<UA_StatusCode>(&promiseMoveFinished, UA_STATUSCODE_BADINVALIDSTATE);
     }
     return skillClient->getFinalResultData(resultData, data, true);
+}
+
+
+const UA_NodeId RegisteredSkill::getParameterSetNodeId()
+{
+    if(!UA_NodeId_isNull(&parameterSetNodeId))
+        return parameterSetNodeId;
+
+    UA_UInt16 nsIdxDi;
+    
+    LockedClient lc = parentComponent->getLockedClient();
+    UA_String nsUri = UA_String_fromChars(NAMESPACE_URI_DI);
+    UA_StatusCode retval = UA_Client_NamespaceGetIndex(lc.get(), &nsUri, &nsIdxDi);
+    UA_String_clear(&nsUri);
+    if (retval != UA_STATUSCODE_GOOD) {
+        throw std::runtime_error("Failed get namespace index for DI Namespace." + std::string(UA_StatusCode_name(retval)));
+    }
+
+    if(!pnp::opcua::UA_Client_findChildWithBrowseName(
+        lc.get(), logger, skillNodeId,
+        UA_QUALIFIEDNAME(nsIdxDi,
+        const_cast<char *>("ParameterSet")),
+        &parameterSetNodeId))
+        parameterSetNodeId = UA_NODEID_NULL;
+
+    return parameterSetNodeId;
 }

@@ -423,6 +423,7 @@ bool SkillDetector::addSkillsFromController(
 
                 std::shared_ptr<RegisteredSkill> skill = std::make_shared<RegisteredSkill>(
                         component, logger, ref->nodeId.nodeId, clientCertPath, clientKeyPath, clientAppUri, clientAppName);
+                skill->setSkillControllerNodeId(*controllerId);
 
                 this->registeredSkills.emplace(skill->getSkillTypeNameStr(), skill);
                 component->skills.emplace_back(skill);

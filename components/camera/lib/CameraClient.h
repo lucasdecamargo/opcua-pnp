@@ -2,8 +2,12 @@
 #define PNP_CAMERA_CLIENT_H
 
 #include <memory>
+#include <map>
 
 #include <helper.hpp>
+
+#include <types_pnp_types_generated.h>
+#include <types_pnp_types_generated_handling.h>
 
 class CameraClient
 {
@@ -29,7 +33,12 @@ public:
     UA_StatusCode addEventSubscription();
 
     UA_StatusCode readVariable(const UA_NodeId& node, UA_Variant* data);
+    
     UA_StatusCode readImageNode(UA_ImagePNG* image);
+    UA_StatusCode readCameraInfoNode(UA_CameraInfoDataType* data);
+    UA_StatusCode readCameraPoseNode(UA_PoseDataType* data);
+
+    UA_StatusCode getNodeIds();
 
 protected:
     UA_Client *client;
@@ -40,6 +49,8 @@ protected:
     UA_UInt32 subId;
     UA_UInt32 monId;
 
+    std::map<std::string, UA_NodeId> nodeIds;
+
     void eventHandler(UA_UInt32 subId, UA_UInt32 monId, void *monContext,
                               size_t nEventFields, UA_Variant *eventFields);
 
@@ -49,6 +60,8 @@ protected:
                                      size_t nEventFields, UA_Variant *eventFields);
 
     bool getEventFilter(UA_EventFilter *filter);
+
+    static const UA_DataTypeArray customDataTypes;
 
 private:
     void threadWorker();

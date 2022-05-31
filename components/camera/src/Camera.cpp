@@ -117,6 +117,9 @@ UA_StatusCode Camera::setParameters()
     UA_Double dist_coeff[5] = {0,0,0,0,0};
     UA_Double cam_matrix[9] = {1,0,0,0,1,0,0,0,1};
 
+    UA_PoseDataType pose;
+    UA_CameraInfoDataType camera_info;
+
     if(cameraSettings.exists("camera_info"))
     {
         logger->trace("Setting camera info");
@@ -131,8 +134,6 @@ UA_StatusCode Camera::setParameters()
 
         if(cameraSettings["camera_info"].exists("camera_matrix"))
         {            
-            
-
             cam_matrix[0] = (cameraSettings["camera_info"]["camera_matrix"].exists("fx") ?
                              cameraSettings["camera_info"]["camera_matrix"]["fx"] : 1.0);
             cam_matrix[2] = (cameraSettings["camera_info"]["camera_matrix"].exists("cx") ?
@@ -142,8 +143,8 @@ UA_StatusCode Camera::setParameters()
             cam_matrix[5] = (cameraSettings["camera_info"]["camera_matrix"].exists("cy") ?
                              cameraSettings["camera_info"]["camera_matrix"]["cy"] : 0.0);
         }
-
-        UA_CameraInfoDataType camera_info;
+    }
+    {
         camera_info.distortionCoefficientsSize = 5;
         camera_info.distortionCoefficients = dist_coeff;
         camera_info.cameraMatrixSize = 9;
@@ -167,10 +168,9 @@ UA_StatusCode Camera::setParameters()
     }
 
     if(cameraSettings.exists("camera_pose.position") && 
-       cameraSettings.exists("camera_pose.pose"))
+       cameraSettings.exists("camera_pose.rotation"))
     {
         logger->trace("Setting camera pose");
-        UA_PoseDataType pose;
 
         pose.position.x = cameraSettings["camera_pose"]["position"]["x"];
         pose.position.y = cameraSettings["camera_pose"]["position"]["y"];
@@ -178,7 +178,19 @@ UA_StatusCode Camera::setParameters()
         pose.rotation.r = cameraSettings["camera_pose"]["rotation"]["r"];
         pose.rotation.p = cameraSettings["camera_pose"]["rotation"]["p"];
         pose.rotation.y = cameraSettings["camera_pose"]["rotation"]["y"];
+    }
+    else
+    {
+        logger->trace("Setting camera pose null");
 
+        pose.position.x = NAN;
+        pose.position.y = NAN;
+        pose.position.z = NAN;
+        pose.rotation.r = NAN;
+        pose.rotation.p = NAN;
+        pose.rotation.y = NAN;
+    }
+    {
         UA_Variant v;
         UA_Variant_init(&v);
         UA_Variant_setScalar(&v, &pose, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_POSEDATATYPE]);

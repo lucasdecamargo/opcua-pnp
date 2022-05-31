@@ -21,6 +21,10 @@ private:
     const std::string clientKeyPath;
     const std::string clientAppUri;
     const std::string clientAppName;
+    std::shared_ptr<spdlog::logger> logger;
+    UA_NodeId skillControllerNodeId = UA_NODEID_NULL;
+    UA_NodeId parameterSetNodeId = UA_NODEID_NULL;
+
 
     GenericSkillClient *skillClient = nullptr;
 public:
@@ -52,6 +56,16 @@ public:
 
     std::shared_ptr<RegisteredComponent> getParentComponent() {
         return parentComponent;
+    }
+
+    const UA_NodeId getSkillControllerNodeId() {
+        return skillControllerNodeId;
+    }
+
+    const UA_NodeId getParameterSetNodeId();
+
+    void setSkillControllerNodeId(const UA_NodeId& node) {
+        skillControllerNodeId = node;
     }
 
     std::future<bool> execute(

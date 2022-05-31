@@ -996,6 +996,37 @@ namespace pnp {
             return found;
         }
 
+        inline UA_StatusCode UA_Client_readVariable(UA_Client* client, const UA_NodeId& node, UA_Variant* data)
+        {
+            UA_ReadRequest request;
+            UA_ReadRequest_init(&request);
+            request.nodesToReadSize = 1;
+            request.nodesToRead = UA_ReadValueId_new();
+            UA_ReadValueId_init(request.nodesToRead);
+            UA_NodeId_copy(&node, &request.nodesToRead->nodeId);
+            request.nodesToRead->attributeId = UA_ATTRIBUTEID_VALUE;
+            
+            UA_ReadResponse response;
+            response = UA_Client_Service_read(client, request);
+            
+            UA_ReadRequest_clear(&request);
+
+            if (response.responseHeader.serviceResult != UA_STATUSCODE_GOOD) {
+                UA_ReadResponse_clear(&response);
+                return response.responseHeader.serviceResult;
+            }
+
+
+            if (response.resultsSize != 1) {
+                UA_ReadResponse_clear(&response);
+                return UA_STATUSCODE_BADINVALIDSTATE;
+            }
+
+            UA_StatusCode retval = UA_Variant_copy(&response.results[0].value, data);
+            UA_ReadResponse_clear(&response);
+            return retval;
+        }
+
         inline UA_UInt16 UA_Server_getNamespaceIdByName(
                 UA_Server* uaServer,
                 const char* nsid

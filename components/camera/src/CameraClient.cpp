@@ -7,6 +7,8 @@
 
 #include <open62541/client_subscriptions.h>
 
+const UA_DataTypeArray CameraClient::customDataTypes = {NULL, UA_TYPES_PNP_TYPES_COUNT, UA_TYPES_PNP_TYPES};
+
 CameraClient::CameraClient(std::shared_ptr<spdlog::logger> _loggerApp,
                          std::shared_ptr<spdlog::logger> _loggerOpcua,
                          const std::string &serverURL,
@@ -36,6 +38,9 @@ CameraClient::CameraClient(std::shared_ptr<spdlog::logger> _loggerApp,
     );
     if (!client)
         throw std::runtime_error("Cannot connect camera client");
+
+    UA_Client_getConfig(client)->customDataTypes = &customDataTypes;
+
 
     UA_EndpointDescription_delete(description);
 }
@@ -141,6 +146,75 @@ void CameraClient::stop()
     stepperThread.join();
 }
 
+UA_StatusCode CameraClient::getNodeIds()
+{
+    UA_NodeId skillControllerNodeId = UA_NODEID_NUMERIC(5, UA_CAMERAID_CAMERADEVICE);
+
+    UA_StatusCode retval = UA_STATUSCODE_GOOD;
+
+    // Get ParameterSet NodeId
+    UA_NodeId parameterSetNodeId;
+    UA_UInt16 nsIdxDi;
+
+    UA_String nsUriDi = UA_String_fromChars(NAMESPACE_URI_DI);
+    {
+        std::lock_guard<std::recursive_mutex> lk(clientMutex);
+        retval = UA_Client_NamespaceGetIndex(client, &nsUriDi, &nsIdxDi);
+    }
+
+    if(retval != UA_STATUSCODE_GOOD)
+        throw std::runtime_error("Failed get namespace index for DI Namespace. " + std::string(UA_StatusCode_name(retval)));
+    
+    {
+        std::lock_guard<std::recursive_mutex> lk(clientMutex);
+        if(!pnp::opcua::UA_Client_findChildWithBrowseName(
+            client, logger, skillControllerNodeId,
+            UA_QUALIFIEDNAME(nsIdxDi,
+            const_cast<char *>("ParameterSet")),
+            &parameterSetNodeId))
+            throw std::runtime_error("Could not find Cameras ParameterSet NodeId");
+    }
+
+    nodeIds.clear();
+
+    UA_UInt16 nsIdxCamera;
+    UA_String nsUriCamera = UA_String_fromChars("https://pnp.org/UA/Camera/");
+
+    {
+        std::lock_guard<std::recursive_mutex> lk(clientMutex);
+        retval = UA_Client_NamespaceGetIndex(client, &nsUriCamera, &nsIdxCamera);
+    }
+    UA_String_clear(&nsUriCamera);
+
+    if (retval != UA_STATUSCODE_GOOD)
+        throw std::runtime_error("Failed get namespace index for Camera Namespace." + std::string(UA_StatusCode_name(retval)));
+
+
+    std::lock_guard<std::recursive_mutex> lk(clientMutex);
+    if(!pnp::opcua::UA_Client_findChildWithBrowseName(
+        client, logger, skillControllerNodeId,
+        UA_QUALIFIEDNAME(nsIdxCamera,
+        const_cast<char *>("ImagePNG")),
+        &nodeIds["ImagePNG"]))
+        logger->error("Could not find ImagePNG NodeId");
+    
+    if(!pnp::opcua::UA_Client_findChildWithBrowseName(
+        client, logger, parameterSetNodeId,
+        UA_QUALIFIEDNAME(nsIdxCamera,
+        const_cast<char *>("CameraInfo")),
+        &nodeIds["CameraInfo"]))
+        logger->error("Could not find CameraInfo NodeId");
+    
+    if(!pnp::opcua::UA_Client_findChildWithBrowseName(
+        client, logger, parameterSetNodeId,
+        UA_QUALIFIEDNAME(nsIdxCamera,
+        const_cast<char *>("CameraPose")),
+        &nodeIds["CameraPose"]))
+        logger->error("Could not find CameraInfo NodeId");
+
+    return retval;
+} 
+
 
 UA_StatusCode CameraClient::readVariable(const UA_NodeId& node, UA_Variant* data)
 {
@@ -185,6 +259,12 @@ UA_StatusCode CameraClient::readImageNode(UA_ImagePNG *image)
         UA_String_clear(&nsCameraUri);
     }
 
+    if(nodeIds.find("ImagePNG") == nodeIds.end())
+    {
+        logger->error("ImagePNG NodeId not set");
+        return UA_STATUSCODE_BADNOTFOUND;
+    }
+
     UA_Variant v;
     UA_StatusCode ret = readVariable(UA_NODEID_NUMERIC(nsCamera, UA_CAMERAID_CAMERADEVICE_IMAGEPNG), &v);
     if (ret != UA_STATUSCODE_GOOD)
@@ -204,6 +284,48 @@ UA_StatusCode CameraClient::readImageNode(UA_ImagePNG *image)
     ret = UA_ImagePNG_copy((UA_ImagePNG*)v.data, image);
 
     UA_Variant_clear(&v);
+
+    return ret;
+}
+
+UA_StatusCode CameraClient::readCameraInfoNode(UA_CameraInfoDataType* data)
+{
+    if(nodeIds.find("CameraInfo") == nodeIds.end())
+    {
+        logger->error("CameraInfo NodeId not set");
+        return UA_STATUSCODE_BADNOTFOUND;
+    }
+
+    UA_StatusCode ret = UA_STATUSCODE_GOOD;
+
+    UA_Variant v;
+    UA_Variant_init(&v);
+    {
+        std::lock_guard<std::recursive_mutex> lk(clientMutex);
+        // ret = pnp::opcua::UA_Client_readVariable(client, nodeIds["CamefaInfo"], &v);
+        ret = UA_Client_readValueAttribute(client, nodeIds["CameraInfo"], &v);
+    }
+
+    if (ret != UA_STATUSCODE_GOOD)
+    {
+        logger->error("Cannot read camera info node: " + std::string(UA_StatusCode_name(ret)));
+        return ret;
+    }
+
+    data = (UA_CameraInfoDataType*)v.data;
+
+    return ret;
+}
+
+UA_StatusCode CameraClient::readCameraPoseNode(UA_PoseDataType* data)
+{
+    if(nodeIds.find("CameraPose") == nodeIds.end())
+    {
+        logger->error("CameraPose NodeId not set");
+        return UA_STATUSCODE_BADNOTFOUND;
+    }
+
+    UA_StatusCode ret = UA_STATUSCODE_GOOD;
 
     return ret;
 }

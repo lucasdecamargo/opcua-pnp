@@ -931,3 +931,8 @@ std::future<UA_StatusCode> SkillClient::getFinalResultData(const UA_String& resu
         return readVariable(finalResultDataId, data);
     });
 }
+
+const UA_NodeId SkillClient::getParameterSetNodeId()
+{
+    return parameterSetNodeId;
+}

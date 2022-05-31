@@ -98,8 +98,17 @@ int main(int argc, char* argv[])
         if(ret != UA_STATUSCODE_GOOD)
             throw std::runtime_error("Cannot intialize async client. STATUSCODE: " +
                 std::string(UA_StatusCode_name(ret)));
-        
-        uaClient->addEventSubscription();
+
+        ret = uaClient->getNodeIds();
+        if(ret != UA_STATUSCODE_GOOD)
+            throw std::runtime_error("Cannot get node ids. STATUSCODE: " +
+                std::string(UA_StatusCode_name(ret)));
+
+        UA_CameraInfoDataType camInfo;
+        ret = uaClient->readCameraInfoNode(&camInfo);
+        if(ret != UA_STATUSCODE_GOOD)
+            throw std::runtime_error("Cannot read camera info node. STATUSCODE: " +
+                std::string(UA_StatusCode_name(ret)));
 
         cv::namedWindow("ImagePNG", cv::WindowFlags::WINDOW_AUTOSIZE);
 

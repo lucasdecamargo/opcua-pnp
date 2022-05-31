@@ -49,6 +49,36 @@ namespace Camera
     public static partial class Methods
     {
         /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Open = 15265;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Close Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Close = 15268;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Read = 15270;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Write Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Write = 15273;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_GetPosition = 15275;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_SetPosition Method.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_SetPosition = 15278;
+
+        /// <summary>
         /// The identifier for the CameraDeviceType_Lock_InitLock Method.
         /// </summary>
         public const uint CameraDeviceType_Lock_InitLock = 15083;
@@ -164,6 +194,11 @@ namespace Camera
     public static partial class Objects
     {
         /// <summary>
+        /// The identifier for the CameraNamespaceMetadata Object.
+        /// </summary>
+        public const uint CameraNamespaceMetadata = 15251;
+
+        /// <summary>
         /// The identifier for the PhotoSkillType_ParameterSet Object.
         /// </summary>
         public const uint PhotoSkillType_ParameterSet = 15068;
@@ -233,6 +268,121 @@ namespace Camera
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class Variables
     {
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceUri Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceUri = 15252;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceVersion Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceVersion = 15253;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespacePublicationDate Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespacePublicationDate = 15254;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_IsNamespaceSubset Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_IsNamespaceSubset = 15255;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticNodeIdTypes Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_StaticNodeIdTypes = 15256;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticNumericNodeIdRange Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_StaticNumericNodeIdRange = 15257;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticStringNodeIdPattern Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_StaticStringNodeIdPattern = 15258;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Size Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Size = 15260;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Writable Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Writable = 15261;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_UserWritable Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_UserWritable = 15262;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_OpenCount Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_OpenCount = 15263;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Open_InputArguments = 15266;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open_OutputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Open_OutputArguments = 15267;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Close_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Close_InputArguments = 15269;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Read_InputArguments = 15271;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read_OutputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Read_OutputArguments = 15272;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Write_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_Write_InputArguments = 15274;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_GetPosition_InputArguments = 15276;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments = 15277;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_SetPosition_InputArguments Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_NamespaceFile_SetPosition_InputArguments = 15279;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultRolePermissions Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_DefaultRolePermissions = 15281;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultUserRolePermissions Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_DefaultUserRolePermissions = 15282;
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultAccessRestrictions Variable.
+        /// </summary>
+        public const uint CameraNamespaceMetadata_DefaultAccessRestrictions = 15283;
+
         /// <summary>
         /// The identifier for the PhotoSkillType_CurrentState_Id Variable.
         /// </summary>
@@ -744,6 +894,36 @@ namespace Camera
     public static partial class MethodIds
     {
         /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Open = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_Open, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Close Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Close = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_Close, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Read = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_Read, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Write Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Write = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_Write, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_GetPosition = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_GetPosition, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_SetPosition Method.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_SetPosition = new ExpandedNodeId(Camera.Methods.CameraNamespaceMetadata_NamespaceFile_SetPosition, Camera.Namespaces.Camera);
+
+        /// <summary>
         /// The identifier for the CameraDeviceType_Lock_InitLock Method.
         /// </summary>
         public static readonly ExpandedNodeId CameraDeviceType_Lock_InitLock = new ExpandedNodeId(Camera.Methods.CameraDeviceType_Lock_InitLock, Camera.Namespaces.Camera);
@@ -859,6 +1039,11 @@ namespace Camera
     public static partial class ObjectIds
     {
         /// <summary>
+        /// The identifier for the CameraNamespaceMetadata Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata = new ExpandedNodeId(Camera.Objects.CameraNamespaceMetadata, Camera.Namespaces.Camera);
+
+        /// <summary>
         /// The identifier for the PhotoSkillType_ParameterSet Object.
         /// </summary>
         public static readonly ExpandedNodeId PhotoSkillType_ParameterSet = new ExpandedNodeId(Camera.Objects.PhotoSkillType_ParameterSet, Camera.Namespaces.Camera);
@@ -928,6 +1113,121 @@ namespace Camera
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     public static partial class VariableIds
     {
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceUri Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceUri = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceUri, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceVersion Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceVersion = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceVersion, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespacePublicationDate Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespacePublicationDate = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespacePublicationDate, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_IsNamespaceSubset Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_IsNamespaceSubset = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_IsNamespaceSubset, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticNodeIdTypes Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_StaticNodeIdTypes = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_StaticNodeIdTypes, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticNumericNodeIdRange Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_StaticNumericNodeIdRange = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_StaticNumericNodeIdRange, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_StaticStringNodeIdPattern Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_StaticStringNodeIdPattern = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_StaticStringNodeIdPattern, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Size Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Size = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Size, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Writable Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Writable = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Writable, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_UserWritable Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_UserWritable = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_UserWritable, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_OpenCount Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_OpenCount = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_OpenCount, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Open_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Open_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Open_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Open_OutputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Open_OutputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Close_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Close_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Close_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Read_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Read_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Read_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Read_OutputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Read_OutputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_Write_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_Write_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_Write_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_GetPosition_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_GetPosition_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_GetPosition_OutputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_NamespaceFile_SetPosition_InputArguments Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_NamespaceFile_SetPosition_InputArguments = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_NamespaceFile_SetPosition_InputArguments, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultRolePermissions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_DefaultRolePermissions = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_DefaultRolePermissions, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultUserRolePermissions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_DefaultUserRolePermissions = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_DefaultUserRolePermissions, Camera.Namespaces.Camera);
+
+        /// <summary>
+        /// The identifier for the CameraNamespaceMetadata_DefaultAccessRestrictions Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CameraNamespaceMetadata_DefaultAccessRestrictions = new ExpandedNodeId(Camera.Variables.CameraNamespaceMetadata_DefaultAccessRestrictions, Camera.Namespaces.Camera);
+
         /// <summary>
         /// The identifier for the PhotoSkillType_CurrentState_Id Variable.
         /// </summary>
@@ -1446,6 +1746,11 @@ namespace Camera
         /// The BrowseName for the CameraDeviceType component.
         /// </summary>
         public const string CameraDeviceType = "CameraDeviceType";
+
+        /// <summary>
+        /// The BrowseName for the CameraNamespaceMetadata component.
+        /// </summary>
+        public const string CameraNamespaceMetadata = "https://pnp.org/UA/Camera/";
 
         /// <summary>
         /// The BrowseName for the ImagePNG component.

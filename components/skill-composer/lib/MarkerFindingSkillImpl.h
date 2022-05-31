@@ -38,21 +38,56 @@ public:
     bool reset() override;
 
 protected:
-    typedef struct
+    struct CameraData
     {
-        std::shared_ptr<RegisteredComponent> camera;
+        std::shared_ptr<RegisteredSkill> photoSkill;
         UA_PoseDataType pose;
+        UA_CameraInfoDataType camInfo;
         UA_ImagePNG photo;
         std::vector<UA_MarkerDataType> markers;
-    } CameraData;
-    
-    std::vector<std::shared_ptr<RegisteredSkill>> 
-    findRegisteredSKillByName(const std::string name);
 
-    std::vector<CameraData>
+        CameraData()
+        {
+            UA_CameraInfoDataType_init(&camInfo);
+            camInfo.cameraMatrixSize = 0;
+            camInfo.distortionCoefficientsSize = 0;
+            camInfo.cameraMatrix = NULL;
+            camInfo.distortionCoefficients = NULL;
+
+            UA_PoseDataType_init(&pose);
+            pose.position.x = NAN;
+            pose.position.y = NAN;
+            pose.position.z = NAN;
+            pose.rotation.r = NAN;
+            pose.rotation.p = NAN;
+            pose.rotation.y = NAN;
+
+            UA_ImagePNG_init(&photo);
+            photo.length = 0;
+            photo.data = NULL;
+        }
+
+        ~CameraData()
+        {
+            UA_CameraInfoDataType_clear(&camInfo);
+            UA_ImagePNG_clear(&photo);
+        }
+    };
+
+    std::vector<std::shared_ptr<CameraData>>
     getCameraData(const std::vector<std::shared_ptr<RegisteredSkill>>& photoSkills);
 
+    UA_NodeId getCameraParameterSetNodeId(std::shared_ptr<RegisteredSkill>& photoSkill);
     
+    std::map<std::string, UA_NodeId> 
+    getCameraParametersNodeIds(std::shared_ptr<RegisteredSkill>& photoSkill);
+
+
+    UA_StatusCode readImagePNG(UA_Client* client, UA_NodeId& imageNodeId, UA_ImagePNG *image); 
+    UA_StatusCode readCameraInfo(UA_Client* client, UA_NodeId& cameraInfoNodeId, 
+                                 UA_CameraInfoDataType *data); 
+    UA_StatusCode readCameraPose(UA_Client* client, UA_NodeId& cameraPoseNodeId, 
+                                 UA_PoseDataType *data);
 };
 
 #endif
