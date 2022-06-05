@@ -19,10 +19,15 @@ public:
     
     virtual ~ComponentClient();
 
-    virtual getNodeIds() = 0;
+    bool connect();
+    void disconnect();
+
+    virtual UA_StatusCode getNodeIds() = 0;
 
 protected:
+    std::shared_ptr<spdlog::logger> logger
     const std::shared_ptr<RegisteredSkill> skill;
+    static const UA_DataTypeArray customDataTypes;
 };
 
 class CameraClient : public ComponentClient
@@ -31,10 +36,9 @@ public:
     explicit CameraClient(std::shared_ptr<spdlog::logger> logger,
                              const std::shared_ptr<RegisteredSkill> skill);
     
-    virtual ~ComponentClient();
+    virtual UA_StatusCode getNodeIds() override;
 
-    virtual getNodeIds() override;
-
+    UA_StatusCode readImageNode(UA_ImagePNG* data);
     UA_StatusCode readCameraInfoNode(UA_CameraInfoDataType* data);
     UA_StatusCode readCameraPoseNode(UA_PoseDataType* data);
 };
