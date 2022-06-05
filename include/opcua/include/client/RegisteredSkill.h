@@ -71,7 +71,9 @@ public:
     std::future<bool> execute(
             std::shared_ptr<spdlog::logger>& loggerApp,
             std::shared_ptr<spdlog::logger>& loggerOpcua,
-            const std::vector<std::shared_ptr<SkillParameter>>& parameters
+            const std::vector<std::shared_ptr<SkillParameter>>& parameters,
+            const bool autoDisconnect = true,
+            const UA_DataTypeArray* customDataTypes = NULL
     );
 
     std::future<UA_StatusCode> getFinalResultData(std::shared_ptr<spdlog::logger>& logger, const UA_String& resultData, UA_Variant *data);

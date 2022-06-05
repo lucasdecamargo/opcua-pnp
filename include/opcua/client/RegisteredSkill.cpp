@@ -92,7 +92,9 @@ RegisteredSkill::~RegisteredSkill() {
 std::future<bool> RegisteredSkill::execute(
         std::shared_ptr<spdlog::logger>& loggerApp,
         std::shared_ptr<spdlog::logger>& loggerOpcua,
-        const std::vector<std::shared_ptr<SkillParameter>>& parameters) {
+        const std::vector<std::shared_ptr<SkillParameter>>& parameters,
+        const bool autoDisconnect,
+        const UA_DataTypeArray* customDataTypes) {
 
     if (!skillClient) {
         UA_Client *uaClient = pnp::opcua::UA_Helper_getClientForEndpoint(
@@ -103,6 +105,9 @@ std::future<bool> RegisteredSkill::execute(
                 clientAppUri,
                 clientAppName
         );
+
+        if(customDataTypes != NULL)
+            UA_Client_getConfig(client)->customDataTypes = customDataTypes;
 
         skillClient = new GenericSkillClient(loggerApp, loggerOpcua, this->parentComponent->endpointUrl, this->skillNodeId, uaClient, "", "", false);
     }
@@ -156,7 +161,9 @@ std::future<bool> RegisteredSkill::execute(
             skillClient->stopThreaded();
             return false;
         }
-        skillClient->stopThreaded();
+        if(autoDisconnect)
+            skillClient->stopThreaded();
+
         return true;
     });
 }
