@@ -119,8 +119,8 @@ bool MarkerDetectionSkillImpl::start(
 
         std::vector<aruco::Marker> markers = marker_detector.detect(cv_img);
 
-        if(markers.empty())
-            return this->detectionFinished();
+        // if(markers.empty())
+        //     return this->detectionFinished();
 
         std::map<int, UA_MarkerDataType> outMarkers;
         for(auto &m: markers)

@@ -91,8 +91,8 @@ int main(int argc, char* argv[])
         pnp::log::LoggerFactory::setLoggerLevel(loggerUa, settings["logging"]["level"]["opcua"]);
 
         // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/video_ex.mp4");
-        std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/image.png");
-        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>(1,cv::CAP_GSTREAMER);
+        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/markers.jpg");
+        std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>(0);
         // device->set(CameraDeviceProperties::CAP_PROP_FORMAT, CameraDeviceEncoders::BMP);
         device->open();
 

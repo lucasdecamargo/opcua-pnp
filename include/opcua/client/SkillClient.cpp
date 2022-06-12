@@ -865,7 +865,7 @@ UA_StatusCode SkillClient::writeParameter() {
         for (std::vector<SkillClientParameter*>::iterator it = parameter.begin() ; it != parameter.end(); ++it) {
             size_t idx = it - parameter.begin();
             SkillClientParameter *param = (*it);
-            if (wResp.results[idx] != UA_STATUSCODE_GOOD) {
+            if (wResp.results[idx] != UA_STATUSCODE_GOOD && wResp.results[idx] != UA_STATUSCODE_BADNOTWRITABLE) {
                 response = wResp.results[idx];
                 logger->error("Failed to write parameter {}. {}", param->name, UA_StatusCode_name(response));
             }

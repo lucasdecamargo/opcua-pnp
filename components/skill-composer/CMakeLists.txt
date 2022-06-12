@@ -91,7 +91,7 @@ add_library(${PROJECT_NAME}-lib
     ${UA_TYPES_SKILL_COMPOSER_SOURCES}
     src/SkillComposer.cpp
     src/MarkerFindingSkillImpl.cpp
-    src/CameraClient.cpp
+    src/ComponentClient.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}-lib

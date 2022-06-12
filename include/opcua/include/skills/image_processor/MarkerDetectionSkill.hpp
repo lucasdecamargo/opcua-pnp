@@ -214,16 +214,20 @@ namespace pnp
                         UA_Variant v_markers;
                         UA_Variant_init(&v_markers);
 
-                        UA_Variant_setArray(
-                            &v_markers,
-                            paramDetectedMarkers.value.data(),
-                            paramDetectedMarkers.value.size(),
-                            &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]
-                        );
-
-                        UA_UInt32 arrayDimension = paramDetectedMarkers.value.size();
-                        v_markers.arrayDimensions = &arrayDimension;
-                        v_markers.arrayDimensionsSize = 1;
+                        if(paramDetectedMarkers.value.size() > 0)
+                        {
+                            UA_Variant_setArray(
+                                &v_markers,
+                                paramDetectedMarkers.value.data(),
+                                paramDetectedMarkers.value.size(),
+                                &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]
+                            );
+                        }
+                        else
+                        {
+                            v_markers.type = &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE];
+                            v_markers.data = NULL;
+                        }
 
                         {
                             LockedServer ls = server->getLocked();

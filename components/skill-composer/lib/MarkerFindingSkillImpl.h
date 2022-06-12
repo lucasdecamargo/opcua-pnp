@@ -3,6 +3,7 @@
 
 #include <OpcUaServer.h>
 #include <skills/skill_composer/MarkerFindingSkill.hpp>
+#include <ComponentClient.h>
 
 #include <client/SkillDetector.h>
 #include <client/RegisteredComponent.h>
@@ -40,7 +41,7 @@ public:
 protected:
     struct CameraData
     {
-        std::shared_ptr<RegisteredSkill> photoSkill;
+        std::shared_ptr<CameraClient> cameraClient;
         UA_PoseDataType pose;
         UA_CameraInfoDataType camInfo;
         UA_ImagePNG photo;
@@ -76,6 +77,8 @@ protected:
 
     std::vector<std::shared_ptr<CameraData>>
     getCameraData(const std::vector<std::shared_ptr<RegisteredSkill>>& photoSkills);
+
+    void detectMarkers(std::shared_ptr<RegisteredSkill> markerDetectionSkill, std::vector<std::shared_ptr<CameraData>> cameraData);
 
     UA_NodeId getCameraParameterSetNodeId(std::shared_ptr<RegisteredSkill>& photoSkill);
     

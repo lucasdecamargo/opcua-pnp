@@ -106,10 +106,10 @@ std::future<bool> RegisteredSkill::execute(
                 clientAppName
         );
 
-        if(customDataTypes != NULL)
-            UA_Client_getConfig(client)->customDataTypes = customDataTypes;
-
         skillClient = new GenericSkillClient(loggerApp, loggerOpcua, this->parentComponent->endpointUrl, this->skillNodeId, uaClient, "", "", false);
+        
+        if(customDataTypes != NULL)
+            UA_Client_getConfig(uaClient)->customDataTypes = customDataTypes;
     }
 
     std::promise<bool> promiseMoveFinished;
@@ -147,7 +147,7 @@ std::future<bool> RegisteredSkill::execute(
         skillClient->stopThreaded();
         return pnp::opcua::setPromiseErrorException<bool>(&promiseMoveFinished, retval);
     }
-    return std::async([this, loggerApp]() {
+    return std::async([this, loggerApp, autoDisconnect]() {
         pnp::opcua::ProgramStateNumber newState = skillClient->getNextState().get();
         if (newState != pnp::opcua::ProgramStateNumber::RUNNING) {
             loggerApp->error("Did not change to expected Running state.");

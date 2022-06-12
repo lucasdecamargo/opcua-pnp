@@ -98,7 +98,7 @@
       <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15068</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=15071" BrowseName="1:OutputImage" ParentNodeId="ns=1;i=15068" DataType="i=2003">
+  <UAVariable NodeId="ns=1;i=15071" BrowseName="1:OutputImage" ParentNodeId="ns=1;i=15068" DataType="i=2003" ValueRank="-1">
     <DisplayName>OutputImage</DisplayName>
     <Description>Contains the data of the output image with drawn markers</Description>
     <References>

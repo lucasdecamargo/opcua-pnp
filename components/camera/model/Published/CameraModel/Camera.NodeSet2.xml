@@ -294,7 +294,7 @@
       <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15139</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="ns=1;i=15250" BrowseName="1:ImagePNG" ParentNodeId="ns=1;i=15139" DataType="i=2003">
+  <UAVariable NodeId="ns=1;i=15250" BrowseName="1:ImagePNG" ParentNodeId="ns=1;i=15139" DataType="i=2003" ValueRank="-1">
     <DisplayName>ImagePNG</DisplayName>
     <Description>Contains the data of the last image frame taken in PNG format</Description>
     <References>
