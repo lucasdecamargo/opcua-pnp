@@ -42,9 +42,7 @@
                 </Variable>
                 
                 <!-- Output parameters -->
-                <Variable SymbolicName="IMAGEPROCESSOR:DetectedMarkersArray" DataType="PNPTYPES:MarkerDataType" ValueRank="Array" AccessLevel="Read">
-                    <Description>Array of detected fiducial markers</Description>
-                </Variable> 
+                <Variable SymbolicName="IMAGEPROCESSOR:DetectedMarkersArray" DataType="PNPTYPES:MarkerListDataType" VariableType="PNPTYPES:MarkerListVariableType" AccessLevel="Read"/> 
 
                 <Variable SymbolicName="IMAGEPROCESSOR:OutputImage" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:ImagePNG" ModellingRule="Mandatory" AccessLevel="Read" ValueRank="Scalar">
                     <Description>Contains the data of the output image with drawn markers</Description>

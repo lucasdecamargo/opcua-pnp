@@ -125,29 +125,22 @@ void MarkerFindingSkillImpl::detectMarkers(std::shared_ptr<RegisteredSkill> mark
     {
         logger->trace("Executing MarkerDetectionSkill");
         if(!imageProcessorClient.execute(&c->photo, &c->camInfo, false).get())
+        {
             logger->error("Could not execute MarkerDetectionSkill on endpoint "
                 + imageProcessorClient.getParentComponent()->endpointUrl);
+        }
 
-        UA_MarkerDataType* markers = NULL;
-        size_t size = 0;
 
-        // if(!imageProcessorClient.connect()
-        //     || !imageProcessorClient.ensureConnected())
-        // {
-        //     logger->error("Could not get connect to ImageProcessor endpoint: " 
-        //         + imageProcessorClient.getParentComponent()->endpointUrl);
-        //     continue;
-        // }
-
-        logger->trace("Reading detected markers");
-        imageProcessorClient.readDetectedMarkersArrayNode(markers, size);
-
-        logger->trace("Setting up marker vector");
-        for(size_t i = 0; i < size; i++)
-            c->markers.push_back(markers[i]);
+        imageProcessorClient.readDetectedMarkersArrayNode(c->markers);
         
-        if(markers != NULL)
-            UA_free(markers);
+        // Only for debbuging purpouses
+        for(auto &m: c->markers)
+        {
+            UA_MarkerDataType marker = m;
+            int id = marker.id;
+        }
+
+        continue;
     }
 }
 

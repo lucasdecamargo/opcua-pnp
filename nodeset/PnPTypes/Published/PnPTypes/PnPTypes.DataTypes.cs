@@ -1060,6 +1060,237 @@ namespace PnPTypes
     #endif
     #endregion
 
+    #region MarkerListDataType Class
+    #if (!OPCUA_EXCLUDE_MarkerListDataType)
+    /// <summary>
+    /// Contains the elements representing a Fiducial Marker
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = PnPTypes.Namespaces.PnPTypesXsd)]
+    public partial class MarkerListDataType : IEncodeable
+    {
+        #region Constructors
+        /// <summary>
+        /// The default constructor.
+        /// </summary>
+        public MarkerListDataType()
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Called by the .NET framework during deserialization.
+        /// </summary>
+        [OnDeserializing]
+        private void Initialize(StreamingContext context)
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Sets private members to default values.
+        /// </summary>
+        private void Initialize()
+        {
+            m_markers = new MarkerDataTypeCollection();
+        }
+        #endregion
+
+        #region Public Properties
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember(Name = "Markers", IsRequired = false, Order = 1)]
+        public MarkerDataTypeCollection Markers
+        {
+            get
+            {
+                return m_markers;
+            }
+
+            set
+            {
+                m_markers = value;
+
+                if (value == null)
+                {
+                    m_markers = new MarkerDataTypeCollection();
+                }
+            }
+        }
+        #endregion
+
+        #region IEncodeable Members
+        /// <summary cref="IEncodeable.TypeId" />
+        public virtual ExpandedNodeId TypeId
+        {
+            get { return DataTypeIds.MarkerListDataType; }
+        }
+
+        /// <summary cref="IEncodeable.BinaryEncodingId" />
+        public virtual ExpandedNodeId BinaryEncodingId
+        {
+            get { return ObjectIds.MarkerListDataType_Encoding_DefaultBinary; }
+        }
+
+        /// <summary cref="IEncodeable.XmlEncodingId" />
+        public virtual ExpandedNodeId XmlEncodingId
+        {
+            get { return ObjectIds.MarkerListDataType_Encoding_DefaultXml; }
+        }
+
+        /// <summary cref="IEncodeable.Encode(IEncoder)" />
+        public virtual void Encode(IEncoder encoder)
+        {
+            encoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            encoder.WriteEncodeableArray("Markers", Markers.ToArray(), typeof(MarkerDataType));
+
+            encoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.Decode(IDecoder)" />
+        public virtual void Decode(IDecoder decoder)
+        {
+            decoder.PushNamespace(PnPTypes.Namespaces.PnPTypesXsd);
+
+            Markers = (MarkerDataTypeCollection)decoder.ReadEncodeableArray("Markers", typeof(MarkerDataType));
+
+            decoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
+        public virtual bool IsEqual(IEncodeable encodeable)
+        {
+            if (Object.ReferenceEquals(this, encodeable))
+            {
+                return true;
+            }
+
+            MarkerListDataType value = encodeable as MarkerListDataType;
+
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (!Utils.IsEqual(m_markers, value.m_markers)) return false;
+
+            return true;
+        }
+
+        #if !NET_STANDARD
+        /// <summary cref="ICloneable.Clone" />
+        public virtual object Clone()
+        {
+            return (MarkerListDataType)this.MemberwiseClone();
+        }
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            MarkerListDataType clone = (MarkerListDataType)base.MemberwiseClone();
+
+            clone.m_markers = (MarkerDataTypeCollection)Utils.Clone(this.m_markers);
+
+            return clone;
+        }
+        #endregion
+
+        #region Private Fields
+        private MarkerDataTypeCollection m_markers;
+        #endregion
+    }
+
+    #region MarkerListDataTypeCollection Class
+    /// <summary>
+    /// A collection of MarkerListDataType objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfMarkerListDataType", Namespace = PnPTypes.Namespaces.PnPTypesXsd, ItemName = "MarkerListDataType")]
+    #if !NET_STANDARD
+    public partial class MarkerListDataTypeCollection : List<MarkerListDataType>, ICloneable
+    #else
+    public partial class MarkerListDataTypeCollection : List<MarkerListDataType>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public MarkerListDataTypeCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public MarkerListDataTypeCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public MarkerListDataTypeCollection(IEnumerable<MarkerListDataType> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator MarkerListDataTypeCollection(MarkerListDataType[] values)
+        {
+            if (values != null)
+            {
+                return new MarkerListDataTypeCollection(values);
+            }
+
+            return new MarkerListDataTypeCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator MarkerListDataType[](MarkerListDataTypeCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (MarkerListDataTypeCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            MarkerListDataTypeCollection clone = new MarkerListDataTypeCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((MarkerListDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
     #region CameraInfoDataType Class
     #if (!OPCUA_EXCLUDE_CameraInfoDataType)
     /// <summary>

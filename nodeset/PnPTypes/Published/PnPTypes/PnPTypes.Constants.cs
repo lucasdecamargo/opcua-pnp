@@ -68,6 +68,11 @@ namespace PnPTypes
         public const uint MarkerDataType = 15001;
 
         /// <summary>
+        /// The identifier for the MarkerListDataType DataType.
+        /// </summary>
+        public const uint MarkerListDataType = 15095;
+
+        /// <summary>
         /// The identifier for the CameraInfoDataType DataType.
         /// </summary>
         public const uint CameraInfoDataType = 15053;
@@ -153,6 +158,11 @@ namespace PnPTypes
         public const uint MarkerDataType_Encoding_DefaultBinary = 15002;
 
         /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public const uint MarkerListDataType_Encoding_DefaultBinary = 15097;
+
+        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public const uint CameraInfoDataType_Encoding_DefaultBinary = 15054;
@@ -178,6 +188,11 @@ namespace PnPTypes
         public const uint MarkerDataType_Encoding_DefaultXml = 15009;
 
         /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public const uint MarkerListDataType_Encoding_DefaultXml = 15101;
+
+        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultXml Object.
         /// </summary>
         public const uint CameraInfoDataType_Encoding_DefaultXml = 15058;
@@ -201,6 +216,11 @@ namespace PnPTypes
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
         /// </summary>
         public const uint MarkerDataType_Encoding_DefaultJson = 15052;
+
+        /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public const uint MarkerListDataType_Encoding_DefaultJson = 15105;
 
         /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultJson Object.
@@ -388,6 +408,11 @@ namespace PnPTypes
         public const uint PnPTypes_BinarySchema_MarkerDataType = 15006;
 
         /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_MarkerListDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_BinarySchema_MarkerListDataType = 15098;
+
+        /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_CameraInfoDataType Variable.
         /// </summary>
         public const uint PnPTypes_BinarySchema_CameraInfoDataType = 15055;
@@ -428,9 +453,29 @@ namespace PnPTypes
         public const uint PnPTypes_XmlSchema_MarkerDataType = 15010;
 
         /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_MarkerListDataType Variable.
+        /// </summary>
+        public const uint PnPTypes_XmlSchema_MarkerListDataType = 15102;
+
+        /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_CameraInfoDataType Variable.
         /// </summary>
         public const uint PnPTypes_XmlSchema_CameraInfoDataType = 15059;
+    }
+    #endregion
+
+    #region VariableType Identifiers
+    /// <summary>
+    /// A class that declares constants for all VariableTypes in the Model Design.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class VariableTypes
+    {
+        /// <summary>
+        /// The identifier for the MarkerListVariableType VariableType.
+        /// </summary>
+        public const uint MarkerListVariableType = 15096;
     }
     #endregion
 
@@ -461,6 +506,11 @@ namespace PnPTypes
         /// The identifier for the MarkerDataType DataType.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType = new ExpandedNodeId(PnPTypes.DataTypes.MarkerDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the MarkerListDataType DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerListDataType = new ExpandedNodeId(PnPTypes.DataTypes.MarkerListDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the CameraInfoDataType DataType.
@@ -548,6 +598,11 @@ namespace PnPTypes
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerListDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.MarkerListDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public static readonly ExpandedNodeId CameraInfoDataType_Encoding_DefaultBinary = new ExpandedNodeId(PnPTypes.Objects.CameraInfoDataType_Encoding_DefaultBinary, PnPTypes.Namespaces.PnPTypes);
@@ -573,6 +628,11 @@ namespace PnPTypes
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerListDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.MarkerListDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultXml Object.
         /// </summary>
         public static readonly ExpandedNodeId CameraInfoDataType_Encoding_DefaultXml = new ExpandedNodeId(PnPTypes.Objects.CameraInfoDataType_Encoding_DefaultXml, PnPTypes.Namespaces.PnPTypes);
@@ -596,6 +656,11 @@ namespace PnPTypes
         /// The identifier for the MarkerDataType_Encoding_DefaultJson Object.
         /// </summary>
         public static readonly ExpandedNodeId MarkerDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.MarkerDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
+        /// The identifier for the MarkerListDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerListDataType_Encoding_DefaultJson = new ExpandedNodeId(PnPTypes.Objects.MarkerListDataType_Encoding_DefaultJson, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
         /// The identifier for the CameraInfoDataType_Encoding_DefaultJson Object.
@@ -783,6 +848,11 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_MarkerDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_MarkerDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the PnPTypes_BinarySchema_MarkerListDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_BinarySchema_MarkerListDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_MarkerListDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the PnPTypes_BinarySchema_CameraInfoDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_BinarySchema_CameraInfoDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_BinarySchema_CameraInfoDataType, PnPTypes.Namespaces.PnPTypes);
@@ -823,9 +893,29 @@ namespace PnPTypes
         public static readonly ExpandedNodeId PnPTypes_XmlSchema_MarkerDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_MarkerDataType, PnPTypes.Namespaces.PnPTypes);
 
         /// <summary>
+        /// The identifier for the PnPTypes_XmlSchema_MarkerListDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId PnPTypes_XmlSchema_MarkerListDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_MarkerListDataType, PnPTypes.Namespaces.PnPTypes);
+
+        /// <summary>
         /// The identifier for the PnPTypes_XmlSchema_CameraInfoDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId PnPTypes_XmlSchema_CameraInfoDataType = new ExpandedNodeId(PnPTypes.Variables.PnPTypes_XmlSchema_CameraInfoDataType, PnPTypes.Namespaces.PnPTypes);
+    }
+    #endregion
+
+    #region VariableType Node Identifiers
+    /// <summary>
+    /// A class that declares constants for all VariableTypes in the Model Design.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public static partial class VariableTypeIds
+    {
+        /// <summary>
+        /// The identifier for the MarkerListVariableType VariableType.
+        /// </summary>
+        public static readonly ExpandedNodeId MarkerListVariableType = new ExpandedNodeId(PnPTypes.VariableTypes.MarkerListVariableType, PnPTypes.Namespaces.PnPTypes);
     }
     #endregion
 
@@ -850,6 +940,16 @@ namespace PnPTypes
         /// The BrowseName for the MarkerDataType component.
         /// </summary>
         public const string MarkerDataType = "MarkerDataType";
+
+        /// <summary>
+        /// The BrowseName for the MarkerListDataType component.
+        /// </summary>
+        public const string MarkerListDataType = "MarkerListDataType";
+
+        /// <summary>
+        /// The BrowseName for the MarkerListVariableType component.
+        /// </summary>
+        public const string MarkerListVariableType = "MarkerListVariableType";
 
         /// <summary>
         /// The BrowseName for the PnPTypes_BinarySchema component.

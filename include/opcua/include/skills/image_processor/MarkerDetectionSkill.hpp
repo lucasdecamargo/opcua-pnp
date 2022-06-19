@@ -138,7 +138,7 @@ namespace pnp
                                         UA_Server_getObjectComponentId(server, *parameterSetNodeId,
                                             UA_QUALIFIEDNAME(static_cast<UA_UInt16>(nsImageProcessorId),
                                             const_cast<char*>("InputImage")))),
-                        paramDetectedMarkers(&UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE],
+                        paramDetectedMarkers(&UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERLISTDATATYPE],
                                         "DetectedMarkersArray",
                                         UA_Server_getObjectComponentId(server, *parameterSetNodeId,
                                             UA_QUALIFIEDNAME(static_cast<UA_UInt16>(nsImageProcessorId),
@@ -213,21 +213,18 @@ namespace pnp
                         logger->trace("Setting detected markers");
                         UA_Variant v_markers;
                         UA_Variant_init(&v_markers);
+                        
+                        UA_MarkerListDataType m_list;
+                        m_list.markers = NULL;
+                        m_list.markersSize = 0;
 
                         if(paramDetectedMarkers.value.size() > 0)
                         {
-                            UA_Variant_setArray(
-                                &v_markers,
-                                paramDetectedMarkers.value.data(),
-                                paramDetectedMarkers.value.size(),
-                                &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]
-                            );
+                            m_list.markersSize = paramDetectedMarkers.value.size();
+                            m_list.markers = paramDetectedMarkers.value.data();
                         }
-                        else
-                        {
-                            v_markers.type = &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE];
-                            v_markers.data = NULL;
-                        }
+
+                        UA_Variant_setScalar(&v_markers, &m_list, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERLISTDATATYPE]);
 
                         {
                             LockedServer ls = server->getLocked();

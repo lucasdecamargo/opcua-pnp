@@ -117,6 +117,18 @@
     </Fields>
 </DataType>
 
+<DataType SymbolicName="PNPTYPES:MarkerListDataType" BaseType="OpcUa:Structure" IsAbstract="false">
+    <Description>Contains the elements representing a Fiducial Marker</Description>
+
+    <Fields>
+        <Field Name="Markers" DataType="PNPTYPES:MarkerDataType" ValueRank="Array"/>
+    </Fields>
+</DataType>
+
+<VariableType SymbolicName="PNPTYPES:MarkerListVariableType" DataType="PNPTYPES:MarkerListDataType" BaseType="OpcUa:BaseDataVariableType" >
+    <Description>List of fiducial markers</Description>
+</VariableType>
+
 
 <DataType SymbolicName="PNPTYPES:CameraInfoDataType" BaseType="OpcUa:Structure" IsAbstract="false">
     <Description>Contains the definition of camera callibration parameters</Description>

@@ -115,11 +115,10 @@ namespace ImageProcessor
            "dGlvbiBjb2VmZmljaWVudHMgYW5kIG1hdHJpeCBvZiB0aGUgY2FtZXJhIHVzZWQgdG8gdGFrZSB0aGUg" +
            "aW1hZ2UgcGhvdG8ALwA/3ToAAAEEzTr/////AwP/////AAAAADVgiQoCAAAAAQAKAAAASW5wdXRJbWFn" +
            "ZQEB3joDAAAAADQAAABDb250YWlucyB0aGUgZGF0YSBvZiB0aGUgaW5wdXQgaW1hZ2UgdG8gYmUgcHJv" +
-           "Y2Vzc2VkAC8AP946AAAAD/////8DA/////8AAAAAN2CJCgIAAAABABQAAABEZXRlY3RlZE1hcmtlcnNB" +
-           "cnJheQEB4DoDAAAAACIAAABBcnJheSBvZiBkZXRlY3RlZCBmaWR1Y2lhbCBtYXJrZXJzAC8AP+A6AAAB" +
-           "BJk6AQAAAAEAAAAAAAAAAQH/////AAAAADVgiQoCAAAAAQALAAAAT3V0cHV0SW1hZ2UBAd86AwAAAAA4" +
-           "AAAAQ29udGFpbnMgdGhlIGRhdGEgb2YgdGhlIG91dHB1dCBpbWFnZSB3aXRoIGRyYXduIG1hcmtlcnMA" +
-           "LwA/3zoAAAEA0wf/////AQH/////AAAAAA==";
+           "Y2Vzc2VkAC8AP946AAAAD/////8DA/////8AAAAAFWCJCgIAAAABABQAAABEZXRlY3RlZE1hcmtlcnNB" +
+           "cnJheQEB4DoALwA/4DoAAAEE9zr/////AQH/////AAAAADVgiQoCAAAAAQALAAAAT3V0cHV0SW1hZ2UB" +
+           "Ad86AwAAAAA4AAAAQ29udGFpbnMgdGhlIGRhdGEgb2YgdGhlIG91dHB1dCBpbWFnZSB3aXRoIGRyYXdu" +
+           "IG1hcmtlcnMALwA/3zoAAAEA0wf/////AQH/////AAAAAA==";
         #endregion
         #endif
         #endregion

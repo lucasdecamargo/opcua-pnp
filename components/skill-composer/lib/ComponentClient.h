@@ -73,7 +73,7 @@ public:
                               const UA_CameraInfoDataType* cameraInfo,
                               const bool autoDisconnect = false);
 
-    UA_StatusCode readDetectedMarkersArrayNode(UA_MarkerDataType* data, size_t& size);
+    UA_StatusCode readDetectedMarkersArrayNode(std::vector<UA_MarkerDataType>& data);
     UA_StatusCode readOutputImageNode(UA_ImagePNG* data);
 
 protected:

@@ -40,6 +40,12 @@
     <opc:Field Name="Position" TypeName="tns:PositionDataType" />
   </opc:StructuredType>
 
+  <opc:StructuredType Name="MarkerListDataType" BaseType="ua:ExtensionObject">
+    <opc:Documentation>Contains the elements representing a Fiducial Marker</opc:Documentation>
+    <opc:Field Name="NoOfMarkers" TypeName="opc:Int32" />
+    <opc:Field Name="Markers" TypeName="tns:MarkerDataType" LengthField="NoOfMarkers" />
+  </opc:StructuredType>
+
   <opc:StructuredType Name="CameraInfoDataType" BaseType="ua:ExtensionObject">
     <opc:Documentation>Contains the definition of camera callibration parameters</opc:Documentation>
     <opc:Field Name="NoOfDistortionCoefficients" TypeName="opc:Int32" />

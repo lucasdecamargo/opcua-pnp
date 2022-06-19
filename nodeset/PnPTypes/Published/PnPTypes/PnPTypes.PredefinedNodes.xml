@@ -374,6 +374,43 @@
       <uax:Identifier>i=22</uax:Identifier>
     </uax:SuperTypeId>
   </MarkerDataType>
+  <MarkerListDataType xmlns="https://pnp.org/UA/PnPTypes/">
+    <uax:NodeClass>DataType_64</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15095</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>MarkerListDataType</uax:Name>
+    </uax:BrowseName>
+    <uax:Description>
+      <uax:Locale></uax:Locale>
+      <uax:Text>Contains the elements representing a Fiducial Marker</uax:Text>
+    </uax:Description>
+    <uax:SuperTypeId>
+      <uax:Identifier>i=22</uax:Identifier>
+    </uax:SuperTypeId>
+  </MarkerListDataType>
+  <MarkerListVariableType xmlns="https://pnp.org/UA/PnPTypes/">
+    <uax:NodeClass>VariableType_16</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15096</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
+      <uax:Name>MarkerListVariableType</uax:Name>
+    </uax:BrowseName>
+    <uax:Description>
+      <uax:Locale></uax:Locale>
+      <uax:Text>List of fiducial markers</uax:Text>
+    </uax:Description>
+    <uax:SuperTypeId>
+      <uax:Identifier>i=63</uax:Identifier>
+    </uax:SuperTypeId>
+    <uax:DataType>
+      <uax:Identifier>ns=1;i=15095</uax:Identifier>
+    </uax:DataType>
+  </MarkerListVariableType>
   <CameraInfoDataType xmlns="https://pnp.org/UA/PnPTypes/">
     <uax:NodeClass>DataType_64</uax:NodeClass>
     <uax:NodeId>
@@ -590,6 +627,39 @@
   <DefaultBinary xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>Object_1</uax:NodeClass>
     <uax:NodeId>
+      <uax:Identifier>ns=1;i=15097</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default Binary</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15097</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15095</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15098</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultBinary>
+  <DefaultBinary xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
       <uax:Identifier>ns=1;i=15054</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
@@ -673,17 +743,23 @@ cGM6RmllbGQgTmFtZT0iSWQiIFR5cGVOYW1lPSJvcGM6VUludDMyIiAvPg0KICAgIDxvcGM6Rmll
 bGQgTmFtZT0iU2l6ZSIgVHlwZU5hbWU9Im9wYzpGbG9hdCIgLz4NCiAgICA8b3BjOkZpZWxkIE5h
 bWU9IkRpY3Rpb25hcnkiIFR5cGVOYW1lPSJvcGM6U3RyaW5nIiAvPg0KICAgIDxvcGM6RmllbGQg
 TmFtZT0iUG9zaXRpb24iIFR5cGVOYW1lPSJ0bnM6UG9zaXRpb25EYXRhVHlwZSIgLz4NCiAgPC9v
-cGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJDYW1lcmFJ
-bmZvRGF0YVR5cGUiIEJhc2VUeXBlPSJ1YTpFeHRlbnNpb25PYmplY3QiPg0KICAgIDxvcGM6RG9j
-dW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEgY2FsbGlicmF0aW9u
-IHBhcmFtZXRlcnM8L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iTm9P
-ZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1lPSJvcGM6SW50MzIiIC8+DQogICAgPG9w
-YzpGaWVsZCBOYW1lPSJEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiBUeXBlTmFtZT0ib3BjOkRvdWJs
-ZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiAvPg0KICAgIDxvcGM6
-RmllbGQgTmFtZT0iTm9PZkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpJbnQzMiIgLz4NCiAg
-ICA8b3BjOkZpZWxkIE5hbWU9IkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpEb3VibGUiIExl
-bmd0aEZpZWxkPSJOb09mQ2FtZXJhTWF0cml4IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4N
-Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</uax:ByteString>
+cGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJNYXJrZXJM
+aXN0RGF0YVR5cGUiIEJhc2VUeXBlPSJ1YTpFeHRlbnNpb25PYmplY3QiPg0KICAgIDxvcGM6RG9j
+dW1lbnRhdGlvbj5Db250YWlucyB0aGUgZWxlbWVudHMgcmVwcmVzZW50aW5nIGEgRmlkdWNpYWwg
+TWFya2VyPC9vcGM6RG9jdW1lbnRhdGlvbj4NCiAgICA8b3BjOkZpZWxkIE5hbWU9Ik5vT2ZNYXJr
+ZXJzIiBUeXBlTmFtZT0ib3BjOkludDMyIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iTWFya2Vy
+cyIgVHlwZU5hbWU9InRuczpNYXJrZXJEYXRhVHlwZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZNYXJrZXJz
+IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KICA8b3BjOlN0cnVjdHVyZWRUeXBlIE5h
+bWU9IkNhbWVyYUluZm9EYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lvbk9iamVjdCI+DQog
+ICAgPG9wYzpEb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9uIG9mIGNhbWVyYSBj
+YWxsaWJyYXRpb24gcGFyYW1ldGVyczwvb3BjOkRvY3VtZW50YXRpb24+DQogICAgPG9wYzpGaWVs
+ZCBOYW1lPSJOb09mRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgVHlwZU5hbWU9Im9wYzpJbnQzMiIg
+Lz4NCiAgICA8b3BjOkZpZWxkIE5hbWU9IkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1l
+PSJvcGM6RG91YmxlIiBMZW5ndGhGaWVsZD0iTm9PZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIC8+
+DQogICAgPG9wYzpGaWVsZCBOYW1lPSJOb09mQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3BjOklu
+dDMyIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3Bj
+OkRvdWJsZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZDYW1lcmFNYXRyaXgiIC8+DQogIDwvb3BjOlN0cnVj
+dHVyZWRUeXBlPg0KDQo8L29wYzpUeXBlRGljdGlvbmFyeT4=</uax:ByteString>
       </uax:Value>
     </uax:Value>
     <uax:DataType>
@@ -871,6 +947,34 @@ Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</uax:ByteString>
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </MarkerDataType>
+    <MarkerListDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15098</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>MarkerListDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15098</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>MarkerListDataType</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </MarkerListDataType>
     <CameraInfoDataType>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
@@ -1035,6 +1139,39 @@ Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</uax:ByteString>
   <DefaultXml xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>Object_1</uax:NodeClass>
     <uax:NodeId>
+      <uax:Identifier>ns=1;i=15101</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default XML</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15101</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15095</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=39</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15102</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultXml>
+  <DefaultXml xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
       <uax:Identifier>ns=1;i=15058</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
@@ -1152,22 +1289,36 @@ cGU9InRuczpNYXJrZXJEYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRl
 ZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4
 VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mTWFya2VyRGF0YVR5cGUiIHR5cGU9InRu
 czpMaXN0T2ZNYXJrZXJEYXRhVHlwZSIgbmlsbGFibGU9InRydWUiPjwveHM6ZWxlbWVudD4NCg0K
-ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAgICA8eHM6YW5u
-b3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9u
-IG9mIGNhbWVyYSBjYWxsaWJyYXRpb24gcGFyYW1ldGVyczwveHM6ZG9jdW1lbnRhdGlvbj4NCiAg
-ICA8L3hzOmFubm90YXRpb24+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQg
-bmFtZT0iRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgdHlwZT0idWE6TGlzdE9mRG91YmxlIiBtaW5P
-Y2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iQ2Ft
-ZXJhTWF0cml4IiB0eXBlPSJ1YTpMaXN0T2ZEb3VibGUiIG1pbk9jY3Vycz0iMCIgbmlsbGFibGU9
-InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhz
-OmVsZW1lbnQgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6Q2FtZXJhSW5mb0Rh
-dGFUeXBlIiAvPg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZDYW1lcmFJbmZvRGF0
-YVR5cGUiPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVy
-YUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgbWluT2NjdXJzPSIw
-IiBtYXhPY2N1cnM9InVuYm91bmRlZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1
-ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mQ2Ft
-ZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6TGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIiBuaWxs
-YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</uax:ByteString>
+ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTWFya2VyTGlzdERhdGFUeXBlIj4NCiAgICA8eHM6YW5u
+b3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBlbGVtZW50cyBy
+ZXByZXNlbnRpbmcgYSBGaWR1Y2lhbCBNYXJrZXI8L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94
+czphbm5vdGF0aW9uPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9
+Ik1hcmtlcnMiIHR5cGU9InRuczpMaXN0T2ZNYXJrZXJEYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBu
+aWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBl
+Pg0KICA8eHM6ZWxlbWVudCBuYW1lPSJNYXJrZXJMaXN0RGF0YVR5cGUiIHR5cGU9InRuczpNYXJr
+ZXJMaXN0RGF0YVR5cGUiIC8+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZk1hcmtl
+ckxpc3REYXRhVHlwZSI+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQgbmFt
+ZT0iTWFya2VyTGlzdERhdGFUeXBlIiB0eXBlPSJ0bnM6TWFya2VyTGlzdERhdGFUeXBlIiBtaW5P
+Y2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8
+L3hzOnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJM
+aXN0T2ZNYXJrZXJMaXN0RGF0YVR5cGUiIHR5cGU9InRuczpMaXN0T2ZNYXJrZXJMaXN0RGF0YVR5
+cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5h
+bWU9IkNhbWVyYUluZm9EYXRhVHlwZSI+DQogICAgPHhzOmFubm90YXRpb24+DQogICAgICA8eHM6
+ZG9jdW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEgY2FsbGlicmF0
+aW9uIHBhcmFtZXRlcnM8L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94czphbm5vdGF0aW9uPg0K
+ICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkRpc3RvcnRpb25Db2Vm
+ZmljaWVudHMiIHR5cGU9InVhOkxpc3RPZkRvdWJsZSIgbWluT2NjdXJzPSIwIiBuaWxsYWJsZT0i
+dHJ1ZSIgLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVyYU1hdHJpeCIgdHlwZT0idWE6
+TGlzdE9mRG91YmxlIiBtaW5PY2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6
+c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQogIDx4czplbGVtZW50IG5hbWU9IkNhbWVy
+YUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgLz4NCg0KICA8eHM6
+Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAgICA8eHM6c2Vx
+dWVuY2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJDYW1lcmFJbmZvRGF0YVR5cGUiIHR5cGU9
+InRuczpDYW1lcmFJbmZvRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5k
+ZWQiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxl
+eFR5cGU+DQogIDx4czplbGVtZW50IG5hbWU9Ikxpc3RPZkNhbWVyYUluZm9EYXRhVHlwZSIgdHlw
+ZT0idG5zOkxpc3RPZkNhbWVyYUluZm9EYXRhVHlwZSIgbmlsbGFibGU9InRydWUiPjwveHM6ZWxl
+bWVudD4NCg0KPC94czpzY2hlbWE+</uax:ByteString>
       </uax:Value>
     </uax:Value>
     <uax:DataType>
@@ -1355,6 +1506,34 @@ YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</uax:ByteString>
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </MarkerDataType>
+    <MarkerListDataType>
+      <uax:NodeClass>Variable_2</uax:NodeClass>
+      <uax:NodeId>
+        <uax:Identifier>ns=1;i=15102</uax:Identifier>
+      </uax:NodeId>
+      <uax:BrowseName>
+        <uax:NamespaceIndex>1</uax:NamespaceIndex>
+        <uax:Name>MarkerListDataType</uax:Name>
+      </uax:BrowseName>
+      <uax:ReferenceTypeId>
+        <uax:Identifier>i=47</uax:Identifier>
+      </uax:ReferenceTypeId>
+      <uax:TypeDefinitionId>
+        <uax:Identifier>i=69</uax:Identifier>
+      </uax:TypeDefinitionId>
+      <uax:NumericId>15102</uax:NumericId>
+      <uax:Value>
+        <uax:Value>
+          <uax:String>//xs:element[@name='MarkerListDataType']</uax:String>
+        </uax:Value>
+      </uax:Value>
+      <uax:DataType>
+        <uax:Identifier>i=12</uax:Identifier>
+      </uax:DataType>
+      <uax:ValueRank>-1</uax:ValueRank>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+    </MarkerListDataType>
     <CameraInfoDataType>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
@@ -1480,6 +1659,31 @@ YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</uax:ByteString>
         <uax:IsInverse>true</uax:IsInverse>
         <uax:TargetId>
           <uax:Identifier>ns=1;i=15001</uax:Identifier>
+        </uax:TargetId>
+      </uax:Reference>
+    </uax:References>
+  </DefaultJson>
+  <DefaultJson xmlns="http://opcfoundation.org/UA/">
+    <uax:NodeClass>Object_1</uax:NodeClass>
+    <uax:NodeId>
+      <uax:Identifier>ns=1;i=15105</uax:Identifier>
+    </uax:NodeId>
+    <uax:BrowseName>
+      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:Name>Default JSON</uax:Name>
+    </uax:BrowseName>
+    <uax:TypeDefinitionId>
+      <uax:Identifier>i=76</uax:Identifier>
+    </uax:TypeDefinitionId>
+    <uax:NumericId>15105</uax:NumericId>
+    <uax:References>
+      <uax:Reference>
+        <uax:ReferenceTypeId>
+          <uax:Identifier>i=38</uax:Identifier>
+        </uax:ReferenceTypeId>
+        <uax:IsInverse>true</uax:IsInverse>
+        <uax:TargetId>
+          <uax:Identifier>ns=1;i=15095</uax:Identifier>
         </uax:TargetId>
       </uax:Reference>
     </uax:References>

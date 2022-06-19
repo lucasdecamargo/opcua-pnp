@@ -826,6 +826,15 @@
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
+            <Identifier>ns=1;i=15098</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
             <Identifier>ns=1;i=15055</Identifier>
           </TargetId>
         </ReferenceNode>
@@ -870,17 +879,23 @@ cGM6RmllbGQgTmFtZT0iSWQiIFR5cGVOYW1lPSJvcGM6VUludDMyIiAvPg0KICAgIDxvcGM6Rmll
 bGQgTmFtZT0iU2l6ZSIgVHlwZU5hbWU9Im9wYzpGbG9hdCIgLz4NCiAgICA8b3BjOkZpZWxkIE5h
 bWU9IkRpY3Rpb25hcnkiIFR5cGVOYW1lPSJvcGM6U3RyaW5nIiAvPg0KICAgIDxvcGM6RmllbGQg
 TmFtZT0iUG9zaXRpb24iIFR5cGVOYW1lPSJ0bnM6UG9zaXRpb25EYXRhVHlwZSIgLz4NCiAgPC9v
-cGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJDYW1lcmFJ
-bmZvRGF0YVR5cGUiIEJhc2VUeXBlPSJ1YTpFeHRlbnNpb25PYmplY3QiPg0KICAgIDxvcGM6RG9j
-dW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEgY2FsbGlicmF0aW9u
-IHBhcmFtZXRlcnM8L29wYzpEb2N1bWVudGF0aW9uPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iTm9P
-ZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1lPSJvcGM6SW50MzIiIC8+DQogICAgPG9w
-YzpGaWVsZCBOYW1lPSJEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiBUeXBlTmFtZT0ib3BjOkRvdWJs
-ZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZEaXN0b3J0aW9uQ29lZmZpY2llbnRzIiAvPg0KICAgIDxvcGM6
-RmllbGQgTmFtZT0iTm9PZkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpJbnQzMiIgLz4NCiAg
-ICA8b3BjOkZpZWxkIE5hbWU9IkNhbWVyYU1hdHJpeCIgVHlwZU5hbWU9Im9wYzpEb3VibGUiIExl
-bmd0aEZpZWxkPSJOb09mQ2FtZXJhTWF0cml4IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4N
-Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</ByteString>
+cGM6U3RydWN0dXJlZFR5cGU+DQoNCiAgPG9wYzpTdHJ1Y3R1cmVkVHlwZSBOYW1lPSJNYXJrZXJM
+aXN0RGF0YVR5cGUiIEJhc2VUeXBlPSJ1YTpFeHRlbnNpb25PYmplY3QiPg0KICAgIDxvcGM6RG9j
+dW1lbnRhdGlvbj5Db250YWlucyB0aGUgZWxlbWVudHMgcmVwcmVzZW50aW5nIGEgRmlkdWNpYWwg
+TWFya2VyPC9vcGM6RG9jdW1lbnRhdGlvbj4NCiAgICA8b3BjOkZpZWxkIE5hbWU9Ik5vT2ZNYXJr
+ZXJzIiBUeXBlTmFtZT0ib3BjOkludDMyIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iTWFya2Vy
+cyIgVHlwZU5hbWU9InRuczpNYXJrZXJEYXRhVHlwZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZNYXJrZXJz
+IiAvPg0KICA8L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KICA8b3BjOlN0cnVjdHVyZWRUeXBlIE5h
+bWU9IkNhbWVyYUluZm9EYXRhVHlwZSIgQmFzZVR5cGU9InVhOkV4dGVuc2lvbk9iamVjdCI+DQog
+ICAgPG9wYzpEb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9uIG9mIGNhbWVyYSBj
+YWxsaWJyYXRpb24gcGFyYW1ldGVyczwvb3BjOkRvY3VtZW50YXRpb24+DQogICAgPG9wYzpGaWVs
+ZCBOYW1lPSJOb09mRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgVHlwZU5hbWU9Im9wYzpJbnQzMiIg
+Lz4NCiAgICA8b3BjOkZpZWxkIE5hbWU9IkRpc3RvcnRpb25Db2VmZmljaWVudHMiIFR5cGVOYW1l
+PSJvcGM6RG91YmxlIiBMZW5ndGhGaWVsZD0iTm9PZkRpc3RvcnRpb25Db2VmZmljaWVudHMiIC8+
+DQogICAgPG9wYzpGaWVsZCBOYW1lPSJOb09mQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3BjOklu
+dDMyIiAvPg0KICAgIDxvcGM6RmllbGQgTmFtZT0iQ2FtZXJhTWF0cml4IiBUeXBlTmFtZT0ib3Bj
+OkRvdWJsZSIgTGVuZ3RoRmllbGQ9Ik5vT2ZDYW1lcmFNYXRyaXgiIC8+DQogIDwvb3BjOlN0cnVj
+dHVyZWRUeXBlPg0KDQo8L29wYzpUeXBlRGljdGlvbmFyeT4=</ByteString>
         </Value>
       </Value>
       <DataType>
@@ -1207,6 +1222,15 @@ Cg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</ByteString>
           </ReferenceTypeId>
           <IsInverse>false</IsInverse>
           <TargetId>
+            <Identifier>ns=1;i=15102</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
             <Identifier>ns=1;i=15059</Identifier>
           </TargetId>
         </ReferenceNode>
@@ -1285,22 +1309,36 @@ cGU9InRuczpNYXJrZXJEYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBtYXhPY2N1cnM9InVuYm91bmRl
 ZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4
 VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mTWFya2VyRGF0YVR5cGUiIHR5cGU9InRu
 czpMaXN0T2ZNYXJrZXJEYXRhVHlwZSIgbmlsbGFibGU9InRydWUiPjwveHM6ZWxlbWVudD4NCg0K
-ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAgICA8eHM6YW5u
-b3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBkZWZpbml0aW9u
-IG9mIGNhbWVyYSBjYWxsaWJyYXRpb24gcGFyYW1ldGVyczwveHM6ZG9jdW1lbnRhdGlvbj4NCiAg
-ICA8L3hzOmFubm90YXRpb24+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQg
-bmFtZT0iRGlzdG9ydGlvbkNvZWZmaWNpZW50cyIgdHlwZT0idWE6TGlzdE9mRG91YmxlIiBtaW5P
-Y2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iQ2Ft
-ZXJhTWF0cml4IiB0eXBlPSJ1YTpMaXN0T2ZEb3VibGUiIG1pbk9jY3Vycz0iMCIgbmlsbGFibGU9
-InRydWUiIC8+DQogICAgPC94czpzZXF1ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhz
-OmVsZW1lbnQgbmFtZT0iQ2FtZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6Q2FtZXJhSW5mb0Rh
-dGFUeXBlIiAvPg0KDQogIDx4czpjb21wbGV4VHlwZSBuYW1lPSJMaXN0T2ZDYW1lcmFJbmZvRGF0
-YVR5cGUiPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVy
-YUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgbWluT2NjdXJzPSIw
-IiBtYXhPY2N1cnM9InVuYm91bmRlZCIgbmlsbGFibGU9InRydWUiIC8+DQogICAgPC94czpzZXF1
-ZW5jZT4NCiAgPC94czpjb21wbGV4VHlwZT4NCiAgPHhzOmVsZW1lbnQgbmFtZT0iTGlzdE9mQ2Ft
-ZXJhSW5mb0RhdGFUeXBlIiB0eXBlPSJ0bnM6TGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIiBuaWxs
-YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</ByteString>
+ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iTWFya2VyTGlzdERhdGFUeXBlIj4NCiAgICA8eHM6YW5u
+b3RhdGlvbj4NCiAgICAgIDx4czpkb2N1bWVudGF0aW9uPkNvbnRhaW5zIHRoZSBlbGVtZW50cyBy
+ZXByZXNlbnRpbmcgYSBGaWR1Y2lhbCBNYXJrZXI8L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94
+czphbm5vdGF0aW9uPg0KICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9
+Ik1hcmtlcnMiIHR5cGU9InRuczpMaXN0T2ZNYXJrZXJEYXRhVHlwZSIgbWluT2NjdXJzPSIwIiBu
+aWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8L3hzOnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBl
+Pg0KICA8eHM6ZWxlbWVudCBuYW1lPSJNYXJrZXJMaXN0RGF0YVR5cGUiIHR5cGU9InRuczpNYXJr
+ZXJMaXN0RGF0YVR5cGUiIC8+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9Ikxpc3RPZk1hcmtl
+ckxpc3REYXRhVHlwZSI+DQogICAgPHhzOnNlcXVlbmNlPg0KICAgICAgPHhzOmVsZW1lbnQgbmFt
+ZT0iTWFya2VyTGlzdERhdGFUeXBlIiB0eXBlPSJ0bnM6TWFya2VyTGlzdERhdGFUeXBlIiBtaW5P
+Y2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIiBuaWxsYWJsZT0idHJ1ZSIgLz4NCiAgICA8
+L3hzOnNlcXVlbmNlPg0KICA8L3hzOmNvbXBsZXhUeXBlPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJM
+aXN0T2ZNYXJrZXJMaXN0RGF0YVR5cGUiIHR5cGU9InRuczpMaXN0T2ZNYXJrZXJMaXN0RGF0YVR5
+cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCiAgPHhzOmNvbXBsZXhUeXBlIG5h
+bWU9IkNhbWVyYUluZm9EYXRhVHlwZSI+DQogICAgPHhzOmFubm90YXRpb24+DQogICAgICA8eHM6
+ZG9jdW1lbnRhdGlvbj5Db250YWlucyB0aGUgZGVmaW5pdGlvbiBvZiBjYW1lcmEgY2FsbGlicmF0
+aW9uIHBhcmFtZXRlcnM8L3hzOmRvY3VtZW50YXRpb24+DQogICAgPC94czphbm5vdGF0aW9uPg0K
+ICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkRpc3RvcnRpb25Db2Vm
+ZmljaWVudHMiIHR5cGU9InVhOkxpc3RPZkRvdWJsZSIgbWluT2NjdXJzPSIwIiBuaWxsYWJsZT0i
+dHJ1ZSIgLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IkNhbWVyYU1hdHJpeCIgdHlwZT0idWE6
+TGlzdE9mRG91YmxlIiBtaW5PY2N1cnM9IjAiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6
+c2VxdWVuY2U+DQogIDwveHM6Y29tcGxleFR5cGU+DQogIDx4czplbGVtZW50IG5hbWU9IkNhbWVy
+YUluZm9EYXRhVHlwZSIgdHlwZT0idG5zOkNhbWVyYUluZm9EYXRhVHlwZSIgLz4NCg0KICA8eHM6
+Y29tcGxleFR5cGUgbmFtZT0iTGlzdE9mQ2FtZXJhSW5mb0RhdGFUeXBlIj4NCiAgICA8eHM6c2Vx
+dWVuY2U+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJDYW1lcmFJbmZvRGF0YVR5cGUiIHR5cGU9
+InRuczpDYW1lcmFJbmZvRGF0YVR5cGUiIG1pbk9jY3Vycz0iMCIgbWF4T2NjdXJzPSJ1bmJvdW5k
+ZWQiIG5pbGxhYmxlPSJ0cnVlIiAvPg0KICAgIDwveHM6c2VxdWVuY2U+DQogIDwveHM6Y29tcGxl
+eFR5cGU+DQogIDx4czplbGVtZW50IG5hbWU9Ikxpc3RPZkNhbWVyYUluZm9EYXRhVHlwZSIgdHlw
+ZT0idG5zOkxpc3RPZkNhbWVyYUluZm9EYXRhVHlwZSIgbmlsbGFibGU9InRydWUiPjwveHM6ZWxl
+bWVudD4NCg0KPC94czpzY2hlbWE+</ByteString>
         </Value>
       </Value>
       <DataType>
@@ -3027,6 +3065,365 @@ YWJsZT0idHJ1ZSI+PC94czplbGVtZW50Pg0KDQo8L3hzOnNjaGVtYT4=</ByteString>
       <MinimumSamplingInterval>0</MinimumSamplingInterval>
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
+    </Node>
+    <Node i:type="DataTypeNode">
+      <NodeId>
+        <Identifier>ns=1;i=15095</Identifier>
+      </NodeId>
+      <NodeClass>DataType_64</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>MarkerListDataType</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>MarkerListDataType</Text>
+      </DisplayName>
+      <Description>
+        <Locale></Locale>
+        <Text>Contains the elements representing a Fiducial Marker</Text>
+      </Description>
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=45</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>i=22</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15097</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15101</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15105</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <IsAbstract>false</IsAbstract>
+      <DataTypeDefinition i:nil="true" />
+    </Node>
+    <Node i:type="VariableTypeNode">
+      <NodeId>
+        <Identifier>ns=1;i=15096</Identifier>
+      </NodeId>
+      <NodeClass>VariableType_16</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>MarkerListVariableType</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>MarkerListVariableType</Text>
+      </DisplayName>
+      <Description>
+        <Locale></Locale>
+        <Text>List of fiducial markers</Text>
+      </Description>
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=45</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>i=63</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <Value>
+        <Value>
+          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
+        </Value>
+      </Value>
+      <DataType>
+        <Identifier>ns=1;i=15095</Identifier>
+      </DataType>
+      <ValueRank>-2</ValueRank>
+      <ArrayDimensions />
+      <IsAbstract>false</IsAbstract>
+    </Node>
+    <Node i:type="ObjectNode">
+      <NodeId>
+        <Identifier>ns=1;i=15097</Identifier>
+      </NodeId>
+      <NodeClass>Object_1</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>0</NamespaceIndex>
+        <Name>Default Binary</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>Default Binary</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=76</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15095</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=39</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15098</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <EventNotifier>0</EventNotifier>
+    </Node>
+    <Node i:type="VariableNode">
+      <NodeId>
+        <Identifier>ns=1;i=15098</Identifier>
+      </NodeId>
+      <NodeClass>Variable_2</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>MarkerListDataType</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>MarkerListDataType</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15020</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=69</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <Value>
+        <Value>
+          <String xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">MarkerListDataType</String>
+        </Value>
+      </Value>
+      <DataType>
+        <Identifier>i=12</Identifier>
+      </DataType>
+      <ValueRank>-1</ValueRank>
+      <ArrayDimensions />
+      <AccessLevel>1</AccessLevel>
+      <UserAccessLevel>1</UserAccessLevel>
+      <MinimumSamplingInterval>0</MinimumSamplingInterval>
+      <Historizing>false</Historizing>
+      <AccessLevelEx>0</AccessLevelEx>
+    </Node>
+    <Node i:type="ObjectNode">
+      <NodeId>
+        <Identifier>ns=1;i=15101</Identifier>
+      </NodeId>
+      <NodeClass>Object_1</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>0</NamespaceIndex>
+        <Name>Default XML</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>Default XML</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=76</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15095</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=39</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15102</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <EventNotifier>0</EventNotifier>
+    </Node>
+    <Node i:type="VariableNode">
+      <NodeId>
+        <Identifier>ns=1;i=15102</Identifier>
+      </NodeId>
+      <NodeClass>Variable_2</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>1</NamespaceIndex>
+        <Name>MarkerListDataType</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>MarkerListDataType</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=47</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15028</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=69</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <Value>
+        <Value>
+          <String xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">//xs:element[@name='MarkerListDataType']</String>
+        </Value>
+      </Value>
+      <DataType>
+        <Identifier>i=12</Identifier>
+      </DataType>
+      <ValueRank>-1</ValueRank>
+      <ArrayDimensions />
+      <AccessLevel>1</AccessLevel>
+      <UserAccessLevel>1</UserAccessLevel>
+      <MinimumSamplingInterval>0</MinimumSamplingInterval>
+      <Historizing>false</Historizing>
+      <AccessLevelEx>0</AccessLevelEx>
+    </Node>
+    <Node i:type="ObjectNode">
+      <NodeId>
+        <Identifier>ns=1;i=15105</Identifier>
+      </NodeId>
+      <NodeClass>Object_1</NodeClass>
+      <BrowseName>
+        <NamespaceIndex>0</NamespaceIndex>
+        <Name>Default JSON</Name>
+      </BrowseName>
+      <DisplayName>
+        <Locale></Locale>
+        <Text>Default JSON</Text>
+      </DisplayName>
+      <Description i:nil="true" />
+      <WriteMask>0</WriteMask>
+      <UserWriteMask>0</UserWriteMask>
+      <RolePermissions />
+      <UserRolePermissions />
+      <AccessRestrictions>0</AccessRestrictions>
+      <References>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=40</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>false</IsInverse>
+          <TargetId>
+            <Identifier>i=76</Identifier>
+          </TargetId>
+        </ReferenceNode>
+        <ReferenceNode>
+          <ReferenceTypeId>
+            <Identifier>i=38</Identifier>
+          </ReferenceTypeId>
+          <IsInverse>true</IsInverse>
+          <TargetId>
+            <Identifier>ns=1;i=15095</Identifier>
+          </TargetId>
+        </ReferenceNode>
+      </References>
+      <EventNotifier>0</EventNotifier>
     </Node>
   </Nodes>
 </NodeSet>

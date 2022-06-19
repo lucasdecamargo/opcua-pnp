@@ -38,6 +38,96 @@ using fortiss_Device;
 
 namespace PnPTypes
 {
+    #region MarkerListVariableState Class
+    #if (!OPCUA_EXCLUDE_MarkerListVariableState)
+    /// <summary>
+    /// Stores an instance of the MarkerListVariableType VariableType.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    public partial class MarkerListVariableState : BaseDataVariableState<MarkerListDataType>
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the type with its default attribute values.
+        /// </summary>
+        public MarkerListVariableState(NodeState parent) : base(parent)
+        {
+        }
+
+        /// <summary>
+        /// Returns the id of the default type definition node for the instance.
+        /// </summary>
+        protected override NodeId GetDefaultTypeDefinitionId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(PnPTypes.VariableTypes.MarkerListVariableType, PnPTypes.Namespaces.PnPTypes, namespaceUris);
+        }
+
+        /// <summary>
+        /// Returns the id of the default data type node for the instance.
+        /// </summary>
+        protected override NodeId GetDefaultDataTypeId(NamespaceTable namespaceUris)
+        {
+            return Opc.Ua.NodeId.Create(PnPTypes.DataTypes.MarkerListDataType, PnPTypes.Namespaces.PnPTypes, namespaceUris);
+        }
+
+        /// <summary>
+        /// Returns the id of the default value rank for the instance.
+        /// </summary>
+        protected override int GetDefaultValueRank()
+        {
+            return ValueRanks.Scalar;
+        }
+
+        #if (!OPCUA_EXCLUDE_InitializationStrings)
+        /// <summary>
+        /// Initializes the instance.
+        /// </summary>
+        protected override void Initialize(ISystemContext context)
+        {
+            Initialize(context, InitializationString);
+            InitializeOptionalChildren(context);
+        }
+
+        /// <summary>
+        /// Initializes the instance with a node.
+        /// </summary>
+        protected override void Initialize(ISystemContext context, NodeState source)
+        {
+            InitializeOptionalChildren(context);
+            base.Initialize(context, source);
+        }
+
+        /// <summary>
+        /// Initializes the any option children defined for the instance.
+        /// </summary>
+        protected override void InitializeOptionalChildren(ISystemContext context)
+        {
+            base.InitializeOptionalChildren(context);
+        }
+
+        #region Initialization String
+        private const string InitializationString =
+           "AwAAABwAAABodHRwczovL3BucC5vcmcvVUEvUG5QVHlwZXMvHwAAAGh0dHA6Ly9vcGNmb3VuZGF0aW9u" +
+           "Lm9yZy9VQS9ESS8eAAAAaHR0cHM6Ly9mb3J0aXNzLm9yZy9VQS9EZXZpY2Uv/////xVgiQICAAAAAQAe" +
+           "AAAATWFya2VyTGlzdFZhcmlhYmxlVHlwZUluc3RhbmNlAQH4OgEB+Dr4OgAAAQH3Ov7///8BAf////8A" +
+           "AAAA";
+        #endregion
+        #endif
+        #endregion
+
+        #region Public Properties
+        #endregion
+
+        #region Overridden Methods
+        #endregion
+
+        #region Private Fields
+        #endregion
+    }
+    #endif
+    #endregion
+
     #region ICameraInfoParameterState Class
     #if (!OPCUA_EXCLUDE_ICameraInfoParameterState)
     /// <summary>

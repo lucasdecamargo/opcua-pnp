@@ -323,7 +323,7 @@ std::future<bool> ImageProcessorClient::execute(const UA_ByteString* inputImage,
     return this->ComponentClient::execute(parameters, autoDisconnect);
 }
 
-UA_StatusCode ImageProcessorClient::readDetectedMarkersArrayNode(std::vector<UA_MarkerDataType>& data)
+UA_StatusCode ImageProcessorClient::readDetectedMarkersArrayNode(UA_MarkerDataType* data, size_t& size)
 {
     if(UA_NodeId_isNull(&detectedMarkersNodeId))
     {
@@ -341,22 +341,58 @@ UA_StatusCode ImageProcessorClient::readDetectedMarkersArrayNode(std::vector<UA_
         return ret;
     }
 
-    if(v.type != &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERLISTDATATYPE])
+    UA_ExtensionObject* extObj;
+
+    if(v.type != &UA_TYPES[UA_TYPES_EXTENSIONOBJECT])
     {
-        logger->error("DetectedMarkersArray is expected to be of type MarkerListDataType and not of type " 
-            + std::string(v.type->typeName));
         UA_Variant_clear(&v);
+        logger->error("DetectedMarkersArray is expected to be an ExtensionObject and not of type " 
+            + std::string(v.type->typeName));
         return UA_STATUSCODE_BADTYPEMISMATCH;
     }
+    // if(v.type != &UA_TYPES[UA_TYPES_PNP_TYPES_POSEDATATYPE])
+    // {
+    //     const char* typeName = v.type->typeName;
+    //     UA_Variant_clear(&v);
+    //     logger->error("Cannot read camera pose node with type " + std::string(typeName));
+    //     return UA_STATUSCODE_BADTYPEMISMATCH;
+    // }
     
-    UA_MarkerListDataType* m_list = reinterpret_cast<UA_MarkerListDataType*>(v.data);
-    UA_MarkerDataType* m = reinterpret_cast<UA_MarkerDataType*>(m_list->markers);
+    extObj = reinterpret_cast<UA_ExtensionObject*>(v.data);
 
-    for(size_t i = 0; i < m_list->markersSize; i++)
+    if(extObj->encoding != UA_EXTENSIONOBJECT_DECODED)
     {
-        data.push_back(m[i]);
-        UA_String_copy(&m[i].dictionary, &data.back().dictionary); // WARNING! Has to be cleared when destructing array
+        UA_Variant_clear(&v);
+        logger->error("DetectedMarkersArray could not be decoded");
+        return UA_STATUSCODE_BADTYPEMISMATCH;
     }
+
+    size = v.arrayLength;
+    
+    if(size > 0)
+    {
+        data = (UA_MarkerDataType*)UA_Array_new(size, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+        
+        // *data = (UA_MarkerDataType*)malloc(size*sizeof(UA_MarkerDataType));
+        memcpy(data, extObj->content.decoded.data, size*sizeof(UA_MarkerDataType));
+        
+        // UA_Array_copy(reinterpret_cast<UA_MarkerDataType*>(extObj->content.decoded.data),
+            // size, (void**)data, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+
+        // UA_ExtensionObject_setValueNoDelete(extObj, data, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+
+        // data = reinterpret_cast<UA_MarkerDataType*>(extObj->content.decoded.data);
+
+        // data = (UA_MarkerDataType*)UA_Array_new(size, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]);
+
+        for(size_t i = 0; i < size; i++)
+        {
+            // UA_MarkerDataType_copy(&((const UA_MarkerDataType*)extObj->content.decoded.data)[i], &data[i]);
+            // UA_MarkerDataType* m = &((UA_MarkerDataType*)(extObj->content.decoded.data))[i];
+            UA_MarkerDataType m = data[i];
+        }   
+    }
+
 
     UA_Variant_clear(&v);
     return ret;

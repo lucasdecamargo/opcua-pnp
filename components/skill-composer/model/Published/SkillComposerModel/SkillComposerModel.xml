@@ -33,9 +33,7 @@
         <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
             <Children>
                 <!-- Output parameters -->
-                <Variable SymbolicName="SKILLCOMPOSER:FoundMarkersArray" DataType="PNPTYPES:MarkerDataType" ValueRank="Array" AccessLevel="Read">
-                    <Description>Array of found fiducial markers</Description>
-                </Variable> 
+                <Variable SymbolicName="SKILLCOMPOSER:FoundMarkersArray" DataType="PNPTYPES:MarkerListDataType" VariableType="PNPTYPES:MarkerListVariableType" AccessLevel="Read"/> 
             </Children>
         </Object>
     </Children>

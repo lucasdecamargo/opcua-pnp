@@ -87,6 +87,23 @@
   </xs:complexType>
   <xs:element name="ListOfMarkerDataType" type="tns:ListOfMarkerDataType" nillable="true"></xs:element>
 
+  <xs:complexType name="MarkerListDataType">
+    <xs:annotation>
+      <xs:documentation>Contains the elements representing a Fiducial Marker</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Markers" type="tns:ListOfMarkerDataType" minOccurs="0" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarkerListDataType" type="tns:MarkerListDataType" />
+
+  <xs:complexType name="ListOfMarkerListDataType">
+    <xs:sequence>
+      <xs:element name="MarkerListDataType" type="tns:MarkerListDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfMarkerListDataType" type="tns:ListOfMarkerListDataType" nillable="true"></xs:element>
+
   <xs:complexType name="CameraInfoDataType">
     <xs:annotation>
       <xs:documentation>Contains the definition of camera callibration parameters</xs:documentation>

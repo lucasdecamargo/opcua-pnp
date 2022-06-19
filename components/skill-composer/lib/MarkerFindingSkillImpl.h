@@ -72,6 +72,9 @@ protected:
         {
             UA_CameraInfoDataType_clear(&camInfo);
             UA_ImagePNG_clear(&photo);
+
+            for(auto &m : markers)
+                UA_String_clear(&m.dictionary);
         }
     };
 

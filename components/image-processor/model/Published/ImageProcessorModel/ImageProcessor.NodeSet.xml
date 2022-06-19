@@ -353,10 +353,7 @@
         <Locale></Locale>
         <Text>DetectedMarkersArray</Text>
       </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Array of detected fiducial markers</Text>
-      </Description>
+      <Description i:nil="true" />
       <WriteMask>0</WriteMask>
       <UserWriteMask>0</UserWriteMask>
       <RolePermissions />
@@ -397,12 +394,10 @@
         </Value>
       </Value>
       <DataType>
-        <Identifier>ns=4;i=15001</Identifier>
+        <Identifier>ns=4;i=15095</Identifier>
       </DataType>
-      <ValueRank>1</ValueRank>
-      <ArrayDimensions>
-        <UInt32>0</UInt32>
-      </ArrayDimensions>
+      <ValueRank>-1</ValueRank>
+      <ArrayDimensions />
       <AccessLevel>1</AccessLevel>
       <UserAccessLevel>1</UserAccessLevel>
       <MinimumSamplingInterval>0</MinimumSamplingInterval>
@@ -2369,10 +2364,7 @@
         <Locale></Locale>
         <Text>DetectedMarkersArray</Text>
       </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Array of detected fiducial markers</Text>
-      </Description>
+      <Description i:nil="true" />
       <WriteMask>0</WriteMask>
       <UserWriteMask>0</UserWriteMask>
       <RolePermissions />
@@ -2404,12 +2396,10 @@
         </Value>
       </Value>
       <DataType>
-        <Identifier>ns=4;i=15001</Identifier>
+        <Identifier>ns=4;i=15095</Identifier>
       </DataType>
-      <ValueRank>1</ValueRank>
-      <ArrayDimensions>
-        <UInt32>0</UInt32>
-      </ArrayDimensions>
+      <ValueRank>-1</ValueRank>
+      <ArrayDimensions />
       <AccessLevel>1</AccessLevel>
       <UserAccessLevel>1</UserAccessLevel>
       <MinimumSamplingInterval>0</MinimumSamplingInterval>
