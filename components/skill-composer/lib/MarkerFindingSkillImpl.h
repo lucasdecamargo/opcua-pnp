@@ -5,6 +5,8 @@
 #include <skills/skill_composer/MarkerFindingSkill.hpp>
 #include <ComponentClient.h>
 
+#include <Eigen/Eigen>
+
 #include <client/SkillDetector.h>
 #include <client/RegisteredComponent.h>
 
@@ -81,7 +83,17 @@ protected:
     std::vector<std::shared_ptr<CameraData>>
     getCameraData(const std::vector<std::shared_ptr<RegisteredSkill>>& photoSkills);
 
-    void detectMarkers(std::shared_ptr<RegisteredSkill> markerDetectionSkill, std::vector<std::shared_ptr<CameraData>> cameraData);
+    void detectMarkers(std::shared_ptr<RegisteredSkill>& markerDetectionSkill, std::vector<std::shared_ptr<CameraData>>& cameraData);
+    void transformMarkers(std::vector<std::shared_ptr<CameraData>>& cameraData);
+    void processMarkers(std::vector<std::shared_ptr<CameraData>>& cameraData, std::vector<UA_MarkerDataType>& outMarkers);
+    
+    std::vector<UA_MarkerDataType> getMarkersByMeanValue(std::vector<std::shared_ptr<CameraData>>& cameraData);
+
+    static Eigen::Matrix3d getRotMatrix( const double roll, const double pitch, const double yaw);
+    static Eigen::Matrix4d getHTM(Eigen::Vector3d& pos, Eigen::Matrix3d& rot);
+
+    static bool isPosValid(const UA_PositionDataType& p);
+    static bool isRotValid(const UA_RotationDataType& r);
 
     UA_NodeId getCameraParameterSetNodeId(std::shared_ptr<RegisteredSkill>& photoSkill);
     

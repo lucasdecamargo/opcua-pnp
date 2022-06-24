@@ -106,7 +106,9 @@ namespace pnp{
                     }
 
                     void findingFinished()
-                    {                        
+                    { 
+                        updateParameters();
+
                         logger->trace("Making transition to READY");
                         if (!transition(ProgramStateNumber::READY)) {
                             logger->error("Failed to make transition after camera has finished to ready");
@@ -134,26 +136,30 @@ namespace pnp{
                         UA_Variant v;
                         UA_Variant_init(&v);
 
-                        UA_Variant_setArray(
-                            &v,
-                            paramFoundMarkers.value.data(),
-                            paramFoundMarkers.value.size(),
-                            &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERDATATYPE]
-                        );
+                        UA_MarkerListDataType m_list;
+                        m_list.markers = NULL;
+                        m_list.markersSize = 0;
 
-                        UA_UInt32 arrayDimension = paramFoundMarkers.value.size();
-                        v.arrayDimensions = &arrayDimension;
-                        v.arrayDimensionsSize = 1;
+                        if(paramFoundMarkers.value.size() > 0)
+                        {
+                            m_list.markersSize = paramFoundMarkers.value.size();
+                            m_list.markers = paramFoundMarkers.value.data();
+                        }
+
+                        UA_Variant_setScalar(&v, &m_list, &UA_TYPES_PNP_TYPES[UA_TYPES_PNP_TYPES_MARKERLISTDATATYPE]);
 
                         {
                             LockedServer ls = server->getLocked();
                             ret = UA_Server_writeValue(ls.get(), *paramFoundMarkers.nodeId.get(), v);
                         }
 
+                        paramFoundMarkers.value.clear();
+
                         if(ret != UA_STATUSCODE_GOOD) {
                             logger->error("Failed to write Detected Markers. Returned: " +
                                 std::string(UA_StatusCode_name(ret)));
                         }
+
                     }
                 };
             }

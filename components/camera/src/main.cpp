@@ -92,8 +92,13 @@ int main(int argc, char* argv[])
 
         // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/video_ex.mp4");
         // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/markers.jpg");
-        std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>(0);
+        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>(0);
         // device->set(CameraDeviceProperties::CAP_PROP_FORMAT, CameraDeviceEncoders::BMP);
+        std::shared_ptr<CameraDevice> device;
+        if(settings["camera"]["device"].isNumber())
+            device = std::make_shared<CvDevice>((int)settings["camera"]["device"]);
+        else
+            device = std::make_shared<CvDevice>(settings["camera"]["device"].c_str());
         device->open();
 
         std::shared_ptr<Camera> camera = std::make_shared<Camera>(

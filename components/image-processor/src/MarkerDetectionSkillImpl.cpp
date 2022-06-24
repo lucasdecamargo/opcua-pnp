@@ -127,6 +127,10 @@ bool MarkerDetectionSkillImpl::start(
         {
             outMarkers[m.id].id = m.id;
             outMarkers[m.id].dictionary = UA_String_fromChars("ARUCO");
+            outMarkers[m.id].size = NAN;
+            outMarkers[m.id].position.x = NAN;
+            outMarkers[m.id].position.y = NAN;
+            outMarkers[m.id].position.z = NAN;
         }
 
         // Check markers size

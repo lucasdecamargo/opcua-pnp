@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 project(skill-composer)
 
 find_package(open62541 1.2 REQUIRED COMPONENTS FullNamespace Events)
-find_package(OpenCV REQUIRED)
+find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -98,6 +98,7 @@ target_link_libraries(${PROJECT_NAME}-lib
     CLI11::CLI11
     config++
     open62541::open62541
+    Eigen3::Eigen
     ${OPCUA_LIB}
     ${OPCUA_CLIENT_LIB}
 )
