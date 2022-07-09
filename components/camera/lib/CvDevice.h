@@ -40,13 +40,13 @@ public:
     /**
      * Returns the specified CameraDevice property
      */ 
-    // virtual double get(int propId) const override;
-    using cv::VideoCapture::get;
+    virtual double get(int propId) const override;
+    // using cv::VideoCapture::get;
     /**
      * Sets a property in the CameraDevice property
      */ 
-    // virtual bool set(int propId, double value) override;
-    using cv::VideoCapture::set;
+    virtual bool set(int propId, double value) override;
+    // using cv::VideoCapture::set;
 
 private:
     std::string filename;

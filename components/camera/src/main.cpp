@@ -90,16 +90,55 @@ int main(int argc, char* argv[])
         std::shared_ptr<spdlog::logger> loggerUa = logger->clone(logger->name() + "-ua");
         pnp::log::LoggerFactory::setLoggerLevel(loggerUa, settings["logging"]["level"]["opcua"]);
 
-        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/video_ex.mp4");
-        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>("/home/lucas/Coding/OPCUA/opcua-pnp/markers.jpg");
-        // std::shared_ptr<CameraDevice> device = std::make_shared<CvDevice>(0);
-        // device->set(CameraDeviceProperties::CAP_PROP_FORMAT, CameraDeviceEncoders::BMP);
         std::shared_ptr<CameraDevice> device;
         if(settings["camera"]["device"].isNumber())
-            device = std::make_shared<CvDevice>((int)settings["camera"]["device"]);
+        {
+            device = std::make_shared<CvDevice>((int)settings["camera"]["device"], cv::CAP_V4L2);
+            device->open();
+            if(settings["camera"].exists("width") && settings["camera"].exists("height"))
+            {
+                int cap_width = settings["camera"]["width"];
+                int cap_height = settings["camera"]["height"];
+                bool set_wh = true;
+
+                if(settings["camera"].exists("format"))
+                {
+                    std::string cap_fmt = std::string(settings["camera"]["format"].c_str());
+
+                    if(cap_fmt.size() == 4)
+                    {
+                        logger->trace("Setting format to " + cap_fmt);
+                        if(!device->set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc(
+                            cap_fmt.at(0),cap_fmt.at(1),cap_fmt.at(2),cap_fmt.at(3)
+                        )))
+                            logger->warn("Could not set format to " + cap_fmt);
+                    }
+                    else
+                        logger->warn(cap_fmt + " is not a valid format");
+                }
+
+                logger->trace("Setting camera width x height: " 
+                    + std::to_string(cap_width)
+                    + "x" + std::to_string(cap_height));
+
+                set_wh &= device->set(cv::CAP_PROP_FRAME_WIDTH, cap_width);
+                set_wh &= device->set(cv::CAP_PROP_FRAME_HEIGHT, cap_height);
+
+
+                if(!set_wh)
+                    logger->warn("Could not set camera width x height: " 
+                    + std::to_string(cap_width)
+                    + "x" + std::to_string(cap_height));
+            }
+            logger->info("Camera device width x height: " 
+                + std::to_string((int)device->get(cv::CAP_PROP_FRAME_WIDTH))
+                + "x" + std::to_string((int)device->get(cv::CAP_PROP_FRAME_HEIGHT)));
+        }
         else
+        {
             device = std::make_shared<CvDevice>(settings["camera"]["device"].c_str());
-        device->open();
+            device->open();
+        }
 
         std::shared_ptr<Camera> camera = std::make_shared<Camera>(
             logger, loggerUa, uaServer, settings["camera"], device);

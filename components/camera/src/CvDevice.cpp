@@ -53,3 +53,13 @@ bool CvDevice::open()
     if(index != -1) return this->cv::VideoCapture::open(index, apiPreference);
     else return this->cv::VideoCapture::open(filename, apiPreference);
 }
+
+double CvDevice::get(int propId) const
+{
+    return this->cv::VideoCapture::get(propId);
+}
+
+bool CvDevice::set(int propId, double value)
+{
+    return this->cv::VideoCapture::set(propId, value);
+}
